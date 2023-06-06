@@ -1,0 +1,1 @@
+var posts=["2018/05/02/PC局域网搭建可道云/","2022/07/01/UE虚拟制片/","2023/03/02/Windows server WDS部署服务/","2022/01/24/博爱助学金项目/","2023/03/06/黑群晖无损降级/","2022/01/24/阿云嘎-心岛/","2023/03/20/数据恢复/"];function toRandomPost(){pjax.loadUrl('/'+posts[Math.floor(Math.random() * posts.length)]);};
