@@ -1,0 +1,1752 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>PC局域网搭建可道云</title>
+    <url>/2018/05/02/PC%E5%B1%80%E5%9F%9F%E7%BD%91%E6%90%AD%E5%BB%BA%E5%8F%AF%E9%81%93%E4%BA%91/</url>
+    <content><![CDATA[<h2 id="UPUPW搭建"><a href="#UPUPW搭建" class="headerlink" title="UPUPW搭建"></a>UPUPW搭建</h2><p>1.下载UPUPW套件<br> 下载地址：<a href="http://www.upupw.net/nphp70/n130.html"><strong>http://www.upupw.net/nphp70/n130.html</strong></a><br> 点击云端下载。</p>
+<p>2.下载后解压到你系统任意位置，然后运行其中的upupw.exe。</p>
+<p>3.在弹出的窗口中，输入“s1”开启全部服务，并回车确认，即可启动所需的运行环境，出现 “-请按任意键继续—”说明已经成功启动，现在直接关闭这个程序窗口即可（启动后自动添加开机启动项，若需关闭打开程序输入s5.）。</p>
+<p>4.下载KodExplorer可道云（以下简称KOD）<br>KOD官网下载最新版本KOD：<a href="http://kodcloud.com/download.html"><strong>http://kodcloud.com/download.html</strong></a><br>   将下载到的KOD压缩包解压到你的<strong>UPUPW</strong>文件夹下的<strong>htdocs</strong>文件夹中。</p>
+<p>5.本机访问，打开浏览器，地址栏输入“127.0.0.1”回车即可访问；<br> 局域网内，其他设备上，打开浏览器，直接在浏览器访问安装KOD的PC ip地址，即可使用KOD。</p>
+<h2 id="XAMPP搭建"><a href="#XAMPP搭建" class="headerlink" title="XAMPP搭建"></a>XAMPP搭建</h2><p>1.下载XAMPP安装包<br> 中文官网下载地址 ： <a href="https://www.apachefriends.org/zh_cn/download.html"><strong>https://www.apachefriends.org/zh_cn&#x2F;download.html</strong></a>。<br>2.安装XAMPP。下载后一步步点击安装即可。</p>
+<p>3.XAMPP服务的开启。点击<strong>Apache</strong>中的<strong>start</strong>开启服务；点击<strong>mysql</strong>中的<strong>start</strong>开启服务。</p>
+<p>4.点击Apache中的admin 访问 <a href="http://localhost/xampp/splash.php"><strong>http://localhost/xampp/splash.php</strong></a>如果出现XAMPP for Winodws网页说明已经安装完成。</p>
+<p>5.下载最新版本的KodExplorer程序，Apache和MySQL正常启动后，点击<strong>Explorer</strong>,进入服务器目录，找到<strong>htdocs</strong>文件夹，将里面的内容清空，然后将kodexplorer文件解压后放置到此目录。</p>
+<p>6.设置kod安装目录为读写权限，浏览器访问<a href="http://127.0.0.1/%EF%BC%8C%E5%BC%80%E5%A7%8B%E4%BD%BF%E7%94%A8%EF%BC%88%E7%82%B9%E5%87%BBApache--%3EAdmin%E6%B5%8F%E8%A7%88%E4%BA%A6%E5%8F%AF%EF%BC%89%E3%80%82">http://127.0.0.1/，开始使用（点击Apache--&gt;Admin浏览亦可）。</a></p>
+<p>注意事项：默认是80端口，若IIS开启了，要先关闭。</p>
+<h2 id="USBWebserver搭建"><a href="#USBWebserver搭建" class="headerlink" title="USBWebserver搭建"></a>USBWebserver搭建</h2><p>1、下载USBWebserver安装包，<a href="https://usbwebserver.yura.mk.ua/">USBWebServer v8.6.5 with PHP 8.1, v8.6.4 with PHP 8.0 and v8.6.3 with PHP 7.4 Portable (yura.mk.ua)</a>解压后，将KOD文件替换root文件夹内所有文件可以将软件安装目录直接放置到USB硬盘、U盘、本地硬盘任何位置，同步网盘也可以。「注意路径中不能包含中文」</p>
+<p>2、双击 运行软件后，等待USBWebserver的Apeche和Mysql两个选项变绿后，Kodexplorer界面会在浏览器中自动弹出。首次页面弹出较慢，约需30秒。</p>
+<p>3、首次登陆需要设置管理员密码。</p>
+<p>4、可通过浏览器访问 <a href="http://localhost:端口号/">http://localhost:端口号/</a> 访问KOD，或者点击USBWebserver「常规」选项中的「localhost」访问KOD。在你关闭 USBWebserver 之后，“Apache” 和 “MySQL” 也会随之关闭，并不会在后台占用系统资源，无须每次手动去停止服务。</p>
+<p><strong>故障&#x2F;其他情况</strong><br>正常情况下，Apache 和 MySQL 服务启动后都会显示绿色的钩，如果出现红色的话，很多时候是默认的端口被占用了。在 Settings (设置) 修改一下端口即可。在设置里面，你可以 Apache 和 MySQL 的端口号，修改网站根目录 (默认位于 USBWebserver 里的 root 文件夹)，以及启动时打开浏览器、启动后隐藏等。</p>
+<h2 id="XAMPP设置开机自启"><a href="#XAMPP设置开机自启" class="headerlink" title="XAMPP设置开机自启"></a>XAMPP设置开机自启</h2><p>1.在XAMPP安装目录下找到<strong>xampp-control.exe</strong>，点击鼠标右键，选择“<strong>以管理员身份运行</strong>”。</p>
+<p>2.打开Xampp的控制面板后，我们点击Apache 前面<strong>红色的叉</strong>，此时会弹出一个确认对话框，点击“<strong>Yes</strong>”。</p>
+<p>3.这时回到XAMPP的控制面板，就会发现红色的叉已经变成绿色的勾，这代表Apache服务已经安装成功了，用同样的方法可以安装MySQL或其他服务。</p>
+<p><strong>注意事项</strong>:在安装服务，一定要确认安装的服务已经停止运行，否则可能安装失败。</p>
+<h2 id="Windows下文件目录软链接（文件夹映射）"><a href="#Windows下文件目录软链接（文件夹映射）" class="headerlink" title="Windows下文件目录软链接（文件夹映射）"></a>Windows下文件目录软链接（文件夹映射）</h2><p>1.假设我们在可道云以admin的身份登陆并且创建一个新的文件夹的那么在对应物理目录下也会有这样一个新的文件夹。在物理目录下删除这个文件夹，那么可道云上也没有了我们不想一直把文件夹放在这个物理目录怎么办？ 这里就要用到一个Windows系统下比较好用的一个命令——mklink</p>
+<p>2.MKLINK [[&#x2F;D] | [&#x2F;H] | [&#x2F;J]] Link Target</p>
+<table>
+<thead>
+<tr>
+<th>字符</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>&#x2F;D</td>
+<td>创建目录符号链接，默认为文件</td>
+</tr>
+<tr>
+<td>空格</td>
+<td>符号链接</td>
+</tr>
+<tr>
+<td>&#x2F;H</td>
+<td>创建硬链接而非符号链接</td>
+</tr>
+<tr>
+<td>&#x2F;J</td>
+<td>创建目录链接</td>
+</tr>
+<tr>
+<td>Link</td>
+<td>指定新的符号链接名称</td>
+</tr>
+<tr>
+<td>Target</td>
+<td>指定新连接引用的路径（相对或绝对）</td>
+</tr>
+</tbody></table>
+<table>
+    <tr>
+        <td colspan="10">符号链接、目录链接、硬链接与快捷方式</td>
+    </tr>
+    <tr>
+        <td>连接类型</td>
+        <td>命令</td>
+        <td>文件类型</td>
+        <td>文件路径</td>
+        <td>空间占用</td>
+        <td>可链接类型</td>
+        <td>本质</td>
+        <td>windows下是否可跨磁盘</td>
+        <td>访问方式</td>
+        <td>源文件与链接文件关联关系</td>
+    </tr>
+    <tr>
+        <td>符号链接（软链接）</td>
+        <td>/d</td>
+        <td>.symlinkd</td>
+        <td>相对路径/绝对路径</td>
+        <td>不占空间</td>
+        <td>只能是目录</td>
+        <td>相当于只是对源目录进行引用（可当作快捷方式）</td>
+        <td>可以跨本地磁盘；也可跨网络磁盘（共享目录）</td>
+        <td>本地访问：通过链接目录所在磁盘路径访问；网络访问：通过tomcat可以实现</td>
+        <td>源目录删除后链接目录无效；链接目录删除后。源目录不受影响；源目录里的文件发生变化时，链接目录同步发生变化，反之同样成立。</td>
+    </tr>
+    <tr>
+        <td>目录链接（软链接）</td>
+        <td>/j</td>
+        <td>.junction</td>
+        <td>绝对路径</td>
+        <td>不占空间</td>
+        <td>只能是目录</td>
+        <td>同上，联接点</td>
+        <td>只能跨本地磁盘</td>
+        <td>同上</td>
+        <td>同上</td>
+    </tr>
+    <tr>
+        <td>硬链接</td>
+        <td>/h</td>
+        <td>.源文件类型</td>
+        <td>绝对路径</td>
+        <td>占用空间和源文件一样</td>
+        <td>只能是文件</td>
+        <td>相当于对源文件进行拷贝</td>
+        <td>不可以</td>
+        <td>本地访问：通过链接目录所在磁盘路径访问；网络访问：通过tomcat可以实现</td>
+        <td>源文件删除后链接文件无效；链接文件删除后。源文件不受影响；源文件里的内容发生变化时，链接文件同步发生变化，反之同样成立。</td>
+    </tr>
+    <tr>
+        <td>快捷方式</td>
+        <td>批处理</td>
+        <td>.lnk</td>
+        <td>绝对路径</td>
+        <td>文件仅有几百字节</td>
+        <td>文件、目录均可</td>
+        <td></td>
+        <td>只能跨本地磁盘</td>
+        <td>本地访问：通过链接目录所在磁盘路径访问；网络访问：无法通过网络访问到快捷方式所对应的实际文件</td>
+        <td>源文件删除后快捷方式无效；快捷方式删除后。源文件不受影响；只是创建了一个快捷方式。</td>
+    </tr>
+</table>
+
+<p>3.下面我们创建一个目录联接 <strong>前为目标位置，后为存储位置</strong><br> 首先现在D盘根目录下创建一个”TEST2“文件夹，然后在CMD命令提示符中输入指令</p>
+<p><code>mklink /j &quot;D:\data\User\admin\home\测试链接&quot; &quot;D:\test2&quot;</code></p>
+<p><strong>注意事项</strong>：该映射只能适用于NTFS文件系统的磁盘，相当于微软的一个开洞实现。</p>
+]]></content>
+      <categories>
+        <category>系统</category>
+      </categories>
+      <tags>
+        <tag>系统</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>UE虚拟制片学习手册</title>
+    <url>/2022/07/01/UE%E8%99%9A%E6%8B%9F%E5%88%B6%E7%89%87/</url>
+    <content><![CDATA[<p>UE虚拟制片</p>
+<p>虚拟制片流程</p>
+<h2 id="一、虚拟舞台-x2F-舞台预演"><a href="#一、虚拟舞台-x2F-舞台预演" class="headerlink" title="一、虚拟舞台&#x2F;舞台预演"></a>一、虚拟舞台&#x2F;舞台预演</h2><h3 id="模型导入导出"><a href="#模型导入导出" class="headerlink" title="模型导入导出"></a>模型导入导出</h3><p>插件下载：<a href="https://www.unrealengine.com/zh-CN/datasmith/plugins">https://www.unrealengine.com/zh-CN/datasmith/plugins</a></p>
+<h3 id=""><a href="#" class="headerlink" title=""></a></h3><h3 id="灯具、效果详解"><a href="#灯具、效果详解" class="headerlink" title="灯具、效果详解"></a>灯具、效果详解</h3><h4 id="电脑摇头灯与频闪灯"><a href="#电脑摇头灯与频闪灯" class="headerlink" title="电脑摇头灯与频闪灯"></a>电脑摇头灯与频闪灯</h4><h4 id="Gobo图案盘替换"><a href="#Gobo图案盘替换" class="headerlink" title="Gobo图案盘替换"></a>Gobo图案盘替换</h4><h4 id="扫描灯与帕灯"><a href="#扫描灯与帕灯" class="headerlink" title="扫描灯与帕灯"></a>扫描灯与帕灯</h4><h4 id="矩阵灯"><a href="#矩阵灯" class="headerlink" title="矩阵灯"></a>矩阵灯</h4><h4 id="摇头矩阵灯"><a href="#摇头矩阵灯" class="headerlink" title="摇头矩阵灯"></a>摇头矩阵灯</h4><h4 id="特效烟花"><a href="#特效烟花" class="headerlink" title="特效烟花"></a>特效烟花</h4><h4 id="特效冷焰火"><a href="#特效冷焰火" class="headerlink" title="特效冷焰火"></a>特效冷焰火</h4><h4 id="特效喷泉"><a href="#特效喷泉" class="headerlink" title="特效喷泉"></a>特效喷泉</h4><h4 id="特效激光灯"><a href="#特效激光灯" class="headerlink" title="特效激光灯"></a>特效激光灯</h4><h4 id="自制DMX灯具"><a href="#自制DMX灯具" class="headerlink" title="自制DMX灯具"></a>自制DMX灯具</h4><h4 id="自发光材质"><a href="#自发光材质" class="headerlink" title="自发光材质"></a>自发光材质</h4><p>内容浏览器右键新建材质</p>
+<p>颜色与亮度数值相乘给到自发光材质</p>
+<h4 id="粒子系统（观众-x2F-特效）"><a href="#粒子系统（观众-x2F-特效）" class="headerlink" title="粒子系统（观众&#x2F;特效）"></a>粒子系统（观众&#x2F;特效）</h4><h4 id="音频可视化"><a href="#音频可视化" class="headerlink" title="音频可视化"></a>音频可视化</h4><h3 id="-1"><a href="#-1" class="headerlink" title=""></a></h3><h3 id="替换灯具"><a href="#替换灯具" class="headerlink" title="替换灯具"></a>替换灯具</h3><p>1.右键视图勾选内容</p>
+<p>2.在自己工程中新建文件夹存放灯具</p>
+<p>3.复制官方灯具-DMXFixtures内容中的灯具到自己工程中的灯具目录（方便修改灯具数据）</p>
+<p>4.选择内容浏览器灯具目录中对应灯具，在世界大纲视图中多选对应灯具</p>
+<p>5.右键替换选中的Actor</p>
+<h3 id="灯具配接"><a href="#灯具配接" class="headerlink" title="灯具配接"></a>灯具配接</h3><p>1.在内容浏览器中新建DMX库</p>
+<p>2.添加控制器 Universe Start（起始域）Amount of Universe(域数量）</p>
+<p>3.打开灯具蓝图，查看灯具通道类型（对应灯具功能）</p>
+<p>Pan（P轴）Tilt（T轴）Color（颜色盘，可删除&#x2F;关闭）Gobo（图案盘）</p>
+<p>Dimmer（亮度）Strobe（屏闪） Zoom（聚焦）Frost（雾化）</p>
+<p>Color Component（RGB添加组件中）</p>
+<p>4.根据灯光通道类型在DMX库中新建Fixture类型（对应几种灯具），选择对应灯具类别</p>
+<p>5.添加Modes通道模式</p>
+<p>6.添加函数并选择对应通道名称（对应灯具功能，顺序需与MA2创建的灯库顺序相同）</p>
+<p>注：1.RGB占三个通道</p>
+<p>2.T轴P轴需设置16Bit</p>
+<p>7.Fixture补丁（对应拨地址码）</p>
+<p>添加Fixture（添加灯具）命名格式XXX_1（方便计算灯具数量）Ctrl+W复制灯具 Universe（域,对应灯具分组）</p>
+<p>8.保存DMX</p>
+<p>9.（1）插件配接(官方示例中获取）</p>
+<p>按顺序选择灯光</p>
+<p>点击DMXLibrary选择配接好的DMX灯库</p>
+<p>点击FirstFixture选择对应的灯光在灯库中第一个灯</p>
+<p>1.按顺序配接不改名 2.配接为一个地址码</p>
+<p>3.按顺序配接地址码并重命名</p>
+<p>（2）手动配接</p>
+<p>选择对应灯具在细节面板中修改DMX内容，Library选择配接好的DMX灯库，补丁选</p>
+<p>择灯具在灯库中对应的灯具。</p>
+<h3 id="-2"><a href="#-2" class="headerlink" title=""></a></h3><h3 id="材质修改"><a href="#材质修改" class="headerlink" title="材质修改"></a>材质修改</h3><h3 id="NDI控制屏幕"><a href="#NDI控制屏幕" class="headerlink" title="NDI控制屏幕"></a>NDI控制屏幕</h3>]]></content>
+      <categories>
+        <category>舞美</category>
+      </categories>
+      <tags>
+        <tag>舞美</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Windows server WDS部署服务</title>
+    <url>/2016/09/02/Windows%20server%20WDS%E9%83%A8%E7%BD%B2%E6%9C%8D%E5%8A%A1/</url>
+    <content><![CDATA[<h2 id="WDS的创建"><a href="#WDS的创建" class="headerlink" title="WDS的创建"></a>WDS的创建</h2><p>1.在Windows server仪表盘中添加角色和功能。</p>
+<p>2.下一步到服务器角色勾选[工具]Windows部署服务工具，选择添加功能。 </p>
+<p>3.勾选[工具]DHCP服务器。</p>
+<p>4.修改服务器IP地址为固定IP，子网掩码255.255.255.0。</p>
+<p>5.一直下一步最后点击安装，安装完成后在仪表盘右上角通知中完成DHCP配置。</p>
+<p>6.在仪表盘右上角工具选项中打开DHCP工具，在IPv4右键新建作用域向导名称为x.x.x.0&#x2F;24(如：192.168.1.0&#x2F;24)，路由器（默认网关）输入刚刚设置的固定IP点击添加，下一步直至完成。</p>
+<p>7.在仪表盘点击WDS，在右侧服务器列表里找到创建好的服务器，右键打开Windows部署服务管理控制台，选择刚刚的服务器右键配置服务器，下一步，选择独立服务器，远程安装文件夹的位置选择一个非系统盘，下一步，PXE服务器初始设置选择响应所有客户端（已知和未知），下一步完成。</p>
+<p>8.拷贝系统镜像到D盘后右键装载（可多版本系统）。</p>
+<p>9.返回Windows部署服务中选择启动映像，添加启动映像，选择刚刚装载好的映像进入sources文件夹，选择boot.wim文件，等待映像信息读取完成后，修改映像名称，一直下一步完成即可。</p>
+<p>10.右键添加安装镜像，创建一个映像组名，下一步，文件位置选择刚刚装载好的映像进入sources文件夹，选择install.wim文件，可用映像选择需要的版本，下一步完成。（同一映像组可以添加多个系统镜像）</p>
+<p>11.选择对应服务器右键选择所有任务，启动（启动WDS部署服务）。</p>
+<p><strong>注意事项</strong>:</p>
+<p>1.如果需要同时装很多台电脑需要创建多播传输功能，一直下一步即可。</p>
+<p>2.客户机安装系统需要输入服务器管理员账号密码，账户名称为域名\administrator</p>
+<p>3.在此操作前需要先搭建好AD域。</p>
+<p>4.若想修改客户机安装系统时不需要输入服务器账号密码和选择操作，可以参考执行无人参与安装 （<a href="https://go.microsoft.com/fwlink/?linkid=89226">https://go.microsoft.com/fwlink/?LinkId=89226</a>） 和示例无人参与文件 （<a href="https://go.microsoft.com/fwlink/?linkid=122642">https://go.microsoft.com/fwlink/?LinkId=122642</a>）进行配置修改。</p>
+<h2 id="客户机重装操作"><a href="#客户机重装操作" class="headerlink" title="客户机重装操作"></a>客户机重装操作</h2><p>开机按F11（不用主板电脑启动项选项按键不同，需查看对应手册）选择网卡启动，选择对应服务器的IP地址，选择对应系统安装即可</p>
+]]></content>
+      <categories>
+        <category>系统</category>
+      </categories>
+      <tags>
+        <tag>系统</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>卖奶茶的小女孩</title>
+    <url>/2023/03/06/%E5%8D%96%E5%A5%B6%E8%8C%B6%E7%9A%84%E5%B0%8F%E5%A5%B3%E5%AD%A9/</url>
+    <content><![CDATA[<h2 id="买奶茶的小女孩"><a href="#买奶茶的小女孩" class="headerlink" title="买奶茶的小女孩"></a>买奶茶的小女孩</h2><p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E4%25B9%25B0%25E5%25A5%25B6%25E8%258C%25B6%25E7%259A%2584%25E5%25B0%258F%25E5%25A5%25B3%25E5%25AD%25A9_%25E9%25A1%25B5%25E9%259D%25A2_1-tuya.jpg" alt="买奶茶的小女孩_页面_1-tuya"></p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E4%25B9%25B0%25E5%25A5%25B6%25E8%258C%25B6%25E7%259A%2584%25E5%25B0%258F%25E5%25A5%25B3%25E5%25AD%25A9_%25E9%25A1%25B5%25E9%259D%25A2_2-tuya.jpg" alt="买奶茶的小女孩_页面_2-tuya"></p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E4%25B9%25B0%25E5%25A5%25B6%25E8%258C%25B6%25E7%259A%2584%25E5%25B0%258F%25E5%25A5%25B3%25E5%25AD%25A9_%25E9%25A1%25B5%25E9%259D%25A2_3-tuya.jpg" alt="买奶茶的小女孩_页面_3-tuya"></p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E4%25B9%25B0%25E5%25A5%25B6%25E8%258C%25B6%25E7%259A%2584%25E5%25B0%258F%25E5%25A5%25B3%25E5%25AD%25A9_%25E9%25A1%25B5%25E9%259D%25A2_4-tuya.jpg" alt="买奶茶的小女孩_页面_4-tuya"></p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E4%25B9%25B0%25E5%25A5%25B6%25E8%258C%25B6%25E7%259A%2584%25E5%25B0%258F%25E5%25A5%25B3%25E5%25AD%25A9_%25E9%25A1%25B5%25E9%259D%25A2_6-tuya.jpg" alt="买奶茶的小女孩_页面_6-tuya"></p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E4%25B9%25B0%25E5%25A5%25B6%25E8%258C%25B6%25E7%259A%2584%25E5%25B0%258F%25E5%25A5%25B3%25E5%25AD%25A9_%25E9%25A1%25B5%25E9%259D%25A2_7-tuya.jpg" alt="买奶茶的小女孩_页面_7-tuya"></p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E4%25B9%25B0%25E5%25A5%25B6%25E8%258C%25B6%25E7%259A%2584%25E5%25B0%258F%25E5%25A5%25B3%25E5%25AD%25A9_%25E9%25A1%25B5%25E9%259D%25A2_8-tuya.jpg" alt="买奶茶的小女孩_页面_8-tuya"></p>
+]]></content>
+      <categories>
+        <category>项目</category>
+      </categories>
+      <tags>
+        <tag>项目</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>“五个一百”网络精品年度发布盛典</title>
+    <url>/2021/12/08/%E2%80%9C%E4%BA%94%E4%B8%AA%E4%B8%80%E7%99%BE%E2%80%9D%E7%BD%91%E7%BB%9C%E7%B2%BE%E5%93%81%E5%B9%B4%E5%BA%A6%E5%8F%91%E5%B8%83%E7%9B%9B%E5%85%B8/</url>
+    <content><![CDATA[<h2 id="项目背景"><a href="#项目背景" class="headerlink" title="项目背景"></a>项目背景</h2><p>中国正能量2021“五个一百”网络精品征集评选展播活动由中央网信办主办，中央网信办网络传播局、中国互联网发展基金会、央视网承办。活动自2016年启动以来历经六届，影响力号召力不断增强，网络同心圆越画越大，汇聚起了奋进新时代、谱写新篇章的磅礴力量。</p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%E6%88%91%E5%B0%B1%E6%98%AF%E4%B8%AD%E5%9B%BD.jpg"></p>
+<p>今年以<strong>“奋斗的人民、奋进的中国”</strong>为主题，突出共建共享，让正能量催生强大热量。聚焦庆祝中国共产党成立100周年、脱贫攻坚、抗疫成果等重大主题，广泛征集正能量作品，通过各环节评定，最终评出了榜样和作品并于1月28播出年度发布盛典。</p>
+<p>视觉设计思路上，紧扣颁奖盛典<strong>“奋斗的人民、奋进的中国”</strong>主题，用前沿现代的设计语言来讲述深厚的文化积淀，虚拟技术融汇艺术，打破次元壁，同时保证视觉有力量也有温度，充分展现当下的时代内涵。</p>
+<h2 id="效果图"><a href="#效果图" class="headerlink" title="效果图"></a>效果图</h2><h3 id="我的祖国"><a href="#我的祖国" class="headerlink" title="我的祖国"></a>我的祖国</h3><p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E4%25B8%2580%25E6%259D%25A1%25E5%25A4%25A7%25E6%25B2%25B3-tuya.jpg" alt="一条大河-tuya"></p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E4%25B8%2580%25E6%259D%25A1%25E5%25A4%25A7%25E6%25B2%25B3%25E4%25B8%25BB%25E5%25B1%258F2-tuya.jpg" alt="一条大河主屏2-tuya"></p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E4%25B8%2580%25E6%259D%25A1%25E5%25A4%25A7%25E6%25B2%25B3%25E4%25B8%25BB%25E5%25B1%258F4-tuya.jpg" alt="一条大河主屏4-tuya"></p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E4%25B8%2580%25E6%259D%25A1%25E5%25A4%25A7%25E6%25B2%25B3%25E4%25B8%25BB%25E5%25B1%258F5-tuya.jpg" alt="一条大河主屏5-tuya"></p>
+<h3 id="生命之河"><a href="#生命之河" class="headerlink" title="生命之河"></a>生命之河</h3><p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E7%2594%259F%25E5%2591%25BD%25E4%25B9%258B%25E6%25B2%25B3-tuya.jpg" alt="生命之河-tuya"></p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E7%2594%259F%25E5%2591%25BD%25E4%25B9%258B%25E6%25B2%25B33-tuya.jpg" alt="生命之河3-tuya"></p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E6%2588%2591%25E5%25B0%25B1%25E6%2598%25AF%25E4%25B8%25AD%25E5%259B%25BD-3.gif" alt="我就是中国-3"></p>
+<h3 id="我有一个梦"><a href="#我有一个梦" class="headerlink" title="我有一个梦"></a>我有一个梦</h3><p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E6%2588%2591%25E6%259C%2589%25E4%25B8%2580%25E4%25B8%25AA%25E6%25A2%25A6-%25E8%2588%259E%25E7%25BE%258E9-tuya.jpg" alt="我有一个梦-舞美9-tuya"></p>
+<h3 id="扶贫日记"><a href="#扶贫日记" class="headerlink" title="扶贫日记"></a>扶贫日记</h3><p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E6%2589%25B6%25E8%25B4%25AB%25E6%2597%25A5%25E8%25AE%25B0%25E8%2588%259E%25E7%25BE%258E2-tuya.jpg" alt="扶贫日记舞美2-tuya"></p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E6%2589%25B6%25E8%25B4%25AB%25E6%2597%25A5%25E8%25AE%25B0%25E8%2588%259E%25E7%25BE%258E1-tuya.jpg" alt="扶贫日记舞美1-tuya"></p>
+<h3 id="瞬间·中国"><a href="#瞬间·中国" class="headerlink" title="瞬间·中国"></a>瞬间·中国</h3><p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E7%25BD%2591%25E7%25BB%259C%25E6%2597%25B6%25E4%25BB%25A3%25E7%25B4%25A0%25E4%25BA%25BA%25E8%2588%259E%25E7%25BE%258E3-tuya.jpg" alt="网络时代素人舞美3-tuya"></p>
+<h3 id="我和我的祖国"><a href="#我和我的祖国" class="headerlink" title="我和我的祖国"></a>我和我的祖国</h3><p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E6%25B2%2599%25E7%2594%25BB5-tuya.jpg" alt="沙画5-tuya"></p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E6%25B2%2599%25E7%2594%25BB8-tuya.jpg" alt="沙画8-tuya"></p>
+<h2 id="现场效果"><a href="#现场效果" class="headerlink" title="现场效果"></a>现场效果</h2><p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E6%2588%2591%25E5%25B0%25B1%25E6%2598%25AF%25E4%25B8%25AD%25E5%259B%25BD-1.gif" alt="我就是中国-1"></p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E6%2588%2591%25E5%25B0%25B1%25E6%2598%25AF%25E4%25B8%25AD%25E5%259B%25BD-2.gif" alt="我就是中国-2"></p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E6%2588%2591%25E5%25B0%25B1%25E6%2598%25AF%25E4%25B8%25AD%25E5%259B%25BD-4.gif" alt="我就是中国-4"></p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%E6%88%91%E5%B0%B1%E6%98%AF%E4%B8%AD%E5%9B%BD-5.gif"></p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%E6%88%91%E5%B0%B1%E6%98%AF%E4%B8%AD%E5%9B%BD-6.gif"></p>
+<img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E6%2588%2591%25E5%25B0%25B1%25E6%2598%25AF%25E4%25B8%25AD%25E5%259B%25BD-7.gif"/>
+
+<h2 id="用户反馈"><a href="#用户反馈" class="headerlink" title="用户反馈"></a>用户反馈</h2><iframe src="//player.bilibili.com/player.html?aid=593607723&bvid=BV1Tq4y1h7mZ&cid=494938533&page=1" scrolling="no" border="0" height="800" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+
+]]></content>
+      <categories>
+        <category>舞台</category>
+      </categories>
+      <tags>
+        <tag>舞台</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>使用Colab挂Sheepit积分</title>
+    <url>/2023/07/20/%E4%BD%BF%E7%94%A8Colab%E6%8C%82Sheepit%E7%A7%AF%E5%88%86/</url>
+    <content><![CDATA[<h2 id="打开Colab项目复制一个副本"><a href="#打开Colab项目复制一个副本" class="headerlink" title="打开Colab项目复制一个副本"></a>打开Colab项目复制一个副本</h2><a class="btn-anzhiyu outline larger" href="https://colab.research.google.com/drive/1JQzTIxAnC6dQc88MJi3UwurlIS8kJpJG?usp=sharing" 
+  title="Colab项目"><i class="fa-brands fa-google-drive"></i><span>Colab项目</span></a>
+
+<h2 id="打开Sheepit官网，并登录账号"><a href="#打开Sheepit官网，并登录账号" class="headerlink" title="打开Sheepit官网，并登录账号"></a>打开Sheepit官网，并登录账号</h2><a class="btn-anzhiyu outline larger" href="https://www.sheepit-renderfarm.com/home" 
+  title="SheepIt官网"><i class="fa-solid fa-cube"></i><span>SheepIt官网</span></a>
+
+<p>点击右上角头像选择Edit profile进入</p>
+<p>点击Render keys复制左下角<strong>Public key（公钥）</strong>到Colab项目中（公钥比填写密码更安全）</p>
+<p>填写用户名</p>
+<h2 id="依次运行三组代码"><a href="#依次运行三组代码" class="headerlink" title="依次运行三组代码"></a>依次运行三组代码</h2><p>这时打开Sheepit官网，点击头像My account，如果已连接的机器显示Tesla T4即可</p>
+]]></content>
+      <categories>
+        <category>系统</category>
+      </categories>
+      <tags>
+        <tag>系统</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>第五届黑龙江省旅发大会</title>
+    <url>/2022/05/07/%E5%A4%A7%E5%BA%86%E6%97%85%E6%B8%B8%E5%8F%91%E5%B1%95%E5%A4%A7%E4%BC%9A/</url>
+    <content><![CDATA[<h2 id="片头分镜"><a href="#片头分镜" class="headerlink" title="片头分镜"></a>片头分镜</h2><p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E6%2580%25BB.jpg" alt="总"></p>
+<h2 id="效果图"><a href="#效果图" class="headerlink" title="效果图"></a>效果图</h2><h3 id="定居"><a href="#定居" class="headerlink" title="定居"></a>定居</h3><p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E7%25AF%2587%25E7%25AB%25A01-4%25E5%25AE%259A%25E5%25B1%2585-%25E8%258D%2589%25E5%258E%259F%25E6%2595%2596%25E5%258C%25855.jpg" alt="篇章1-4定居-草原敖包5"></p>
+<h3 id="欢腾“骏马归来”"><a href="#欢腾“骏马归来”" class="headerlink" title="欢腾“骏马归来”"></a>欢腾“骏马归来”</h3><p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/1212312123.jpg" alt="1212312123"></p>
+<h3 id="三代铁人-现代化建设环境"><a href="#三代铁人-现代化建设环境" class="headerlink" title="三代铁人-现代化建设环境"></a>三代铁人-现代化建设环境</h3><p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E7%25AC%25AC%25E4%25B8%2589%25E4%25BB%25A3%25E9%2593%2581%25E4%25BA%25BA%25E6%259D%258E%25E6%2596%25B0%25E6%25B0%2591.jpg" alt="第三代铁人李新民"></p>
+<h3 id="我的家-百湖美景"><a href="#我的家-百湖美景" class="headerlink" title="我的家-百湖美景"></a>我的家-百湖美景</h3><p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E6%2588%2591%25E7%259A%2584%25E5%25AE%25B62.jpg" alt="我的家2"></p>
+]]></content>
+      <categories>
+        <category>舞台</category>
+      </categories>
+      <tags>
+        <tag>舞台</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>博爱助学金项目</title>
+    <url>/2022/01/24/%E5%8D%9A%E7%88%B1%E5%8A%A9%E5%AD%A6%E9%87%91%E9%A1%B9%E7%9B%AE/</url>
+    <content><![CDATA[<h2 id=""><a href="#" class="headerlink" title=""></a></h2><h2 id="项目信息"><a href="#项目信息" class="headerlink" title="项目信息"></a>项目信息</h2><p><strong>背景</strong>：博爱助学金项目是中国红基会大型公益项目“博爱助学计划”的重要组成部分，2006年起旨在通过动员社会资源、募集公益资金，设立博爱助学金以资助贫困学生完成学业。目前已经惠及全国27个省（自治区、直辖市）的1952名学生。</p>
+<p><strong>简介</strong>：博爱助学金系统主要为公益助学的项目管理，包括信息采集、信息查询、受助反馈、财务统计等功能，帮助公益机构高效地管理项目。提供信息采集、反馈等管理系统。</p>
+<p><strong>主要困难</strong><br>●项目时间跨度大，2006年至今已15年，部分历史电子档案统计标准不一。<br>●近两年规模扩大，申请资助的学生人数增多，靠管理员人工登记，管理成<br>本较高。<br>短期技术需求<br>●管理系统用于管理申请人的身份信息、证明材料、收款确认及反馈等。<br>●对于需要连续资助的贫困生可以有特殊标记，或能实现快速提取信息。<br>长期技术需求&#x2F;规划<br>●可以进行批量导入导出<br>●内部工作人员可以根据特定条件检索查询</p>
+<p><strong>鸣谢：在此感谢伙伴沈忠康和黄杰琪为项目开发做出的努力。</strong></p>
+<h2 id="内容梳理"><a href="#内容梳理" class="headerlink" title="内容梳理"></a>内容梳理</h2><p><strong>根据官方提供的需求，整理了对应功能的思维导图</strong></p>
+<img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/yuque_mind.jpG"/>
+
+<p><strong>关于权限分配</strong></p>
+<img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/yuque_mind2.jpeg" style="zoom: 50%;" />
+
+<h2 id="遇到的困难和解决方法"><a href="#遇到的困难和解决方法" class="headerlink" title="遇到的困难和解决方法"></a>遇到的困难和解决方法</h2><p><strong>1.按照官方要求打印本地表格</strong></p>
+<img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/image1.png"/>
+
+<p>得益于钉钉宜搭自带的自定义打印模板功能，排好版式之后使用字段变量名${组件名}进行数据填充。</p>
+<p><strong>2.首页文件下载</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">function</span> <span class="title function_">linkToHref</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="variable language_">window</span>.<span class="title function_">open</span>(<span class="string">`文件的下载链接`</span>, <span class="string">&#x27;_blank&#x27;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>钉钉宜搭平台上传的文件资料不能直接生成下载链接，所以我们写了一段js，管理员只需把链接剪切到‘文件的下载链接’中即可。</p>
+<p><strong>3.官方要求实现按照三个维度进行查询并做出筛选功能</strong></p>
+<img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/image2.png"/>
+
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//对显示弹窗进行数据采集</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">function</span> <span class="title function_">onOpenDetail</span>(<span class="params">rowData</span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> &#123; id &#125; = rowData;</span><br><span class="line">  <span class="keyword">const</span> prefix = <span class="string">`数据地址`</span>;</span><br><span class="line">  <span class="variable language_">window</span>.<span class="title function_">open</span>(<span class="string">`<span class="subst">$&#123;prefix&#125;</span><span class="subst">$&#123;id&#125;</span>&amp;isRenderNav=false&amp;iframeState=web`</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//点击查询按钮提交需要查询的表单数据</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">function</span> <span class="title function_">onActionClick</span>(<span class="params">rowData</span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> id = rowData.<span class="property">id</span>;</span><br><span class="line">  <span class="variable language_">this</span>.<span class="property">utils</span>.<span class="property">router</span>.<span class="title function_">push</span>(<span class="string">&quot;数据地址&quot;</span>, &#123; <span class="attr">formInstId</span>: id &#125;, <span class="literal">true</span>, <span class="literal">true</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//对查询到的数据返回到对应位置</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">function</span> <span class="title function_">onSearch</span>(<span class="params">values</span>) &#123;</span><br><span class="line">  <span class="comment">// const sponsor = `$&#123;values.标签变量&#125;`;</span></span><br><span class="line">  <span class="keyword">const</span> type = values.标签变量;</span><br><span class="line">  <span class="keyword">const</span> name = values.标签变量;</span><br><span class="line">  <span class="keyword">const</span> gender = values.标签变量;</span><br><span class="line">  <span class="keyword">const</span> age = values.标签变量;</span><br><span class="line">  <span class="keyword">const</span> address = values.标签变量;</span><br><span class="line">  <span class="keyword">const</span> school = values.标签变量;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> queries = &#123;</span><br><span class="line">    <span class="comment">// textField_唯一标识: sponsor,</span></span><br><span class="line">    checkboxField_唯一标识: type,</span><br><span class="line">    textField_唯一标识: name,</span><br><span class="line">    radioField_唯一标识: gender,</span><br><span class="line">    textField_唯一标识: age,</span><br><span class="line">    addressField_唯一标识: address,</span><br><span class="line">    textField_唯一标识: school</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  <span class="title class_">Object</span>.<span class="title function_">keys</span>(queries).<span class="title function_">forEach</span>(<span class="function"><span class="params">q</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (!queries[q] || queries[q] === <span class="string">&#x27;undefined&#x27;</span>) &#123;</span><br><span class="line">      <span class="keyword">delete</span> queries[q];</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (<span class="title class_">Object</span>.<span class="title function_">keys</span>(queries).<span class="property">length</span> &gt; <span class="number">0</span>) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">dataSourceMap</span>[<span class="string">&#x27;getTableData&#x27;</span>].<span class="title function_">load</span>(&#123; <span class="attr">searchFieldJson</span>: <span class="title class_">JSON</span>.<span class="title function_">stringify</span>(queries) &#125;);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">function</span> <span class="title function_">onReset</span>(<span class="params">values</span>) &#123;</span><br><span class="line">  <span class="variable language_">this</span>.<span class="property">dataSourceMap</span>[<span class="string">&#x27;getTableData&#x27;</span>].<span class="title function_">load</span>(&#123; <span class="attr">_tag</span>: <span class="string">&quot;default&quot;</span> &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="页面展示"><a href="#页面展示" class="headerlink" title="页面展示"></a>页面展示</h2><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E5%258D%259A%25E7%2588%25B1%25E5%259C%25A8%25E5%258A%25A9%25E5%25AD%25A6%25E9%2587%2591-%25E9%25A6%2596%25E9%25A1%25B5.jpg"/>
+
+<img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/image3.png"/>
+
+<img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/image4.png"/>
+
+<img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/image5.png"/>
+
+<img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/image6.png"/>
+
+<img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/image7.png"/>
+
+<h2 id="最终成果"><a href="#最终成果" class="headerlink" title="最终成果"></a>最终成果</h2><center class="half">
+    <img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E5%258D%259A%25E7%2588%25B1%25E5%259C%25A8%25E5%258A%25A9%25E5%25AD%25A6%25E9%2587%2591-%25E5%2585%25AC%25E5%2591%258A.jpg" Height="300"/>
+    <img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E5%258D%259A%25E7%2588%25B1%25E5%259C%25A8%25E5%258A%25A9%25E5%25AD%25A6%25E9%2587%2591-%25E5%25A5%2596%25E6%259D%25AF.jpg" Height="300"/>
+</center>
+
+
+<img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E5%258D%259A%25E7%2588%25B1%25E5%258A%25A9%25E5%25AD%25A6%25E9%2587%2591-%25E5%25AE%259C%25E6%2590%25AD%25E6%25A8%25A1%25E6%259D%25BF.jpg"/>
+
+<p><a href="https://developer.aliyun.com/article/874030?spm=a2c6h.14164896.0.0.681475dbVKooDc">第二期“码上公益营·低代码挑战”评审结果通知-阿里云开发者社区 (aliyun.com)</a></p>
+]]></content>
+      <categories>
+        <category>公益</category>
+      </categories>
+      <tags>
+        <tag>公益</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>安徽省第十五届运动会开幕式</title>
+    <url>/2022/05/07/%E5%AE%89%E5%BE%BD%E7%9C%81%E8%BF%90%E5%8A%A8%E4%BC%9A/</url>
+    <content><![CDATA[<h2 id="项目背景"><a href="#项目背景" class="headerlink" title="项目背景"></a>项目背景</h2><p>“体育强则中国强，国运兴则体育兴”，近年来国家始终强调和重视体育事业，恰逢滁州建市三十周年，本次安徽省十五运在滁州盛大举办，也成为了一扇对外展示滁州特色的重要窗口。</p>
+<h3 id="《惊雷之声》"><a href="#《惊雷之声》" class="headerlink" title="《惊雷之声》"></a><strong>《惊雷之声》</strong></h3><p>以充满张力的群体戏剧表演配合投影画面、大视觉装置，用艺术手段再现“18手印”的壮举，展现滁州人民敢为人先的开创精神，以及这片江淮大地上孕育的热血豪情。</p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E7%25A0%25B4%25E5%2586%25B0%25E4%25B9%258B%25E5%258B%2587_%25E6%2596%2587%25E5%25AD%2597-tuya.jpg" alt="破冰之勇_文字-tuya"></p>
+<img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/640.gif" alt="640" style="zoom:200%;" />
+
+]]></content>
+      <categories>
+        <category>舞台</category>
+      </categories>
+      <tags>
+        <tag>舞台</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>抖音直播视频截取</title>
+    <url>/2022/05/07/%E6%8A%96%E9%9F%B3%E7%9B%B4%E6%92%AD%E8%A7%86%E9%A2%91%E6%88%AA%E5%8F%96/</url>
+    <content><![CDATA[<h2 id="必要步骤"><a href="#必要步骤" class="headerlink" title="必要步骤"></a>必要步骤</h2><p>1.浏览器打开直播间。</p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/image-20230610171209178.png" alt="image-20230610171209178"></p>
+<p>2.按键盘F12进入控制台，并输入以下get命令获取直播链接。</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">__LIVING_PLAYER__.<span class="title function_">getPlayer</span>().<span class="property">config</span>.<span class="property">url</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/image-20230610171319320.png" alt="image-20230610171319320"></p>
+<h2 id="OBS录制"><a href="#OBS录制" class="headerlink" title="OBS录制"></a>OBS录制</h2><h3 id="OBS下载地址"><a href="#OBS下载地址" class="headerlink" title="OBS下载地址"></a><strong><a href="https://obsproject.com/download">OBS下载地址</a></strong></h3><p>1.打开OBS新建场景，添加来源选择媒体源。</p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/image-20230610171443428.png" alt="image-20230610171443428"></p>
+<p>2.取消勾选本地文件，在输入栏浏览器获取的地址后点击确认。</p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/image-20230610171522312.png" alt="image-20230610171522312"></p>
+<p>3.设置好画面尺寸，然后点开始录制即可。</p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/image-20230610171544245.png" alt="image-20230610171544245"></p>
+<h2 id="Potplayer录制"><a href="#Potplayer录制" class="headerlink" title="Potplayer录制"></a>Potplayer录制</h2><h3 id="Potplayer下载地址"><a href="#Potplayer下载地址" class="headerlink" title="Potplayer下载地址"></a><strong><a href="http://potplayer.tv/?lang=zh_CN">Potplayer下载地址</a></strong></h3><p>1.打开potplayer右键打开-打开链接或按快捷键Ctrl+U</p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/image-20230610171633272.png" alt="image-20230610171633272"></p>
+<p>2.链接到播放网址，点击确认。</p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/image-20230610171655791.png" alt="image-20230610171655791"></p>
+<ol start="3">
+<li>屏幕右键视频-视频录制-保存流。</li>
+</ol>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/image-20230610171713320.png" alt="image-20230610171713320"></p>
+<p>注意：要保存直播的话，视频开始播放了就尽快开始“保存流”，或者准备保存前，按Ctrl+Y重载一下链接（双击播放列表的链接也行），再点开始。不要等播放了好几分钟才点开始，因为输出的会是无效文件，播放不了。</p>
+]]></content>
+      <categories>
+        <category>舞台</category>
+      </categories>
+      <tags>
+        <tag>舞台</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>数据恢复</title>
+    <url>/2023/03/20/%E6%95%B0%E6%8D%AE%E6%81%A2%E5%A4%8D/</url>
+    <content><![CDATA[<h1 id="数据恢复"><a href="#数据恢复" class="headerlink" title="数据恢复"></a><strong>数据恢复</strong></h1><p>所需软件WinHex R-Studio（自行找破解版下载）</p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/20201030143801667.png"></p>
+<p>winhex  数据恢复分类：硬恢复和软恢复。所谓硬恢复就是硬盘出现物理性损伤，比如有盘体 坏道、电路板芯片烧毁、盘体异响，等故障，由此所导致的普通用户不容易取出里面数据， 那么我们将它修好，同时又保留里面的数据或后来恢复里面的数据，这些都叫数据恢复， 只不过这些故障有容易的和困难的之分；所谓软恢复，就是硬盘本身没有物理损伤，而是 由于人为或者病毒破坏所造成的数据丢失（比如误格式化，误分区），那么这样的数据恢复 就叫软恢复。 这里呢，我们主要介绍软恢复，因为硬恢复还需要购买一些工具设备（比如 pc3000, 电烙铁，各种芯片、电路板），而且还需要懂一点点电路基础，我们这里所讲到的所有的知 识，涉及面广，层次深，既有数据结构原理，为我们手工准确恢复数据提供依据，又有各 种数据恢复软件的使用方法及技巧，为我们快速恢复数据提供便利，而且所有软件均为网 上下载，不需要我们投资一分钱。 数据恢复的前提：数据不能被二次破坏、覆盖！ 关于数码与码制： 关于二进制、十六进制、八进制它们之间的转换我不想多说，因为他对我们数据恢复 来说帮助不大，而且很容易把我们绕晕。如果你感兴趣想多了解一些，可以到百度里面去 搜一下，这方面资料已经很多了，就不需要我再多说了。 数据恢复我们主要用十六进制编辑器：Winhex （数据恢复首选软件） 我们先了解一下数据结构： 下面是一个分了三个区的整个硬盘的数据结构</p>
+<table>
+<thead>
+<tr>
+<th>MBR</th>
+<th>C盘</th>
+<th>EBR</th>
+<th>D盘</th>
+<th>EBR</th>
+<th>E盘</th>
+</tr>
+</thead>
+</table>
+<p>MBR，即主引导纪录，位于整个硬盘的 0 柱面 0 磁道 1 扇区，共占用了 63 个扇区， 但实际只使用了 1 个扇区（512 字节）。在总共 512 字节的主引导记录中，MBR 又可分为 三部分：第一部分：引导代码，占用了 446 个字节；第二部分：分区表，占用了 64 字节； 第三部分：55AA，结束标志，占用了两个字节。后面我们要说的用 winhex 软件来恢复误 分区，主要就是恢复第二部分：分区表。 引导代码的作用：就是让硬盘具备可以引导的功能。如果引导代码丢失，分区表还在， 那么这个硬盘作为从盘所有分区数据都还在，只是这个硬盘自己不能够用来启动进系统了。 如果要恢复引导代码，可以用 DOS 下的命令：FDISK &#x2F;MBR；这个命令只是用来恢复引导 代码，不会引起分区改变，丢失数据。另外，也可以用工具软件，比如 DISKGEN、WINHEX 等。 但分区表如果丢失，后果就是整个硬盘一个分区没有，就好象刚买来一个新硬盘没有 分过区一样。是很多病毒喜欢破坏的区域。 EBR，也叫做扩展 MBR（Extended MBR）。因为主引导记录 MBR 最多只能描述 4 个 分区项，如果想要在一个硬盘上分多于 4 个区，就要采用扩展 MBR 的办法。 MBR、EBR 是分区产生的。 比如 MBR 和 EBR 各都占用 63 个扇区，C 盘占用 1435329 个扇区……那么数据结构 如下表：</p>
+<table>
+    <tr>
+        <td>63</td>
+        <td>1435329</td>
+        <td>63</td>
+        <td>1435329</td>
+        <td>63</td>
+        <td>1253889</td>
+    </tr>
+    <tr>
+        <td>MBR</td>
+        <td>C盘</td>
+        <td>EBR</td>
+        <td>D盘</td>
+        <td>EBR</td>
+        <td>E盘</td>
+    </tr>
+    <tr>
+        <td> </td>
+        <td> </td>
+        <td colspan="4">扩展分区</td>
+    </tr>
+</table>
+
+<p>而每一个分区又由 DBR、FAT1、FAT2、DIR、DATA5 部分组成：比如 C 盘的数据结 构：</p>
+<table>
+    <tr>
+        <td colspan="5">C盘</td>
+    </tr>
+    <tr>
+        <td>DBR</td>
+        <td>FAT1</td>
+        <td>FAT2</td>
+        <td>DIR</td>
+        <td>DITA</td>
+    </tr>
+</table>
+
+<p>Winhex 是使用最多的一款工具软件，是在 Windows 下运行的十六进制编辑软件，此 软件功能非常强大，有完善的分区管理功能和文件管理功能，能自动分析分区链和文件簇 链，能对硬盘进行不同方式不同程度的备份，甚至克隆整个硬盘；它能够编辑任何一种文 件类型的二进制内容（用十六进制显示）其磁盘编辑器可以编辑物理磁盘或逻辑磁盘的任 意扇区，是手工恢复数据的首选工具软件。 首先要安装 Winhex，安装完了就可以启动 winhex 了，启动画面如下：首先出现的是 启动中心对话框。</p>
+]]></content>
+      <categories>
+        <category>系统</category>
+      </categories>
+      <tags>
+        <tag>系统</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>梵VANLOUNGE品牌设计</title>
+    <url>/2022/08/30/%E6%A2%B5VANLOUNGE%E5%93%81%E7%89%8C%E8%AE%BE%E8%AE%A1/</url>
+    <content><![CDATA[<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E4%25B8%25BB%25E9%25A1%25B5.jpg" alt="主页"></p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/1-2.jpg" alt="1-2"></p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E6%25A2%25B5%2520VANLOUNGE%25E5%2593%2581%25E7%2589%258CVI%25E6%2589%258B%25E5%2586%258C_%25E9%25A1%25B5%25E9%259D%25A2_03-tuya.jpg" alt="梵 VANLOUNGE品牌VI手册_页面_03-tuya"></p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E6%25A2%25B5%2520VANLOUNGE%25E5%2593%2581%25E7%2589%258CVI%25E6%2589%258B%25E5%2586%258C_%25E9%25A1%25B5%25E9%259D%25A2_04-tuya.jpg" alt="梵 VANLOUNGE品牌VI手册_页面_04-tuya"></p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E6%25A2%25B5%2520VANLOUNGE%25E5%2593%2581%25E7%2589%258CVI%25E6%2589%258B%25E5%2586%258C_%25E9%25A1%25B5%25E9%259D%25A2_05-tuya.jpg" alt="梵 VANLOUNGE品牌VI手册_页面_05-tuya"></p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E6%25A2%25B5%2520VANLOUNGE%25E5%2593%2581%25E7%2589%258CVI%25E6%2589%258B%25E5%2586%258C_%25E9%25A1%25B5%25E9%259D%25A2_06-tuya.jpg" alt="梵 VANLOUNGE品牌VI手册_页面_06-tuya"></p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E6%25A2%25B5%2520VANLOUNGE%25E5%2593%2581%25E7%2589%258CVI%25E6%2589%258B%25E5%2586%258C_%25E9%25A1%25B5%25E9%259D%25A2_07-tuya.jpg" alt="梵 VANLOUNGE品牌VI手册_页面_07-tuya"></p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E6%25A2%25B5%2520VANLOUNGE%25E5%2593%2581%25E7%2589%258CVI%25E6%2589%258B%25E5%2586%258C_%25E9%25A1%25B5%25E9%259D%25A2_08-tuya.jpg" alt="梵 VANLOUNGE品牌VI手册_页面_08-tuya"></p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E6%25A2%25B5%2520VANLOUNGE%25E5%2593%2581%25E7%2589%258CVI%25E6%2589%258B%25E5%2586%258C_%25E9%25A1%25B5%25E9%259D%25A2_09-tuya.jpg" alt="梵 VANLOUNGE品牌VI手册_页面_09-tuya"></p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E6%25A2%25B5%2520VANLOUNGE%25E5%2593%2581%25E7%2589%258CVI%25E6%2589%258B%25E5%2586%258C_%25E9%25A1%25B5%25E9%259D%25A2_10-tuya.jpg" alt="梵 VANLOUNGE品牌VI手册_页面_10-tuya"></p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E6%25A2%25B5%2520VANLOUNGE%25E5%2593%2581%25E7%2589%258CVI%25E6%2589%258B%25E5%2586%258C_%25E9%25A1%25B5%25E9%259D%25A2_11-tuya.jpg" alt="梵 VANLOUNGE品牌VI手册_页面_11-tuya"></p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E6%25A2%25B5%2520VANLOUNGE%25E5%2593%2581%25E7%2589%258CVI%25E6%2589%258B%25E5%2586%258C_%25E9%25A1%25B5%25E9%259D%25A2_12-tuya.jpg" alt="梵 VANLOUNGE品牌VI手册_页面_12-tuya"></p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E6%25A2%25B5%2520VANLOUNGE%25E5%2593%2581%25E7%2589%258CVI%25E6%2589%258B%25E5%2586%258C_%25E9%25A1%25B5%25E9%259D%25A2_13-tuya.jpg" alt="梵 VANLOUNGE品牌VI手册_页面_13-tuya"></p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E6%25A2%25B5%2520VANLOUNGE%25E5%2593%2581%25E7%2589%258CVI%25E6%2589%258B%25E5%2586%258C_%25E9%25A1%25B5%25E9%259D%25A2_14-tuya.jpg" alt="梵 VANLOUNGE品牌VI手册_页面_14-tuya"></p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E6%25A2%25B5%2520VANLOUNGE%25E5%2593%2581%25E7%2589%258CVI%25E6%2589%258B%25E5%2586%258C_%25E9%25A1%25B5%25E9%259D%25A2_15-tuya.jpg" alt="梵 VANLOUNGE品牌VI手册_页面_15-tuya"></p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E6%25A2%25B5%2520VANLOUNGE%25E5%2593%2581%25E7%2589%258CVI%25E6%2589%258B%25E5%2586%258C_%25E9%25A1%25B5%25E9%259D%25A2_16-tuya.jpg" alt="梵 VANLOUNGE品牌VI手册_页面_16-tuya"></p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E6%25A2%25B5%2520VANLOUNGE%25E5%2593%2581%25E7%2589%258CVI%25E6%2589%258B%25E5%2586%258C_%25E9%25A1%25B5%25E9%259D%25A2_17-tuya.jpg" alt="梵 VANLOUNGE品牌VI手册_页面_17-tuya"></p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E6%25A2%25B5%2520VANLOUNGE%25E5%2593%2581%25E7%2589%258CVI%25E6%2589%258B%25E5%2586%258C_%25E9%25A1%25B5%25E9%259D%25A2_18-tuya.jpg" alt="梵 VANLOUNGE品牌VI手册_页面_18-tuya"></p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E6%25A2%25B5%2520VANLOUNGE%25E5%2593%2581%25E7%2589%258CVI%25E6%2589%258B%25E5%2586%258C_%25E9%25A1%25B5%25E9%259D%25A2_19-tuya.jpg" alt="梵 VANLOUNGE品牌VI手册_页面_19-tuya"></p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E6%25A2%25B5%2520VANLOUNGE%25E5%2593%2581%25E7%2589%258CVI%25E6%2589%258B%25E5%2586%258C_%25E9%25A1%25B5%25E9%259D%25A2_20-tuya.jpg" alt="梵 VANLOUNGE品牌VI手册_页面_20-tuya"></p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E6%25A2%25B5%2520VANLOUNGE%25E5%2593%2581%25E7%2589%258CVI%25E6%2589%258B%25E5%2586%258C_%25E9%25A1%25B5%25E9%259D%25A2_21-tuya.jpg" alt="梵 VANLOUNGE品牌VI手册_页面_21-tuya"></p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E6%25A2%25B5%2520VANLOUNGE%25E5%2593%2581%25E7%2589%258CVI%25E6%2589%258B%25E5%2586%258C_%25E9%25A1%25B5%25E9%259D%25A2_22-tuya.jpg" alt="梵 VANLOUNGE品牌VI手册_页面_22-tuya"></p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E6%25A2%25B5%2520VANLOUNGE%25E5%2593%2581%25E7%2589%258CVI%25E6%2589%258B%25E5%2586%258C_%25E9%25A1%25B5%25E9%259D%25A2_23-tuya.jpg" alt="梵 VANLOUNGE品牌VI手册_页面_23-tuya"></p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E6%25A2%25B5%2520VANLOUNGE%25E5%2593%2581%25E7%2589%258CVI%25E6%2589%258B%25E5%2586%258C_%25E9%25A1%25B5%25E9%259D%25A2_24-tuya.jpg" alt="梵 VANLOUNGE品牌VI手册_页面_24-tuya"></p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E6%25A2%25B5%2520VANLOUNGE%25E5%2593%2581%25E7%2589%258CVI%25E6%2589%258B%25E5%2586%258C_%25E9%25A1%25B5%25E9%259D%25A2_25-tuya.jpg" alt="梵 VANLOUNGE品牌VI手册_页面_25-tuya"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/LYK1013/Pic@master/%E6%A2%B5%20VANLOUNGE%E5%93%81%E7%89%8CVI%E6%89%8B%E5%86%8C_%E9%A1%B5%E9%9D%A2_26-tuya.jpg" alt="梵 VANLOUNGE品牌VI手册_页面_26-tuya"></p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E6%25A2%25B5%2520VANLOUNGE%25E5%2593%2581%25E7%2589%258CVI%25E6%2589%258B%25E5%2586%258C_%25E9%25A1%25B5%25E9%259D%25A2_27-tuya.jpg" alt="梵 VANLOUNGE品牌VI手册_页面_27-tuya"></p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E6%25A2%25B5%2520VANLOUNGE%25E5%2593%2581%25E7%2589%258CVI%25E6%2589%258B%25E5%2586%258C_%25E9%25A1%25B5%25E9%259D%25A2_28-tuya.jpg" alt="梵 VANLOUNGE品牌VI手册_页面_28-tuya"></p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E6%25A2%25B5%2520VANLOUNGE%25E5%2593%2581%25E7%2589%258CVI%25E6%2589%258B%25E5%2586%258C_%25E9%25A1%25B5%25E9%259D%25A2_29-tuya.jpg" alt="梵 VANLOUNGE品牌VI手册_页面_29-tuya"></p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E6%25A2%25B5%2520VANLOUNGE%25E5%2593%2581%25E7%2589%258CVI%25E6%2589%258B%25E5%2586%258C_%25E9%25A1%25B5%25E9%259D%25A2_30-tuya.jpg" alt="梵 VANLOUNGE品牌VI手册_页面_30-tuya"></p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E6%25A2%25B5%2520VANLOUNGE%25E5%2593%2581%25E7%2589%258CVI%25E6%2589%258B%25E5%2586%258C_%25E9%25A1%25B5%25E9%259D%25A2_31-tuya.jpg" alt="梵 VANLOUNGE品牌VI手册_页面_31-tuya"></p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E6%25A2%25B5%2520VANLOUNGE%25E5%2593%2581%25E7%2589%258CVI%25E6%2589%258B%25E5%2586%258C_%25E9%25A1%25B5%25E9%259D%25A2_32-tuya.jpg" alt="梵 VANLOUNGE品牌VI手册_页面_32-tuya"></p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E6%25A2%25B5%2520VANLOUNGE%25E5%2593%2581%25E7%2589%258CVI%25E6%2589%258B%25E5%2586%258C_%25E9%25A1%25B5%25E9%259D%25A2_33-tuya.jpg" alt="梵 VANLOUNGE品牌VI手册_页面_33-tuya"></p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E6%25A2%25B5%2520VANLOUNGE%25E5%2593%2581%25E7%2589%258CVI%25E6%2589%258B%25E5%2586%258C_%25E9%25A1%25B5%25E9%259D%25A2_34-tuya.jpg" alt="梵 VANLOUNGE品牌VI手册_页面_34-tuya"></p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E6%25A2%25B5%2520VANLOUNGE%25E5%2593%2581%25E7%2589%258CVI%25E6%2589%258B%25E5%2586%258C_%25E9%25A1%25B5%25E9%259D%25A2_35-tuya.jpg" alt="梵 VANLOUNGE品牌VI手册_页面_35-tuya"></p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E6%25A2%25B5%2520VANLOUNGE%25E5%2593%2581%25E7%2589%258CVI%25E6%2589%258B%25E5%2586%258C_%25E9%25A1%25B5%25E9%259D%25A2_36-tuya.jpg" alt="梵 VANLOUNGE品牌VI手册_页面_36-tuya"></p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E6%25A2%25B5%2520VANLOUNGE%25E5%2593%2581%25E7%2589%258CVI%25E6%2589%258B%25E5%2586%258C_%25E9%25A1%25B5%25E9%259D%25A2_37-tuya.jpg" alt="梵 VANLOUNGE品牌VI手册_页面_37-tuya"></p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E6%25A2%25B5%2520VANLOUNGE%25E5%2593%2581%25E7%2589%258CVI%25E6%2589%258B%25E5%2586%258C_%25E9%25A1%25B5%25E9%259D%25A2_38-tuya.jpg" alt="梵 VANLOUNGE品牌VI手册_页面_38-tuya"></p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E6%25A2%25B5%2520VANLOUNGE%25E5%2593%2581%25E7%2589%258CVI%25E6%2589%258B%25E5%2586%258C_%25E9%25A1%25B5%25E9%259D%25A2_39-tuya.jpg" alt="梵 VANLOUNGE品牌VI手册_页面_39-tuya"></p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E6%25A2%25B5%2520VANLOUNGE%25E5%2593%2581%25E7%2589%258CVI%25E6%2589%258B%25E5%2586%258C_%25E9%25A1%25B5%25E9%259D%25A2_40-tuya.jpg" alt="梵 VANLOUNGE品牌VI手册_页面_40-tuya"></p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E6%25A2%25B5%2520VANLOUNGE%25E5%2593%2581%25E7%2589%258CVI%25E6%2589%258B%25E5%2586%258C_%25E9%25A1%25B5%25E9%259D%25A2_41-tuya.jpg" alt="梵 VANLOUNGE品牌VI手册_页面_41-tuya"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/LYK1013/Pic@master/%E6%A2%B5%20VANLOUNGE%E5%93%81%E7%89%8CVI%E6%89%8B%E5%86%8C_%E9%A1%B5%E9%9D%A2_42-tuya.jpg" alt="梵 VANLOUNGE品牌VI手册_页面_42-tuya"></p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E6%25A2%25B5%2520VANLOUNGE%25E5%2593%2581%25E7%2589%258CVI%25E6%2589%258B%25E5%2586%258C_%25E9%25A1%25B5%25E9%259D%25A2_43-tuya.jpg" alt="梵 VANLOUNGE品牌VI手册_页面_43-tuya"></p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E6%25A2%25B5%2520VANLOUNGE%25E5%2593%2581%25E7%2589%258CVI%25E6%2589%258B%25E5%2586%258C_%25E9%25A1%25B5%25E9%259D%25A2_44-tuya.jpg" alt="梵 VANLOUNGE品牌VI手册_页面_44-tuya"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/LYK1013/Pic@master/%E6%A2%B5%20VANLOUNGE%E5%93%81%E7%89%8CVI%E6%89%8B%E5%86%8C_%E9%A1%B5%E9%9D%A2_45-tuya.jpg" alt="梵 VANLOUNGE品牌VI手册_页面_45-tuya"></p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E6%25A2%25B5%2520VANLOUNGE%25E5%2593%2581%25E7%2589%258CVI%25E6%2589%258B%25E5%2586%258C_%25E9%25A1%25B5%25E9%259D%25A2_46-tuya.jpg" alt="梵 VANLOUNGE品牌VI手册_页面_46-tuya"></p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E6%25A2%25B5%2520VANLOUNGE%25E5%2593%2581%25E7%2589%258CVI%25E6%2589%258B%25E5%2586%258C_%25E9%25A1%25B5%25E9%259D%25A2_47-tuya.jpg" alt="梵 VANLOUNGE品牌VI手册_页面_47-tuya"></p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E6%25A2%25B5%2520VANLOUNGE%25E5%2593%2581%25E7%2589%258CVI%25E6%2589%258B%25E5%2586%258C_%25E9%25A1%25B5%25E9%259D%25A2_48-tuya.jpg" alt="梵 VANLOUNGE品牌VI手册_页面_48-tuya"></p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E6%25A2%25B5%2520VANLOUNGE%25E5%2593%2581%25E7%2589%258CVI%25E6%2589%258B%25E5%2586%258C_%25E9%25A1%25B5%25E9%259D%25A2_49-tuya.jpg" alt="梵 VANLOUNGE品牌VI手册_页面_49-tuya"></p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E6%25A2%25B5%2520VANLOUNGE%25E5%2593%2581%25E7%2589%258CVI%25E6%2589%258B%25E5%2586%258C_%25E9%25A1%25B5%25E9%259D%25A2_50-tuya.jpg" alt="梵 VANLOUNGE品牌VI手册_页面_50-tuya"></p>
+<p>![](<a href="https://cdn.jsdelivr.net/gh/LYK1013/Pic@master/%E6%A2%B5">https://cdn.jsdelivr.net/gh/LYK1013/Pic@master/梵</a> VANLOUNGE品牌VI手册_页面_51-tuya_看图王.png)</p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E6%25A2%25B5%2520VANLOUNGE%25E5%2593%2581%25E7%2589%258CVI%25E6%2589%258B%25E5%2586%258C_%25E9%25A1%25B5%25E9%259D%25A2_52-tuya.jpg" alt="梵 VANLOUNGE品牌VI手册_页面_52-tuya"></p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E6%25A2%25B5%2520VANLOUNGE%25E5%2593%2581%25E7%2589%258CVI%25E6%2589%258B%25E5%2586%258C_%25E9%25A1%25B5%25E9%259D%25A2_53-tuya.jpg" alt="梵 VANLOUNGE品牌VI手册_页面_53-tuya"></p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E6%25A2%25B5%2520VANLOUNGE%25E5%2593%2581%25E7%2589%258CVI%25E6%2589%258B%25E5%2586%258C_%25E9%25A1%25B5%25E9%259D%25A2_54-tuya_%25E7%259C%258B%25E5%259B%25BE%25E7%258E%258B-tuya.png" alt="梵 VANLOUNGE品牌VI手册_页面_54-tuya_看图王-tuya"></p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E6%25A2%25B5%2520VANLOUNGE%25E5%2593%2581%25E7%2589%258CVI%25E6%2589%258B%25E5%2586%258C_%25E9%25A1%25B5%25E9%259D%25A2_55-tuya.jpg" alt="梵 VANLOUNGE品牌VI手册_页面_55-tuya"></p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E6%25A2%25B5%2520VANLOUNGE%25E5%2593%2581%25E7%2589%258CVI%25E6%2589%258B%25E5%2586%258C_%25E9%25A1%25B5%25E9%259D%25A2_56-tuya.jpg" alt="梵 VANLOUNGE品牌VI手册_页面_56-tuya"></p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E6%25A2%25B5%2520VANLOUNGE%25E5%2593%2581%25E7%2589%258CVI%25E6%2589%258B%25E5%2586%258C_%25E9%25A1%25B5%25E9%259D%25A2_57-tuya_%25E7%259C%258B%25E5%259B%25BE%25E7%258E%258B.png" alt="梵 VANLOUNGE品牌VI手册_页面_57-tuya_看图王"></p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E6%25A2%25B5%2520VANLOUNGE%25E5%2593%2581%25E7%2589%258CVI%25E6%2589%258B%25E5%2586%258C_%25E9%25A1%25B5%25E9%259D%25A2_58-tuya.jpg" alt="梵 VANLOUNGE品牌VI手册_页面_58-tuya"></p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E6%25A2%25B5%2520VANLOUNGE%25E5%2593%2581%25E7%2589%258CVI%25E6%2589%258B%25E5%2586%258C_%25E9%25A1%25B5%25E9%259D%25A2_59-tuya.jpg" alt="梵 VANLOUNGE品牌VI手册_页面_59-tuya"></p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E6%25A2%25B5%2520VANLOUNGE%25E5%2593%2581%25E7%2589%258CVI%25E6%2589%258B%25E5%2586%258C_%25E9%25A1%25B5%25E9%259D%25A2_60-tuya.jpg" alt="梵 VANLOUNGE品牌VI手册_页面_60-tuya"></p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E6%25A2%25B5%2520VANLOUNGE%25E5%2593%2581%25E7%2589%258CVI%25E6%2589%258B%25E5%2586%258C_%25E9%25A1%25B5%25E9%259D%25A2_61-tuya.jpg" alt="梵 VANLOUNGE品牌VI手册_页面_61-tuya"></p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E6%25A2%25B5%2520VANLOUNGE%25E5%2593%2581%25E7%2589%258CVI%25E6%2589%258B%25E5%2586%258C_%25E9%25A1%25B5%25E9%259D%25A2_62-tuya.jpg" alt="梵 VANLOUNGE品牌VI手册_页面_62-tuya"></p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E6%25A2%25B5%2520VANLOUNGE%25E5%2593%2581%25E7%2589%258CVI%25E6%2589%258B%25E5%2586%258C_%25E9%25A1%25B5%25E9%259D%25A2_63-tuya.jpg" alt="梵 VANLOUNGE品牌VI手册_页面_63-tuya"></p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E6%25A2%25B5%2520VANLOUNGE%25E5%2593%2581%25E7%2589%258CVI%25E6%2589%258B%25E5%2586%258C_%25E9%25A1%25B5%25E9%259D%25A2_64-tuya.jpg" alt="梵 VANLOUNGE品牌VI手册_页面_64-tuya"></p>
+]]></content>
+      <categories>
+        <category>项目</category>
+      </categories>
+      <tags>
+        <tag>项目</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>米兰大教堂MR-无界</title>
+    <url>/2022/05/07/%E7%B1%B3%E5%85%B0%E5%A4%A7%E6%95%99%E5%A0%82MR-%E6%97%A0%E7%95%8C/</url>
+    <content><![CDATA[<h2 id="效果图"><a href="#效果图" class="headerlink" title="效果图"></a>效果图</h2><p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E5%25BE%25AE%25E4%25BF%25A1%25E5%259B%25BE%25E7%2589%2587_20220507231905-tuya.jpg" alt="微信图片_20220507231905-tuya"></p>
+<p>应用下载：</p>
+<a class="btn-anzhiyu outline larger" href="https://apps.apple.com/cn/app/id1617745545?platform=iphone" 
+  title="APP Store"><i class="fa-brands fa-apple"></i><span>APP Store</span></a>
+<a class="btn-anzhiyu outline larger" href="https://appgallery.huawei.com/app/C105870855" 
+  title="华为应用市场"><i class="fa-brands fa-android"></i><span>华为应用市场</span></a>
+
+]]></content>
+      <categories>
+        <category>舞台</category>
+      </categories>
+      <tags>
+        <tag>舞台</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>腾讯新闻小Q外宣规范</title>
+    <url>/2021/01/07/%E8%85%BE%E8%AE%AF%E6%96%B0%E9%97%BB%E5%A4%96%E5%AE%A3%E8%A7%84%E8%8C%83/</url>
+    <content><![CDATA[<h1 id="🎥视频制作规范"><a href="#🎥视频制作规范" class="headerlink" title="🎥视频制作规范"></a><strong>🎥视频制作规范</strong></h1><h2 id="🧾工作流程"><a href="#🧾工作流程" class="headerlink" title="🧾工作流程"></a><strong>🧾工作流程</strong></h2><p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/image.png" alt="image"></p>
+<p>🦄剩余需要做 | 📌最近需要做 | 🕒正在做 | 📣已完成待审核 | 😭审核没过正在改 </p>
+<p>👌已完成可以发布 | 📝文案修改中暂不可用 | 🎤需配音 | 💣需EMMA审核</p>
+<hr>
+<h2 id="📏视频号尺寸"><a href="#📏视频号尺寸" class="headerlink" title="📏视频号尺寸"></a><strong>📏视频号尺寸</strong></h2><p>竖屏 比例6：7 分辨率1080*1260 </p>
+<p>横屏无过多要求比例16：9即可</p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/_rc44mI_N9RiPwcUdWdwDA" alt="img"></p>
+<hr>
+<h2 id="💿视频号上传大小"><a href="#💿视频号上传大小" class="headerlink" title="💿视频号上传大小"></a><strong>💿视频号上传大小</strong></h2><p>视频大小不超过30M，若超过30M可登陆视频号助手，在网页上进行操作，可上传1GB的视频。链接：<a href="https://channels.weixin.qq.com/"> <strong>视频号助手</strong> </a></p>
+<hr>
+<h2 id="⏰视频号上传时长"><a href="#⏰视频号上传时长" class="headerlink" title="⏰视频号上传时长"></a><strong>⏰视频号上传时长</strong></h2><p>短视频不超过一分钟即可，长视频不限时间。</p>
+<hr>
+<h2 id="🎭制作软件"><a href="#🎭制作软件" class="headerlink" title="🎭制作软件"></a><strong>🎭制作软件</strong></h2><p>手机：剪映，清晰度一定选4K。</p>
+<p>电脑：Adobe Premiere Pro、Adobe AfterEffects、Final Cut Pro X、MAXON Cinema 4D、DaVinci Resolve Studio、等</p>
+<p>导出以后需要在  <a href="http://www.pcfreetime.com/formatfactory/CN/index.html"><strong>格式工厂</strong></a>  或<a href="https://maruko.appinn.me/"> <strong>小丸工具箱</strong> </a>转换一下MP4格式，用QQ发给小白的手机上，在小白手机上保存（这样才不会压缩画质）</p>
+<hr>
+<h2 id="🎨素材绘制详解："><a href="#🎨素材绘制详解：" class="headerlink" title="🎨素材绘制详解："></a><strong>🎨素材绘制详解：</strong></h2><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/wIcnh7QONzhbFbUnhRoIgg" alt="img" style="zoom:25%;" />
+
+<img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/image2-tuya.png" alt="image2-tuya" style="zoom: 25%;" />
+
+<img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/image3-tuya.png" alt="image3-tuya" style="zoom: 33%;" />
+
+<img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/-d-UV0j3TdFYXwXCIhyJ6w" alt="img" style="zoom: 50%;" />
+
+<img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/imag4e-tuya.png" alt="imag4e-tuya" style="zoom: 50%;" />
+
+<hr>
+<h2 id="📣文案注意措辞："><a href="#📣文案注意措辞：" class="headerlink" title="📣文案注意措辞："></a><strong>📣文案注意措辞：</strong></h2><p>读者替换成【用户】的字眼</p>
+<p>统一用【帐号】</p>
+<p>注意 的、地、得的用法：</p>
+<p>“的”前面的词语一般用来修饰 “的”后面的事物，说明“的”后面的事物怎么样。结构形式一般为：形容词、名词、代词+的+名词。</p>
+<p>“得”后面的词语一般用来补充说明“得”前面的动作怎么样，结构形式一般为：动词、形容词+得+副词。</p>
+<p>“地”前面的词语一般用来形容“地”后面的动作，说明“地”后面的动作怎么样。结构方式一般为：形容词、副词+地+动词。</p>
+<hr>
+<h2 id="📡视频号发布"><a href="#📡视频号发布" class="headerlink" title="📡视频号发布"></a><strong>📡视频号发布</strong></h2><p>添加话题、位置、公众号链接（若不需要可不加）</p>
+<p>话题：动画类是#腾讯新闻宝藏功能&#x2F;人人都是媒体人为基础的标签，其他标签根据视      频内容自行添加。</p>
+<p>​      视频类是#小Q日常为基础标签，其他标签根据视频内容自行添加。</p>
+<p>位置：北京市腾讯北京总部大楼。</p>
+<p>公众号链接：需要在公共号文章中复制链接再粘贴到相应的框里。</p>
+<p>动画制作需要导出两版：一版用于视频号发布，另外一版用于微博发布。</p>
+<p>视频号发布时间节点及内容：每周三发动画、周五发日常剪辑视频。下午4-6点使用白Q手机发布。</p>
+<p>将工程文件收集打包，存在硬盘里收集起来。</p>
+<hr>
+<h2 id="🧱视频工程整理"><a href="#🧱视频工程整理" class="headerlink" title="🧱视频工程整理"></a><strong>🧱视频工程整理</strong></h2><h3 id="一、工程整理"><a href="#一、工程整理" class="headerlink" title="一、工程整理"></a><strong>一、工程整理</strong></h3><h4 id="第一步："><a href="#第一步：" class="headerlink" title="第一步："></a><strong>第一步：</strong></h4><p>复制【原始合成】三份，分别改名背景视频、内容导出、遮罩视频</p>
+<h4 id="第二步："><a href="#第二步：" class="headerlink" title="第二步："></a><strong>第二步：</strong></h4><p>新建一个合成，命名为预览视频（注意帧数率保持一致），按照顺序分别选中遮罩视频、内容导出、背景视频拖入预览视频的合成里。（如下图）</p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/image5-tuya.png" alt="image5-tuya"></p>
+<h4 id="第三步："><a href="#第三步：" class="headerlink" title="第三步："></a><strong>第三步：</strong></h4><p>打开内容导出合成，关掉不可编辑的图层的显示按钮，关掉预合成图层、视频及音乐</p>
+<h4 id="第四步："><a href="#第四步：" class="headerlink" title="第四步："></a><strong>第四步：</strong></h4><p>打来背景视频合成，关掉用户可编辑图层按钮，不删除图层，便于后期修改 （一般为图片、文字）。</p>
+<p>（做第五步之前先知晓下遮罩视频、内容导出和背景视频已为人知的关系：遮罩视频在内容导出的上面，背景视频在最下面，内容导出读取遮罩视频的亮度反转通道（Luma Intverted Matte），遮罩层一般设置为白色，那么内容导出里同样位置的内容显示为透明，就会显示出背时视频；如果为黑色，内容导出的内容全显示）</p>
+<p>例子：模板里有落叶或者花瓣飘落，就需要把落叶的图层保留在遮罩与背景视频里，内容导出里的落叶图层去除，遮罩里的落叶调整为白色，亮度反转通道一下，就能让落叶或者花瓣不在内容导出里，又能显示在内容导出上面。</p>
+<h4 id="第五步："><a href="#第五步：" class="headerlink" title="第五步："></a><strong>第五步：</strong></h4><p>打开遮罩视频合成，关掉可编辑与不可编辑的图层；要是模板中有遮罩就要打开遮罩图层（一般是两种情况：一种是有树叶花瓣等素材需要展示在内容导出上面，但是不能留在内容导出里；第二是内容导出里可编辑的图片或文字的显示动画是用视频遮罩来亮度反转的）</p>
+<h3 id="二、内容导出详解："><a href="#二、内容导出详解：" class="headerlink" title="二、内容导出详解："></a><strong>二、内容导出详解：</strong></h3><h4 id="1-用户可编辑文字的-图层命名规范"><a href="#1-用户可编辑文字的-图层命名规范" class="headerlink" title="1.用户可编辑文字的****图层命名规范"></a><strong>1.用户可编辑文字的****图层命名规范</strong></h4><p>当需要编辑的文字在内容导出里有多处显示，并且需要达到替换其中一个，其余的图层也跟随变化，那么就要选中其中一个文字图层（显示相对完整且图层展示时间较长的图层）进行特殊命名标识（开头添加“#”号）；这样是为了快速定位该图层，并准确把其余图层链接至标“#”号的图层上。</p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/image6-tuya.png" alt="image6-tuya"></p>
+<p>其他注意事项：</p>
+<p>   ● 请检查在内容导出层中的文字层是否符合规范</p>
+<p>   ● 文字层是否画文本框</p>
+<p>   ● 是否使用了具有版权的字体</p>
+<p>   ● 字间距，描边，排序方式是否符合规范</p>
+<p>   ● 文字层命名是否准确</p>
+<h4 id="2-图片类图层整理规范"><a href="#2-图片类图层整理规范" class="headerlink" title="2.图片类图层整理规范"></a><strong>2.图片类图层整理规范</strong></h4><h5 id="2-1将可编辑的图层进行命名标识（tu1、tu2、tu3…以此类推-）"><a href="#2-1将可编辑的图层进行命名标识（tu1、tu2、tu3…以此类推-）" class="headerlink" title="2.1将可编辑的图层进行命名标识（tu1、tu2、tu3…以此类推****）"></a><strong>2.1将可编辑的图层进行命名标识（tu1、tu2、tu3…以此类推****）</strong></h5><p>（命名规则同文字图层命名规范）同一张图片有多个图层时，同一张图片的命名需要保持一致，然后在需要设置可编辑的图层前面加“#”号表示。</p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/image7-tuya.png" alt="image7-tuya"></p>
+<h5 id="2-2将图层不展示的部分剪掉"><a href="#2-2将图层不展示的部分剪掉" class="headerlink" title="2.2将图层不展示的部分剪掉"></a><strong>2.2将图层不展示的部分剪掉</strong></h5><p>图层的长度尽量保持在最短的时长。</p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/image8.png" alt="image8"></p>
+<h5 id="2-3注意不要出现负数帧"><a href="#2-3注意不要出现负数帧" class="headerlink" title="2.3注意不要出现负数帧"></a><strong>2.3注意不要出现负数帧</strong></h5><p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/image9-tuya.png" alt="image9-tuya"></p>
+<h5 id="2-4可替换素材替换为jpg或png格式"><a href="#2-4可替换素材替换为jpg或png格式" class="headerlink" title="2.4可替换素材替换为jpg或png格式"></a><strong>2.4可替换素材替换为jpg或png格式</strong></h5><p>需要替换的图片请不要使用ps的图层直接制作，需要在ps中导出为jpg或者png后在导入ae中制作，这样后期若要替换素材会比较方便。</p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/image10-tuya.png" alt="image10-tuya"></p>
+<p>其他注意事项：</p>
+<p>​                ● 图片分辨率过大或者容量过大时进行压缩（720p左右，大小1m以内）</p>
+<p>​                ● 尽量裁切只保留用到的部分</p>
+<p>​                ● 是否使用了无法支持的效果和动画</p>
+<h5 id="2-5-内容导出注意事项"><a href="#2-5-内容导出注意事项" class="headerlink" title="2.5 内容导出注意事项"></a><strong>2.5 内容导出注意事项</strong></h5><p>​                ● 添加了脚本和插件的需要easy-bake-v1.0.1烘焙成关键帧。</p>
+<p>​                ● 不可编辑元素尽量都放在主视频中。</p>
+<h3 id="三、工程打包"><a href="#三、工程打包" class="headerlink" title="三、工程打包"></a><strong>三、工程打包</strong></h3><h4 id="1-素材栏整理"><a href="#1-素材栏整理" class="headerlink" title="1.素材栏整理"></a><strong>1.素材栏整理</strong></h4><p>删除未使用的素材，做到工程最小化之后，需要将工程用到的所有素材移动至工程整理文件夹。</p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/image11-tuya.png" alt="image11-tuya"></p>
+<h4 id="2-工程打包"><a href="#2-工程打包" class="headerlink" title="2.工程打包"></a><strong>2.工程打包</strong></h4><p>以上步骤完成之后请打包工程，打包方式如下：</p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/image12-tuya.png" alt="image12-tuya"></p>
+<p>请确保文件不会丢失，压缩后对应文件夹存于硬盘交给对接人。</p>
+<h3 id="四、回收文件"><a href="#四、回收文件" class="headerlink" title="四、回收文件"></a><strong>四、回收文件</strong></h3><p>模板提交的文件需要按以下要求，并做好命名规范。</p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/image13-tuya.png" alt="image13-tuya"></p>
+<hr>
+<h1 id="🔐版权规范"><a href="#🔐版权规范" class="headerlink" title="🔐版权规范"></a><strong>🔐版权规范</strong></h1><h2 id="💥视频制作注意版权："><a href="#💥视频制作注意版权：" class="headerlink" title="💥视频制作注意版权："></a><strong>💥视频制作注意版权：</strong></h2><p>配乐的使用：要登陆QQ音乐进行下载。</p>
+<p>字体的使用：要登陆腾讯字体库进行查看是否有版权</p>
+<p>使用有版权的字体：<a href="http://dcloud.oa.com/Material/Font"> <strong>腾讯字体库</strong> </a></p>
+<p>素材及音效的使用：无版权的<a href="https://www.aigei.com/"> <strong>爱给网</strong> </a>可自行下载</p>
+<p>​                                   无版权的<a href="https://soundcloud.com/"> <strong>sound cloud</strong> </a></p>
+<hr>
+<h2 id="🎴腾讯新闻采买版权图片使用规范"><a href="#🎴腾讯新闻采买版权图片使用规范" class="headerlink" title="🎴腾讯新闻采买版权图片使用规范"></a><strong>🎴腾讯新闻采买版权图片使用规范</strong></h2><p>为规范各业务侧对腾讯新闻采买版权图片（以下简称为“版权图片”）的使用，降低侵权风险，减少侵权对公司声誉及经济成本造成的损失，所有使用图片的人员须严格遵守如下规范。</p>
+<h3 id="一、版权图片使用规则："><a href="#一、版权图片使用规则：" class="headerlink" title="一、版权图片使用规则："></a><strong>一、版权图片使用规则：</strong></h3><h4 id="1、获取渠道："><a href="#1、获取渠道：" class="headerlink" title="1、获取渠道："></a><strong>1、获取渠道：</strong></h4><p>员工在日常工作中使用图片，须从指定渠道获取（见下文二条款），禁止通过搜索引擎（如百度搜索等）、社交媒体（如朋友圈、微博）等非正规渠道获取，禁止使用来源不明或署名不清的图片，避免侵权风险。</p>
+<h4 id="2、使用场景："><a href="#2、使用场景：" class="headerlink" title="2、使用场景："></a><strong>2、使用场景：</strong></h4><p>①腾讯新闻采购的版权图片仅限日常原创编辑发文使用，如作为内容的配图、组图、焦点图等资讯页面（以资讯传播为目的）合法使用；</p>
+<p>②不可对图片进行二次加工或修改，不可用于视频素材、海报制作、设计素材，不可作为商业用途使用。（如将素材用于任何具有商业性、推广性的、广告性用途，包括但不限于印刷品、商业性的广播、电影或数字化产品、商业广告、市场推广、产品促销、产品包装、产品介绍等场景。）</p>
+<p>③如有商业需求或非商用海报类内容需求，可从（<a href="http://dcloud.oa.com/%EF%BC%89%E4%B8%8B%E8%BD%BD%E6%88%96%E5%8D%95%E7%8B%AC%E9%87%87%E8%B4%AD%E3%80%82">http://dcloud.oa.com/）下载或单独采购。</a></p>
+<h4 id="3、使用范围："><a href="#3、使用范围：" class="headerlink" title="3、使用范围："></a><strong>3、使用范围：</strong></h4><p>①版权图片须在内容线业务范围内使用（如腾讯新闻相关业务的APP、PC端、微信公众号、企鹅号、微博等渠道）；</p>
+<p>②使用版权图片的微信公众号、微博帐号、企鹅号等公众平台帐号须报备安全运营组备案；</p>
+<p>③禁止版权图片为员工个人私用、禁止买卖、转让、租借他人使用，禁止在非内容线业务中使用；</p>
+<p>④禁止向第三方平台或个人授权使用。版权签署协议仅规定甲乙双方权利义务，不涉及第三方使用，严禁员工未经允许，将平台所用图片以接口、稿件转载、私下传递等任何形式提供给第三方使用（含编辑类及商业用途类）。</p>
+<p>⑤采购的限量图片不得超量下载。版权图片采购侧按年度收集各频道采购量，各频道需严格按量使用，避免超量、浪费使用。</p>
+<h4 id="4、标注来源："><a href="#4、标注来源：" class="headerlink" title="4、标注来源："></a><strong>4、标注来源：</strong></h4><p>腾讯新闻已采购版权的图片社共6家，员工在使用此类图库购买的照片时，须在正文来源处标注图库名称及摄影师名称，如“视觉中国”、“东方IC”、“XX摄影师”等。</p>
+<h4 id="5、转载："><a href="#5、转载：" class="headerlink" title="5、转载："></a><strong>5、转载：</strong></h4><p>转载文章时，需核实是否与转载来源有转载协议或授权，如有，需确认文章中的图片版权，若无版权需删除图片，避免侵权。</p>
+<hr>
+<h3 id="二、版权图片获取渠道"><a href="#二、版权图片获取渠道" class="headerlink" title="二、版权图片获取渠道"></a><strong>二、版权图片获取渠道</strong></h3><h4 id="1、端外使用渠道："><a href="#1、端外使用渠道：" class="headerlink" title="** 1、端外使用渠道：**"></a>** 1、端外使用渠道：**</h4><p>腾讯新闻已采购版权图片涉及编辑图、创意图、历史图、国内外时政图等限量及不限量图片。员工可通过分配的图片社账号在各官网下载图片使用。不限量图片可无限使用；限量图片按次授权，请勿超量使用。</p>
+<table>
+    <tr>
+        <td colspan="6">版权图片资源</td>
+    </tr>
+    <tr>
+        <td>图片社</td>
+        <td>覆盖资源量</td>
+        <td>采购内容</td>
+        <td>采购量级</td>
+        <td>图片下载地址</td>
+        <td>账号密码</td>
+    </tr>
+    <tr>
+    <tr>
+        <td rowspan="3">视觉中国</td>
+        <td rowspan="3">2大全球顶级图片库 1家摄影社区</td>
+        <td>日常综合（编辑/创意图片）</td>
+        <td>限量</td>
+        <td rowspan="3">https://www.cfp.cn/</td>
+        <td rowspan="5">限量图片按需分配账号，年度分配账号已下发。</td>
+    </tr>
+    <tr>
+        <td>娱乐大事件图片专线（编辑图片）</td>
+        <td>限量专场数量（单一场专线图片内容不限量）</td>
+    </tr>
+    <tr>
+        <td>历史资料编辑图片（含corbis）</td>
+        <td>限量</td>
+    </tr>
+    <tr>
+        <td>东方IC</td>
+        <td>10家国际通讯社 9家国内媒体 300+家图片供应商 15个体育赛事</td>
+        <td>编辑图片</td>
+        <td >限量</td>
+        <td>https://www.icphoto.cn/</td>
+    </tr>
+    <tr>
+        <td>SIPA</td>
+        <td>14家全品类编辑类图片供应商 4家体育垂类图片供应商</td>
+        <td>时效新闻</td>
+        <td>限量</td>
+        <td>www.sipaphoto.com</td>
+    </tr>
+    <tr>
+        <td>路透社</td>
+        <td>英国最大新闻通讯社，涉及日常全球突发、时政、民生、社会等资讯热点。如中美贸易战，全球疫情等；美国大选等大事件系列图片资源。</td>
+        <td>时政新闻</td>
+        <td>不限量</td>
+        <td>https://www.reutersconnect.com/</td>
+        <td rowspan="3">如需使用，企业微信联系XXX获取</td>
+    </tr>
+    <tr>
+        <td>新华社图片</td>
+        <td>每天24小时实时播发新闻图片700余张，全年发稿20多万张。</td>
+        <td>时效图片专线</td>
+        <td>不限量</td>
+        <td>http://home.xinhua-news.com/</td>
+    </tr>
+    <tr>
+        <td>中新社图片</td>
+        <td>每天24小时即时新闻传真图片全年播发数量在25000张以上。</td>
+        <td>时效图片</td>
+        <td>不限量</td>
+        <td>http://photolib.chinanews.com/index.jsp</td>
+    </tr>
+</table>
+
+</table>
+
+
+
+<h4 id="2、端内使用渠道："><a href="#2、端内使用渠道：" class="headerlink" title="** 2、端内使用渠道：**"></a>** 2、端内使用渠道：**</h4><p>CMS后台已接通图片中台，并将已有版权图片通过中台接入到CMS编辑发文后台，可用于任务池或推荐池内文章列表图。</p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/6xzpiMTPEevtzai5r3SM4g" alt="img"></p>
+<h3 id="三、版权图片下载账号管理"><a href="#三、版权图片下载账号管理" class="headerlink" title="三、版权图片下载账号管理"></a><strong>三、版权图片下载账号管理</strong></h3><h4 id="1、密码备案："><a href="#1、密码备案：" class="headerlink" title="1、密码备案："></a><strong>1、密码备案：</strong></h4><p>安全运营组统一为需求侧下发版权图片下载账号，需求侧须修改原始密码报备总监，并邮件同步g_pcg_szhgl(安全运营组)备份。</p>
+<h4 id="2、定期修改："><a href="#2、定期修改：" class="headerlink" title="2、定期修改："></a><strong>2、定期修改：</strong></h4><p>为保证账号安全，若团队无人员流动须每季度修改1次密码，</p>
+<p>修改后须邮件同步g_pcg_szhgl(安全运营组)备份；</p>
+<p>若团队有人员离职、转岗，须即时更改密码，邮件同步g_pcg_szhgl(安全运营组)备份。</p>
+<h4 id="3、禁止转借："><a href="#3、禁止转借：" class="headerlink" title="** 3、禁止转借：**"></a>** 3、禁止转借：**</h4><p>各团队分配所得账号仅限团队成员使用，禁止转借非业务侧人员、公司外部人员使用，禁止授权实习生及外包人员操作，以免造成账号信息泄露及经济损失。</p>
+<h4 id="4、一经发现未按以上流程对账号进行管理，将视情况对账号对应责任基干按管理失职进行追责。"><a href="#4、一经发现未按以上流程对账号进行管理，将视情况对账号对应责任基干按管理失职进行追责。" class="headerlink" title="4、一经发现未按以上流程对账号进行管理，将视情况对账号对应责任基干按管理失职进行追责。"></a><strong>4、一经发现未按以上流程对账号进行管理，将视情况对账号对应责任基干按管理失职进行追责。</strong></h4><p>（此规范会根据版权图片拓展进展及产品变化即时更新；针对图片使用、需求及权限问题联系XXX）</p>
+<hr>
+<h2 id="🎵采买版权音乐规范"><a href="#🎵采买版权音乐规范" class="headerlink" title="🎵采买版权音乐规范"></a><strong>🎵采买版权音乐规范</strong></h2><p>​    首选QQ音乐</p>
+<p>无版权的<a href="https://www.aigei.com/"> <strong>爱给网</strong> </a></p>
+<p>​       无版权的<a href="https://soundcloud.com/"> <strong>sound cloud</strong> </a>    </p>
+<p>​    无版权的<a href="https://icons8.com/"> <strong>icon8</strong> </a></p>
+<p>可购买版权的<a href="https://www.vfinemusic.com/#/"> <strong>VFINEMUSIC</strong> </a></p>
+<hr>
+<h1 id="✨LOGO规范"><a href="#✨LOGO规范" class="headerlink" title="✨LOGO规范"></a><strong>✨LOGO规范</strong></h1><h2 id="品牌视觉规范"><a href="#品牌视觉规范" class="headerlink" title="品牌视觉规范"></a><strong>品牌视觉规范</strong></h2><p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/DQ15zzqi6zvI6ddsVvqDrA" alt="img"></p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/image14-tuya-tuya.png" alt="image14-tuya-tuya"></p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/image15-tuya-tuya.png" alt="image15-tuya-tuya"></p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/image16-tuya-tuya.png"></p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/image17-tuya-tuya.png" alt="image17-tuya-tuya"></p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/image18-tuya-tuya.png" alt="image18-tuya-tuya"></p>
+<h2 id="LOGO源文件下载"><a href="#LOGO源文件下载" class="headerlink" title="LOGO源文件下载"></a><strong>LOGO源文件下载</strong></h2><p>链接：<a href="https://share.weiyun.com/mP5dxaIw">https://share.weiyun.com/mP5dxaIw</a>  密码：txxwxq</p>
+<hr>
+<h1 id="教程"><a href="#教程" class="headerlink" title="教程"></a><strong>教程</strong></h1><h2 id="🏆网址"><a href="#🏆网址" class="headerlink" title="🏆网址"></a><strong>🏆网址</strong></h2><p>AE教程表 <a href="https://naotu.baidu.com/file/57b09fb63a02bda0c6fecfe9c9405e91">https://naotu.baidu.com/file/57b09fb63a02bda0c6fecfe9c9405e91</a></p>
+<p>PV <a href="https://naotu.baidu.com/file/1be981ba323da2c03af1b9ce3658dbbd">https://naotu.baidu.com/file/1be981ba323da2c03af1b9ce3658dbbd</a></p>
+<p><strong>Motion Graphics in After Effects</strong> <a href="https://mamoworld.com/motion-graphics-ebook/nav.html">https://mamoworld.com/motion-graphics-ebook/nav.html</a></p>
+<p>MG 在 PV 的制作中比较常用，而且常常和表达式，还有脚本一起配合使用，使用较多的 Motion 脚本，还有P9 shape，以及 Sp_memory 。</p>
+<p>Motion v2.0   <a href="http://www.lookae.com/motion2">http://www.lookae.com/motion2</a></p>
+<p>Duik         <a href="http://www.gfxcamp.com/duik">http://www.gfxcamp.com/duik</a></p>
+<p>Newton 插件（牛顿插件） <a href="http://www.cgown.com/ae/ae-tutorials/4461.html#">http://www.cgown.com/ae/ae-tutorials/4461.html#</a></p>
+<p>Animation Compose   <a href="http://www.cgown.com/ae/ae-plugin/17764.html">http://www.cgown.com/ae/ae-plugin/17764.html</a> </p>
+<p>AE 高级运动图形教程-从 A 到 Z 地址：:<a href="http://www.bilibili.com/video/av991280/index_2.html">www.bilibili.com/video/av991280/index_2.html</a></p>
+<p>AE 动画原理 12 则教程 地址：<a href="http://www.bilibili.com/video/av512214/">http://www.bilibili.com/video/av512214/</a> </p>
+<p>MG 动画自习室的一些教程 地址：<a href="http://v.qq.com/vplus/964008b9234fc3cff1e701cbd613f876">http://v.qq.com/vplus/964008b9234fc3cff1e701cbd613f876</a></p>
+<p>木偶工具的使用教程 地址： <a href="http://www.bilibili.com/video/av1713666/">http://www.bilibili.com/video/av1713666/</a>      </p>
+<p>​                                             <a href="http://www.bilibili.com/video/av1734635/">http://www.bilibili.com/video/av1734635/</a></p>
+<p>E3D（Element 3D） VideoCopilot Element 3D AE 插件 E3D 全部教程 中英文双语字幕 地址：<a href="http://www.cgchina.net/pingmiansheji/AEzhuanqu/2014/0518/1110.html">http://www.cgchina.net/pingmiansheji/AEzhuanqu/2014/0518/1110.html</a></p>
+<p>可以通过 E3D 在 AE 中直接实现 3D 效果</p>
+<hr>
+<p><strong>运动曲线：</strong><a href="https://easings.net/">https://easings.net/</a></p>
+<p>文字层 地址：<a href="http://tieba.baidu.com/p/3629323404?pid=65452933557&cid=0#65452933557">http://tieba.baidu.com/p/3629323404?pid=65452933557&amp;cid=0#65452933557</a> </p>
+<p>实例效果教程推荐 地址：<a href="http://space.bilibili.com/6672592/#!/video/0//2">http://space.bilibili.com/6672592/#!/video/0//2</a></p>
+<p>遮罩蒙版教程 地址：<a href="http://tieba.baidu.com/p/2593406010">http://tieba.baidu.com/p/2593406010</a></p>
+<p> PV 师入坑教程 22 地址：<a href="http://i.youku.com/u/UMTM4OTQ0MDY0">http://i.youku.com/u/UMTM4OTQ0MDY0</a></p>
+<p>AE 技能表 地址：<a href="http://tieba.baidu.com/p/4069969842">http://tieba.baidu.com/p/4069969842</a></p>
+<p>Blender：<a href="https://space.bilibili.com/35723238?from=search&seid=13382239950815866988">https://space.bilibili.com/35723238?from=search&amp;seid=13382239950815866988</a></p>
+<p>​                <a href="https://space.bilibili.com/76594159">https://space.bilibili.com/76594159</a></p>
+<p>3D人物动作生成（需提前绑定骨骼）：<a href="https://www.mixamo.com/#/">https://www.mixamo.com/#/</a></p>
+<hr>
+<h2 id="🔑口诀"><a href="#🔑口诀" class="headerlink" title="🔑口诀"></a><strong>🔑口诀</strong></h2><p>MG动画不可怕，双APC闯天下。</p>
+<p>AP来把素材画，AC动画不靠挂。</p>
+<p>动画Key帧太繁重，有些脚本也得用。</p>
+<p>AE脚本管理器，创建物体和偏移。</p>
+<p>Motion2脚本也还中，三种功能用一生。</p>
+<p>Duik脚本自己试，角色动画表达式。</p>
+<p>PuppetTools 3 脚本，用Null绑定角色美。</p>
+<p>Ease&amp;Wizz是神马，关键帧动画耍一耍。</p>
+<p>Particular最伟大，矢量烟雾就靠它。</p>
+<p>3D Stroke 3D线，弥补shape的缺陷。</p>
+<p>Rubber HoseV1.0脚本，人物IK它最准。</p>
+<p>更多脚本不说啦，下面才是重要哒。</p>
+<p>动画音乐难协调，AE做完剪辑搞。</p>
+<p>镜头时间有要求，跟着文案音乐走。</p>
+<p>动画流畅且自然，甲方看着就垂涎。</p>
+<p>镜头切换是考验，小白大神能分辨。</p>
+<p>素材并非扁平化，效果达到才称霸。</p>
+<p>大神不是一日功，坚持创新登顶峰。</p>
+<hr>
+<h2 id="🔍-动效周期表"><a href="#🔍-动效周期表" class="headerlink" title="🔍 动效周期表"></a><strong>🔍 动效周期表</strong></h2><p>动效周期表解析 ：<a href="https://uiiiuiii.com/aftereffects/12127765.html">优设视频解析版</a></p>
+<p>动效周期表解析 ：<a href="https://www.zcool.com.cn/article/ZMTEwNDAwOA==.html">站酷文字解析上</a> <a href="https://www.zcool.com.cn/article/ZMTEwNjU1Mg==.html">站酷文字解析中</a> <a href="https://www.zcool.com.cn/article/ZMTEwODI2OA==.html">站酷文字解析下</a></p>
+<p>工程文件下载：<a href="https://yueli.lanzous.com/id2m1wf">工程文件</a></p>
+<hr>
+<h1 id="🧩微信公众号"><a href="#🧩微信公众号" class="headerlink" title="🧩微信公众号"></a><strong>🧩微信公众号</strong></h1><hr>
+<h2 id="🔧工具"><a href="#🔧工具" class="headerlink" title="🔧工具"></a><strong>🔧工具</strong></h2><h3 id="排版工具"><a href="#排版工具" class="headerlink" title="排版工具"></a><strong>排版工具</strong></h3><p>秀米 ：<a href="https://xiumi.us/#/">https://xiumi.us/#/</a></p>
+<p>壹伴：<a href="https://yiban.io/">https://yiban.io/</a></p>
+<p>135编辑器：<a href="http://www.135editor.com/">www.135editor.com/</a></p>
+<p>365编辑器：<a href="http://www.365editor.com/">www.365editor.com/</a></p>
+<p>小蚂蚁编辑器：<a href="https://www.xmyeditor.com/">https://www.xmyeditor.com/</a></p>
+<p>96编辑器：<a href="https://bj.96weixin.com/">https://bj.96weixin.com/</a></p>
+<p>i排版：<a href="http://ipaiban.com/">http://ipaiban.com</a></p>
+<p>Markdown</p>
+<h3 id="表单工具"><a href="#表单工具" class="headerlink" title="表单工具"></a><strong>表单工具</strong></h3><p>麦客表单：<a href="http://www.mikecrm.com/">http://www.mikecrm.com/</a></p>
+<p>金数据：<a href="https://jinshuju.net/">https://jinshuju.net/</a></p>
+<p>腾讯问卷：<a href="https://wj.qq.com/">https://wj.qq.com/</a></p>
+<p>问卷网：<a href="https://www.wenjuan.com/">https://www.wenjuan.com/</a></p>
+<p>问卷星：<a href="https://www.wjx.cn/">https://www.wjx.cn/</a></p>
+<p>表单大师：<a href="https://www.jsform.com/">https://www.jsform.com/</a></p>
+<h3 id="微场景"><a href="#微场景" class="headerlink" title="微场景"></a><strong>微场景</strong></h3><p>iH5：<a href="https://www.ih5.cn/">https://www.ih5.cn/</a></p>
+<p>意派360：<a href="https://www.epub360.com/">https://www.epub360.com/</a></p>
+<hr>
+<h1 id="🎥直播导播"><a href="#🎥直播导播" class="headerlink" title="🎥直播导播"></a><strong>🎥直播导播</strong></h1><h2 id="拉流："><a href="#拉流：" class="headerlink" title="拉流："></a><strong>拉流：</strong></h2><p>IPTV m3u 直播源：<a href="https://github.com/EvilCult/iptv-m3u-maker">https://github.com/EvilCult/iptv-m3u-maker</a></p>
+<p>直播源汇总：<a href="https://github.com/imDazui/Tvlist-awesome-m3u-m3u8">https://github.com/imDazui/Tvlist-awesome-m3u-m3u8</a></p>
+<p>直播平台的直播源获取：<a href="https://github.com/wbt5/real-url">https://github.com/wbt5/real-url</a></p>
+<hr>
+<h2 id="分辨率码率："><a href="#分辨率码率：" class="headerlink" title="分辨率码率："></a><strong>分辨率码率：</strong></h2><p>分辨率比例颜色  4:3  16:9  16:10 </p>
+<table>
+<thead>
+<tr>
+<th>分辨率</th>
+<th>建议码率</th>
+<th>帧数 (建议码率)</th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>宽</td>
+<td>高</td>
+<td>Kbps</td>
+<td>60</td>
+<td>30</td>
+<td>25</td>
+<td>24</td>
+<td>20</td>
+<td>18</td>
+<td>15</td>
+<td>12</td>
+<td>10</td>
+<td>8</td>
+</tr>
+<tr>
+<td><strong>160</strong></td>
+<td><strong>80</strong></td>
+<td>25</td>
+<td>60</td>
+<td>30</td>
+<td>25</td>
+<td>24</td>
+<td>20</td>
+<td>18</td>
+<td>15</td>
+<td>12</td>
+<td>10</td>
+<td>8</td>
+</tr>
+<tr>
+<td><strong>160</strong></td>
+<td><strong>120</strong></td>
+<td>38</td>
+<td>90</td>
+<td>45</td>
+<td>38</td>
+<td>36</td>
+<td>30</td>
+<td>27</td>
+<td>23</td>
+<td>18</td>
+<td>15</td>
+<td>12</td>
+</tr>
+<tr>
+<td><strong>160</strong></td>
+<td><strong>240</strong></td>
+<td>75</td>
+<td>180</td>
+<td>90</td>
+<td>75</td>
+<td>72</td>
+<td>60</td>
+<td>54</td>
+<td>45</td>
+<td>36</td>
+<td>30</td>
+<td>24</td>
+</tr>
+<tr>
+<td><strong>176</strong></td>
+<td><strong>144</strong></td>
+<td>50</td>
+<td>119</td>
+<td>59</td>
+<td>50</td>
+<td>48</td>
+<td>40</td>
+<td>36</td>
+<td>30</td>
+<td>24</td>
+<td>20</td>
+<td>16</td>
+</tr>
+<tr>
+<td><strong>240</strong></td>
+<td><strong>176</strong></td>
+<td>83</td>
+<td>198</td>
+<td>99</td>
+<td>83</td>
+<td>79</td>
+<td>66</td>
+<td>59</td>
+<td>50</td>
+<td>40</td>
+<td>33</td>
+<td>26</td>
+</tr>
+<tr>
+<td><strong>240</strong></td>
+<td><strong>180</strong></td>
+<td>84</td>
+<td>203</td>
+<td>101</td>
+<td>84</td>
+<td>81</td>
+<td>68</td>
+<td>61</td>
+<td>51</td>
+<td>41</td>
+<td>34</td>
+<td>27</td>
+</tr>
+<tr>
+<td><strong>256</strong></td>
+<td><strong>192</strong></td>
+<td>96</td>
+<td>230</td>
+<td>115</td>
+<td>96</td>
+<td>92</td>
+<td>77</td>
+<td>69</td>
+<td>58</td>
+<td>46</td>
+<td>38</td>
+<td>31</td>
+</tr>
+<tr>
+<td><strong>320</strong></td>
+<td><strong>180</strong></td>
+<td>113</td>
+<td>270</td>
+<td>135</td>
+<td>113</td>
+<td>108</td>
+<td>90</td>
+<td>81</td>
+<td>68</td>
+<td>54</td>
+<td>45</td>
+<td>36</td>
+</tr>
+<tr>
+<td><strong>320</strong></td>
+<td><strong>192</strong></td>
+<td>120</td>
+<td>288</td>
+<td>144</td>
+<td>120</td>
+<td>115</td>
+<td>96</td>
+<td>86</td>
+<td>72</td>
+<td>58</td>
+<td>48</td>
+<td>38</td>
+</tr>
+<tr>
+<td><strong>320</strong></td>
+<td><strong>240</strong></td>
+<td>150</td>
+<td>360</td>
+<td>180</td>
+<td>150</td>
+<td>144</td>
+<td>120</td>
+<td>108</td>
+<td>90</td>
+<td>72</td>
+<td>60</td>
+<td>48</td>
+</tr>
+<tr>
+<td><strong>352</strong></td>
+<td><strong>240</strong></td>
+<td>165</td>
+<td>396</td>
+<td>198</td>
+<td>165</td>
+<td>158</td>
+<td>132</td>
+<td>119</td>
+<td>99</td>
+<td>79</td>
+<td>66</td>
+<td>53</td>
+</tr>
+<tr>
+<td><strong>352</strong></td>
+<td><strong>288</strong></td>
+<td>198</td>
+<td>475</td>
+<td>238</td>
+<td>198</td>
+<td>190</td>
+<td>158</td>
+<td>143</td>
+<td>119</td>
+<td>95</td>
+<td>79</td>
+<td>63</td>
+</tr>
+<tr>
+<td><strong>400</strong></td>
+<td><strong>300</strong></td>
+<td>234</td>
+<td>563</td>
+<td>281</td>
+<td>234</td>
+<td>225</td>
+<td>188</td>
+<td>169</td>
+<td>141</td>
+<td>113</td>
+<td>94</td>
+<td>75</td>
+</tr>
+<tr>
+<td><strong>480</strong></td>
+<td><strong>270</strong></td>
+<td>253</td>
+<td>608</td>
+<td>304</td>
+<td>253</td>
+<td>243</td>
+<td>203</td>
+<td>182</td>
+<td>152</td>
+<td>122</td>
+<td>101</td>
+<td>81</td>
+</tr>
+<tr>
+<td><strong>480</strong></td>
+<td><strong>288</strong></td>
+<td>270</td>
+<td>648</td>
+<td>324</td>
+<td>270</td>
+<td>259</td>
+<td>216</td>
+<td>194</td>
+<td>162</td>
+<td>130</td>
+<td>108</td>
+<td>86</td>
+</tr>
+<tr>
+<td><strong>480</strong></td>
+<td><strong>360</strong></td>
+<td>338</td>
+<td>810</td>
+<td>405</td>
+<td>338</td>
+<td>324</td>
+<td>270</td>
+<td>243</td>
+<td>203</td>
+<td>162</td>
+<td>135</td>
+<td>108</td>
+</tr>
+<tr>
+<td><strong>512</strong></td>
+<td><strong>288</strong></td>
+<td>288</td>
+<td>691</td>
+<td>346</td>
+<td>288</td>
+<td>276</td>
+<td>230</td>
+<td>207</td>
+<td>173</td>
+<td>138</td>
+<td>115</td>
+<td>92</td>
+</tr>
+<tr>
+<td><strong>512</strong></td>
+<td><strong>384</strong></td>
+<td>384</td>
+<td>922</td>
+<td>461</td>
+<td>384</td>
+<td>369</td>
+<td>307</td>
+<td>276</td>
+<td>230</td>
+<td>184</td>
+<td>154</td>
+<td>123</td>
+</tr>
+<tr>
+<td><strong>640</strong></td>
+<td><strong>240</strong></td>
+<td>300</td>
+<td>720</td>
+<td>360</td>
+<td>300</td>
+<td>288</td>
+<td>240</td>
+<td>216</td>
+<td>180</td>
+<td>144</td>
+<td>120</td>
+<td>96</td>
+</tr>
+<tr>
+<td><strong>640</strong></td>
+<td><strong>288</strong></td>
+<td>360</td>
+<td>864</td>
+<td>432</td>
+<td>360</td>
+<td>346</td>
+<td>288</td>
+<td>259</td>
+<td>216</td>
+<td>173</td>
+<td>144</td>
+<td>115</td>
+</tr>
+<tr>
+<td><strong>640</strong></td>
+<td><strong>360</strong></td>
+<td>450</td>
+<td>1,080</td>
+<td>540</td>
+<td>450</td>
+<td>432</td>
+<td>360</td>
+<td>324</td>
+<td>270</td>
+<td>216</td>
+<td>180</td>
+<td>144</td>
+</tr>
+<tr>
+<td><strong>640</strong></td>
+<td><strong>480</strong></td>
+<td>600</td>
+<td>1,440</td>
+<td>720</td>
+<td>600</td>
+<td>576</td>
+<td>480</td>
+<td>432</td>
+<td>360</td>
+<td>288</td>
+<td>240</td>
+<td>192</td>
+</tr>
+<tr>
+<td><strong>648</strong></td>
+<td><strong>486</strong></td>
+<td>615</td>
+<td>1,476</td>
+<td>738</td>
+<td>615</td>
+<td>590</td>
+<td>492</td>
+<td>443</td>
+<td>369</td>
+<td>295</td>
+<td>246</td>
+<td>197</td>
+</tr>
+<tr>
+<td><strong>704</strong></td>
+<td><strong>480</strong></td>
+<td>660</td>
+<td>1,584</td>
+<td>792</td>
+<td>660</td>
+<td>634</td>
+<td>528</td>
+<td>475</td>
+<td>396</td>
+<td>317</td>
+<td>264</td>
+<td>211</td>
+</tr>
+<tr>
+<td><strong>704</strong></td>
+<td><strong>576</strong></td>
+<td>792</td>
+<td>1,901</td>
+<td>950</td>
+<td>792</td>
+<td>760</td>
+<td>634</td>
+<td>570</td>
+<td>475</td>
+<td>380</td>
+<td>317</td>
+<td>253</td>
+</tr>
+<tr>
+<td><strong>720</strong></td>
+<td><strong>240</strong></td>
+<td>338</td>
+<td>810</td>
+<td>405</td>
+<td>338</td>
+<td>324</td>
+<td>270</td>
+<td>243</td>
+<td>203</td>
+<td>162</td>
+<td>135</td>
+<td>108</td>
+</tr>
+<tr>
+<td><strong>720</strong></td>
+<td><strong>288</strong></td>
+<td>405</td>
+<td>972</td>
+<td>486</td>
+<td>405</td>
+<td>389</td>
+<td>324</td>
+<td>292</td>
+<td>243</td>
+<td>194</td>
+<td>162</td>
+<td>130</td>
+</tr>
+<tr>
+<td><strong>720</strong></td>
+<td><strong>380</strong></td>
+<td>534</td>
+<td>1,283</td>
+<td>641</td>
+<td>534</td>
+<td>513</td>
+<td>428</td>
+<td>385</td>
+<td>321</td>
+<td>257</td>
+<td>214</td>
+<td>171</td>
+</tr>
+<tr>
+<td><strong>720</strong></td>
+<td><strong>400</strong></td>
+<td>563</td>
+<td>1,350</td>
+<td>675</td>
+<td>563</td>
+<td>540</td>
+<td>450</td>
+<td>405</td>
+<td>338</td>
+<td>270</td>
+<td>225</td>
+<td>180</td>
+</tr>
+<tr>
+<td><strong>720</strong></td>
+<td><strong>480</strong></td>
+<td>675</td>
+<td>1,620</td>
+<td>810</td>
+<td>675</td>
+<td>648</td>
+<td>540</td>
+<td>486</td>
+<td>405</td>
+<td>324</td>
+<td>270</td>
+<td>216</td>
+</tr>
+<tr>
+<td><strong>720</strong></td>
+<td><strong>576</strong></td>
+<td>810</td>
+<td>1,944</td>
+<td>972</td>
+<td>810</td>
+<td>778</td>
+<td>648</td>
+<td>583</td>
+<td>486</td>
+<td>389</td>
+<td>324</td>
+<td>259</td>
+</tr>
+<tr>
+<td><strong>768</strong></td>
+<td><strong>432</strong></td>
+<td>648</td>
+<td>1,555</td>
+<td>778</td>
+<td>648</td>
+<td>622</td>
+<td>518</td>
+<td>467</td>
+<td>389</td>
+<td>311</td>
+<td>259</td>
+<td>207</td>
+</tr>
+<tr>
+<td><strong>768</strong></td>
+<td><strong>576</strong></td>
+<td>864</td>
+<td>2,074</td>
+<td>1,037</td>
+<td>864</td>
+<td>829</td>
+<td>691</td>
+<td>622</td>
+<td>518</td>
+<td>415</td>
+<td>346</td>
+<td>276</td>
+</tr>
+<tr>
+<td><strong>800</strong></td>
+<td><strong>450</strong></td>
+<td>703</td>
+<td>1,688</td>
+<td>844</td>
+<td>703</td>
+<td>675</td>
+<td>563</td>
+<td>506</td>
+<td>422</td>
+<td>338</td>
+<td>281</td>
+<td>225</td>
+</tr>
+<tr>
+<td><strong>800</strong></td>
+<td><strong>600</strong></td>
+<td>938</td>
+<td>2,250</td>
+<td>1,125</td>
+<td>938</td>
+<td>900</td>
+<td>750</td>
+<td>675</td>
+<td>563</td>
+<td>450</td>
+<td>375</td>
+<td>300</td>
+</tr>
+<tr>
+<td><strong>960</strong></td>
+<td><strong>540</strong></td>
+<td>1,013</td>
+<td>2,430</td>
+<td>1,215</td>
+<td>1,013</td>
+<td>972</td>
+<td>810</td>
+<td>729</td>
+<td>608</td>
+<td>486</td>
+<td>405</td>
+<td>324</td>
+</tr>
+<tr>
+<td><strong>960</strong></td>
+<td><strong>720</strong></td>
+<td>1,350</td>
+<td>3,240</td>
+<td>1,620</td>
+<td>1,350</td>
+<td>1,296</td>
+<td>1,080</td>
+<td>972</td>
+<td>810</td>
+<td>648</td>
+<td>540</td>
+<td>432</td>
+</tr>
+<tr>
+<td><strong>1024</strong></td>
+<td><strong>576</strong></td>
+<td>1,152</td>
+<td>2,765</td>
+<td>1,382</td>
+<td>1,152</td>
+<td>1,106</td>
+<td>922</td>
+<td>829</td>
+<td>691</td>
+<td>553</td>
+<td>461</td>
+<td>369</td>
+</tr>
+<tr>
+<td><strong>1024</strong></td>
+<td><strong>768</strong></td>
+<td>1,536</td>
+<td>3,686</td>
+<td>1,843</td>
+<td>1,536</td>
+<td>1,475</td>
+<td>1,229</td>
+<td>1,106</td>
+<td>922</td>
+<td>737</td>
+<td>614</td>
+<td>492</td>
+</tr>
+<tr>
+<td><strong>1024</strong></td>
+<td><strong>1080</strong></td>
+<td>2,160</td>
+<td>5,184</td>
+<td>2,592</td>
+<td>2,160</td>
+<td>2,074</td>
+<td>1,728</td>
+<td>1,555</td>
+<td>1,296</td>
+<td>1,037</td>
+<td>864</td>
+<td>691</td>
+</tr>
+<tr>
+<td><strong>1280</strong></td>
+<td><strong>720</strong></td>
+<td>1,800</td>
+<td>4,320</td>
+<td>2,160</td>
+<td>1,800</td>
+<td>1,728</td>
+<td>1,440</td>
+<td>1,296</td>
+<td>1,080</td>
+<td>864</td>
+<td>720</td>
+<td>576</td>
+</tr>
+<tr>
+<td><strong>1280</strong></td>
+<td><strong>960</strong></td>
+<td>2,400</td>
+<td>5,760</td>
+<td>2,880</td>
+<td>2,400</td>
+<td>2,304</td>
+<td>1,920</td>
+<td>1,728</td>
+<td>1,440</td>
+<td>1,152</td>
+<td>960</td>
+<td>768</td>
+</tr>
+<tr>
+<td><strong>1280</strong></td>
+<td><strong>1080</strong></td>
+<td>2,700</td>
+<td>6,480</td>
+<td>3,240</td>
+<td>2,700</td>
+<td>2,592</td>
+<td>2,160</td>
+<td>1,944</td>
+<td>1,620</td>
+<td>1,296</td>
+<td>1,080</td>
+<td>864</td>
+</tr>
+<tr>
+<td><strong>1360</strong></td>
+<td><strong>765</strong></td>
+<td>2,032</td>
+<td>4,877</td>
+<td>2,438</td>
+<td>2,032</td>
+<td>1,951</td>
+<td>1,626</td>
+<td>1,463</td>
+<td>1,219</td>
+<td>975</td>
+<td>813</td>
+<td>650</td>
+</tr>
+<tr>
+<td><strong>1366</strong></td>
+<td><strong>768</strong></td>
+<td>2,049</td>
+<td>4,918</td>
+<td>2,459</td>
+<td>2,049</td>
+<td>1,967</td>
+<td>1,639</td>
+<td>1,475</td>
+<td>1,229</td>
+<td>984</td>
+<td>820</td>
+<td>656</td>
+</tr>
+<tr>
+<td><strong>1600</strong></td>
+<td><strong>900</strong></td>
+<td>2,813</td>
+<td>6,750</td>
+<td>3,375</td>
+<td>2,813</td>
+<td>2,700</td>
+<td>2,250</td>
+<td>2,025</td>
+<td>1,688</td>
+<td>1,350</td>
+<td>1,125</td>
+<td>900</td>
+</tr>
+<tr>
+<td><strong>1600</strong></td>
+<td><strong>1200</strong></td>
+<td>3,750</td>
+<td>9,000</td>
+<td>4,500</td>
+<td>3,750</td>
+<td>3,600</td>
+<td>3,000</td>
+<td>2,700</td>
+<td>2,250</td>
+<td>1,800</td>
+<td>1,500</td>
+<td>1,200</td>
+</tr>
+<tr>
+<td><strong>1920</strong></td>
+<td><strong>1080</strong></td>
+<td>4,050</td>
+<td>9,720</td>
+<td>4,860</td>
+<td>4,050</td>
+<td>3,888</td>
+<td>3,240</td>
+<td>2,916</td>
+<td>2,430</td>
+<td>1,944</td>
+<td>1,620</td>
+<td>1,296</td>
+</tr>
+</tbody></table>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/GQNM-EeO4GNvEL0bECjmoA" alt="img"></p>
+<hr>
+<h2 id="大屏直播方案："><a href="#大屏直播方案：" class="headerlink" title="大屏直播方案："></a><strong>大屏直播方案：</strong></h2><p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/image19.png" alt="image19"></p>
+<hr>
+<h2 id="直播软件（此处不考虑硬件）"><a href="#直播软件（此处不考虑硬件）" class="headerlink" title="直播软件（此处不考虑硬件）"></a><strong>直播软件（此处不考虑硬件）</strong></h2><p>OBS：<a href="https://obsproject.com/">https://obsproject.com/</a></p>
+<p>OBS插件：<a href="https://obsproject.com/forum/">https://obsproject.com/forum/</a>        <a href="https://www.obsapp.com/">https://www.obsapp.com/</a></p>
+<p>腾讯云直播导播台：<a href="https://cloud.tencent.com/product/lvc">https://cloud.tencent.com/product/lvc</a></p>
+<p>vMix：<a href="https://www.vmix.com/">https://www.vmix.com/</a></p>
+<p>Wirecast Pro：<a href="http://www.telestream.net/wirecast/overview.htm">http://www.telestream.net/wirecast/overview.htm</a></p>
+<p>mimoLive：自行下载（MAC）</p>
+<p>纳加导播软件：<a href="http://www.nagasoft.cn/xzzq/">http://www.nagasoft.cn/xzzq/</a></p>
+<p>Mshow：<a href="http://mshow.yy.com/">http://mshow.yy.com/</a></p>
+<p>禾鸟科技：<a href="http://www.hemiaolive.com/">http://www.hemiaolive.com/</a></p>
+<p>雷特宜播：<a href="http://www.videostar.com/vislive/">http://www.videostar.com/vislive/</a></p>
+<p>2D虚拟形象：live 2D：<a href="https://www.live2d.com/">https://www.live2d.com/</a></p>
+<p>3D虚拟形象：VUP：<a href="http://www.vlivemax.com/">http://www.vlivemax.com/</a></p>
+<p>​           facering：<a href="http://www.facerigcn.com/">http://www.facerigcn.com/</a></p>
+<p>​           live 3D：<a href="https://live3d.io/">https://live3d.io/</a></p>
+<p>电视频道视频播放软件：Insta Playout （自行下载）</p>
+<hr>
+<h2 id="关于推流（以视频号为示范，其他平台同理）"><a href="#关于推流（以视频号为示范，其他平台同理）" class="headerlink" title="关于推流（以视频号为示范，其他平台同理）"></a><strong>关于推流（以视频号为示范，其他平台同理）</strong></h2><p> 1、完成视频号的认证，认证条件大家可以看下手机。</p>
+<p>2、等待官方推流开通通知，开通之后会收到私信，访问视频号助手后台：<a href="https://link.zhihu.com/?target=https://channels.weixin.qq.com/setting/member">https://channels.weixin.qq.com</a></p>
+<p>3、在视频号助手后台设置直播，获得推流地址，如下图所示：</p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/image20-tuya.png" alt="image20-tuya"></p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/image21-tuya.png" alt="image21-tuya"></p>
+<p>4.打开导播软件，设置推流地址：（各导播软件添加推流地址的位置不同）</p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/image22-tuya.png" alt="image22-tuya"></p>
+<p>5.底部出现绿灯，表示推流成功。（可用其他手机、电脑进行验证）</p>
+<hr>
+<h2 id="RTMP推流和拉流问题解答"><a href="#RTMP推流和拉流问题解答" class="headerlink" title="RTMP推流和拉流问题解答"></a>RTMP推流和拉流问题解答</h2><h3 id="一、名词解释："><a href="#一、名词解释：" class="headerlink" title="一、名词解释："></a><strong>一、名词解释：</strong></h3><p>RTMP是Real Time Messaging Protocol（实时消息传输协议）的首字母缩写。该协议基于TCP，是一个协议族，包括RTMP基本协议及RTMPT&#x2F;RTMPS&#x2F;RTMPE等多种变种。RTMP是一种设计用来进行实时数据通信的网络协议，主要用来在Flash&#x2F;AIR平台和支持RTMP协议的流媒体&#x2F;交互服务器之间进行音视频和数据通信。</p>
+<p>推流：为将直播内容推送至服务器的过程；</p>
+<p>拉流：为服务器已有直播内容，用指定地址进行拉取的过程。</p>
+<p>RTMP地址规则：</p>
+<p>第一种(比较常见)：</p>
+<p>rtmp:&#x2F;&#x2F;域名或ip:端口（如没有，则默认是1935）&#x2F;应用名&#x2F;串流名称</p>
+<p>第二种(比较少见)：</p>
+<p>rtmp:&#x2F;&#x2F;域名或ip:端口（如没有，则默认是1935）&#x2F;串流名称</p>
+<p>推流示例地址：</p>
+<p>rtmp:&#x2F;&#x2F;push.test.com&#x2F;appname&#x2F;streamname</p>
+<p>等同于：rtmp:&#x2F;&#x2F;push.test.com:1935&#x2F;appname&#x2F;streamname</p>
+<p>拉流示例地址：</p>
+<p>rtmp:&#x2F;&#x2F;pull.test.com&#x2F;appname&#x2F;streamname</p>
+<p>等同于：rtmp:&#x2F;&#x2F;pull.test.com:1935&#x2F;appname&#x2F;streamname</p>
+<h3 id="二、RTMP推流失败原因及解决方法："><a href="#二、RTMP推流失败原因及解决方法：" class="headerlink" title="二、RTMP推流失败原因及解决方法："></a><strong>二、RTMP推流失败原因及解决方法：</strong></h3><h4 id="1、地址填写错误"><a href="#1、地址填写错误" class="headerlink" title="1、地址填写错误"></a><strong>1、地址填写错误</strong></h4><p>A、一般常见的错误是填写两行时，分割错误或直接填写成一行；</p>
+<p>解决方法：参照上面正确的填写方式。</p>
+<p>B、推流地址填写成拉流地址，目前大部分直播平台的推流地址和拉流地址都是不一样的，极个别是一样的；</p>
+<p>解决方法：填写前跟RTMP地址提供商沟通清楚需要填写的是推流地址，而不是拉流地址；</p>
+<h4 id="2、网络问题"><a href="#2、网络问题" class="headerlink" title="2、网络问题"></a><strong>2、网络问题</strong></h4><p>A、推到服务器的媒体流码率超过当前推流所在环境的网络上传带宽；</p>
+<p>解决方法：开播前用<a href="http://www.speedtest.cn/%E6%88%96http://www.speedtest.net%E6%B5%8B%E8%AF%95%E4%B8%8B%E5%BD%93%E5%89%8D%E7%9A%84%E7%BD%91%E7%BB%9C%E5%B8%A6%E5%AE%BD%EF%BC%8C%E7%84%B6%E5%90%8E%E5%86%8D%E6%A0%B9%E6%8D%AE%E5%88%86%E8%BE%A8%E7%8E%87%E7%A0%81%E7%8E%87%E8%A1%A8%E5%8D%87%E7%BA%A7%E5%B8%A6%E5%AE%BD%E6%88%96%E9%99%8D%E4%BD%8E%E6%8E%A8%E6%B5%81%E7%A0%81%E7%8E%87%EF%BC%9B">http://www.speedtest.cn/或http://www.speedtest.net测试下当前的网络带宽，然后再根据分辨率码率表升级带宽或降低推流码率；</a></p>
+<p>B、电脑使用的DNS服务器解析不了推流地址里的域名(编码器推流也类似)；</p>
+<p>解决方法：使用ping mcs.rtmp.yy.com命令，如无法ping通，说明DNS服务器无法解析，可网络搜索电脑所在地区的DNS服务器ip，然后填写到电脑中；还可以试试谷歌公开的DNS服务器ip：8.8.8.8，或国内公开的DNS服务器ip：</p>
+<p>CNNIC：1.2.4.8和210.2.4.8</p>
+<p>南京信风：114.114.114.114和114.114.115.115(公共版)，114.114.114.119和114.114.115.119(反木马版)，114.114.114.110和114.114.115.110(校园版或绿色版)</p>
+<p>阿里巴巴&#x2F;中国万网：223.5.5.5和223.6.6.6</p>
+<p>百度：180.76.76.76</p>
+<p>OneDNS：112.124.47.27和114.215.126.16</p>
+<p>DNS派：101.226.4.6和218.30.118.6(电信)，123.125.81.6和140.207.198.6(联通)</p>
+<p>C、网络运营商限制或路由器限制了某些端口，导致推流失败；</p>
+<p>解决方法：win7以上系统需要在【控制面板-&gt;程序和功能-&gt;打开或关闭windows功能】里打开telnet客户端，然后在命令行输入：telnet mcs.rtmp.yy.com 1935，如果有提示错误，说明端口被禁用，请联系网络运营商或设置路由器开放RTMP默认端口1935，或更换无此限制的网络；</p>
+<h3 id="三、RTMP拉流失败原因及解决方法："><a href="#三、RTMP拉流失败原因及解决方法：" class="headerlink" title="三、RTMP拉流失败原因及解决方法："></a><strong>三、RTMP拉流失败原因及解决方法：</strong></h3><p>可使用常见支持播放RTMP流的播放器进行播放(比如VLC、PotPlayer等)，如提示无法播放，要么服务器没有推流，要么网络有问题，可按照下面各种解决方法进行排查：</p>
+<h4 id="1、地址填写错误-1"><a href="#1、地址填写错误-1" class="headerlink" title="1、地址填写错误"></a><strong>1、地址填写错误</strong></h4><p>A、填写非rtmp的流地址；</p>
+<p>解决方法：正确填写RTMP地址。</p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/image23.png" alt="image23"></p>
+<p>B、拉流地址填写成推流地址，目前大部分直播平台的推流地址和拉流地址都是不一样的，极个别是一样的；</p>
+<p>解决方法：填写前跟RTMP地址提供商沟通清楚需要填写的是拉流地址，而不是推流地址；</p>
+<h4 id="2、网络问题-1"><a href="#2、网络问题-1" class="headerlink" title="2、网络问题"></a><strong>2、网络问题</strong></h4><p>A、网络运营商或提供流媒体的服务器出口路由器限制了某些端口，导致拉流失败(比较少见)；</p>
+<p>解决方法：可采样【telnet 服务器ip地址 RTMP端口】方式判断，如有限制，进行相应设置或解除限制；</p>
+<p>B、网络使用高峰期，网络拥塞，导致拉流超时；</p>
+<p>解决方法：将提供直播内容的服务器部署到网络带宽比较充裕、网络速度比较好的机房，将拉流服务器都分散处于各个核心机房，带宽充裕，网络速度比较好。</p>
+<hr>
+]]></content>
+      <categories>
+        <category>项目</category>
+      </categories>
+      <tags>
+        <tag>项目</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>茅台茅韵宣传片</title>
+    <url>/2022/05/07/%E8%8C%85%E5%8F%B0%E8%8C%85%E9%9F%B5%E5%AE%A3%E4%BC%A0%E7%89%87/</url>
+    <content><![CDATA[<h2 id="前期设计"><a href="#前期设计" class="headerlink" title="前期设计"></a>前期设计</h2><p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E8%258C%2585%25E5%258F%25B0.jpg" alt="茅台"></p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E6%25AF%259B%25E9%259F%25B5.jpg" alt="毛韵"></p>
+]]></content>
+      <categories>
+        <category>舞台</category>
+      </categories>
+      <tags>
+        <tag>舞台</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>过年啦-冬奥一起玩</title>
+    <url>/2022/05/07/%E8%BF%87%E5%B9%B4%E5%95%A6-%E5%86%AC%E5%A5%A5%E4%B8%80%E8%B5%B7%E7%8E%A9/</url>
+    <content><![CDATA[<h2 id="效果图"><a href="#效果图" class="headerlink" title="效果图"></a>效果图</h2><p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E6%25BB%2591%25E5%2586%25B0%25E5%259C%25BA0027.jpg" alt="滑冰场0027"></p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E5%25BE%25AE%25E4%25BF%25A1%25E5%259B%25BE%25E7%2589%2587_20220117234737.jpg" alt="微信图片_20220117234737"></p>
+<p><a href="https://www.mxdia.com/posts/Yb9A43zKzyZz">过年啦-冬奥一起玩 - 不业文化 -MXDIA乂媒体</a></p>
+]]></content>
+      <categories>
+        <category>舞台</category>
+      </categories>
+      <tags>
+        <tag>舞台</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>阿云嘎-心岛</title>
+    <url>/2022/05/07/%E9%98%BF%E4%BA%91%E5%98%8E-%E5%BF%83%E5%B2%9B/</url>
+    <content><![CDATA[<h2 id="效果图"><a href="#效果图" class="headerlink" title="效果图"></a>效果图</h2><p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E5%25BF%2583%25E5%25B2%259B4.jpg"></p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E5%25BF%2583%25E5%25B2%259B5.jpg"></p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E9%2598%25BF%25E4%25BA%2591%25E5%2598%258E4.gif"></p>
+<h2 id="现场效果"><a href="#现场效果" class="headerlink" title="现场效果"></a>现场效果</h2><p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E9%2598%25BF%25E4%25BA%2591%25E5%2598%258E2.gif"></p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E9%2598%25BF%25E4%25BA%2591%25E5%2598%258E1.gif"></p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E9%2598%25BF%25E4%25BA%2591%25E5%2598%258E3.gif"></p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E9%2598%25BF%25E4%25BA%2591%25E5%2598%258E%25E5%25B9%2595%25E5%2590%258E.png"></p>
+<h2 id="用户反馈"><a href="#用户反馈" class="headerlink" title="用户反馈"></a>用户反馈</h2><p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E5%25BF%2583%25E5%25B2%259B22.png"></p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E5%25BF%2583%25E5%25B2%259B33.png"></p>
+<iframe src="https://v6.stream.tencentmusic.com/0b53yeabyaaauaai6gofrjrkdqoddtaqahaa.f160030.mp4?dis_k=580523d3d658d86e2a73b3ddabd65df4&dis_t=1686102385&local=1&fromtag=1061014" scrolling="no" border="0" height="800" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>]]></content>
+      <categories>
+        <category>舞台</category>
+      </categories>
+      <tags>
+        <tag>舞台</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>黑群晖无损降级</title>
+    <url>/2023/03/06/%E9%BB%91%E7%BE%A4%E6%99%96%E6%97%A0%E6%8D%9F%E9%99%8D%E7%BA%A7/</url>
+    <content><![CDATA[<p><strong>无损的降级重装黑群晖系统：</strong></p>
+<p>一、物理机安装的，需要找一个U盘，刷PE系统到U盘。</p>
+<p>​       虚拟机安装的，只需要找一个PE的ISO镜像，不需要用到U盘。</p>
+<p>二、物理机安装的群晖，把刷好PE系统的U盘拿到安装群晖的主机插上，开机进BIOS设置从PE这个U盘启动。</p>
+<p>​       虚拟机安装群晖的，把虚拟机关机，把PE镜像的ISO挂到群晖虚拟机上，设置从ISO镜像启动。</p>
+<p>三、进入PE后，运行Diskgenius，在左边找到群晖的存储硬盘（标有1.42.6字样的分区）找到 etc 文件夹浏览文件，右键强制删除文件夹里VERSION 这个文件。</p>
+<p>四、在左边找到 etc.defaults 这个文件夹，右键强制删除文件夹里VERSION 这个文件。</p>
+<p>六、如果你有多个存储硬盘，把每个硬盘的 etc 和 etc.defaults 这两个文件夹的 VERSION 这个文件，强制删除，一个不留。</p>
+<p>七、如果你的群晖是用固态硬盘做引导或者你的群晖是用虚拟机安装的，找到 HD0 这个磁盘（标记有 ESP 字样的），右键，删除所有的分区。删除分区后，记得点一下左上角的“保存更改”。</p>
+<p>九、引导盘的所有分区删除了就行，不需要再建立，留空。</p>
+<p>十、固态硬盘做引导或者你的群晖是用虚拟机安装的，此时可以用写镜像软件把升级之前用的群晖引导文件刷到引导盘上。</p>
+<p>​       U盘做引导，此时你可以去把U盘还原空间， 然后把升级之前用的群晖引导文件刷到U盘上。</p>
+<p>十一、引导盘做好了以后，重启，设置从引导盘启动，会出现群晖引导菜单，手动选第二项（群晖型号版本号 Baremetal with Jun&#96;s Mod 版本号 Reinstall)回车。</p>
+<p>十二、在电脑上用群晖助手搜索，会搜索到群晖的IP地址，此时状态为可转移。此时显示的版本最低版本要求，低于此版本是无法安装的。</p>
+<p>十三、在浏览器输入群晖的IP打开，会出现群晖的安装界面，点：安装。</p>
+<p>十四、选择安装类型：选择“迁移” &gt; 手动安装 &gt; 浏览 &gt; 找到对应安装包（需与引导文件匹配） &gt; 立即安装</p>
+<table>
+    <tr>
+        <td>（1）DS3615、DS3617、DS916的1.02b引导，与之对应的系统安装包版本为该型号的6.1-15047至6.17-15284之间；</td>
+        <td>（2）DS3615和DS3617的1.03b引导，与之对应的系统安装包版本为该型号的6.2-23739至6.23-25426之间；</td>
+        <td>（3）DS918的1.04b引导，与之对应的系统安装包版本为该型号的6.2-23739至6.23-25426之间；</td>
+    </tr>
+</table>
+
+<p>十五、等到安装完成后群晖会自动重启，耐心等待几分钟，重新搜索后直到群晖显示“已就绪”就表示降级重装成功！（DS918重装时，如果是手动上传6.23版本的安装包，安装完成后系统会显示是6.23up3版本；而DS3615和DS3617重装6.23完成后，显示6.23版本而不是6.23up3版本。这是正常现象，无须担心。）</p>
+<p>十六、如果NAS主机配置有nvme固态硬盘给群晖做缓存盘，降级重装系统后有可能系统会提示缓存盘损毁，只需要重新打上nvme的补丁，重启后就正常了。如果NAS主机配置有nvme固态硬盘给群晖做存储盘的，降级重装系统后重新打上nvme的补丁，重启后nvme的存储盘也会正常显示的。</p>
+]]></content>
+      <categories>
+        <category>系统</category>
+      </categories>
+      <tags>
+        <tag>系统</tag>
+      </tags>
+  </entry>
+</search>
