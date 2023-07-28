@@ -135,34 +135,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Windows server WDS部署服务</title>
-    <url>/2016/09/02/Windows%20server%20WDS%E9%83%A8%E7%BD%B2%E6%9C%8D%E5%8A%A1/</url>
-    <content><![CDATA[<h2 id="WDS的创建"><a href="#WDS的创建" class="headerlink" title="WDS的创建"></a>WDS的创建</h2><p>1.在Windows server仪表盘中添加角色和功能。</p>
-<p>2.下一步到服务器角色勾选[工具]Windows部署服务工具，选择添加功能。 </p>
-<p>3.勾选[工具]DHCP服务器。</p>
-<p>4.修改服务器IP地址为固定IP，子网掩码255.255.255.0。</p>
-<p>5.一直下一步最后点击安装，安装完成后在仪表盘右上角通知中完成DHCP配置。</p>
-<p>6.在仪表盘右上角工具选项中打开DHCP工具，在IPv4右键新建作用域向导名称为x.x.x.0&#x2F;24(如：192.168.1.0&#x2F;24)，路由器（默认网关）输入刚刚设置的固定IP点击添加，下一步直至完成。</p>
-<p>7.在仪表盘点击WDS，在右侧服务器列表里找到创建好的服务器，右键打开Windows部署服务管理控制台，选择刚刚的服务器右键配置服务器，下一步，选择独立服务器，远程安装文件夹的位置选择一个非系统盘，下一步，PXE服务器初始设置选择响应所有客户端（已知和未知），下一步完成。</p>
-<p>8.拷贝系统镜像到D盘后右键装载（可多版本系统）。</p>
-<p>9.返回Windows部署服务中选择启动映像，添加启动映像，选择刚刚装载好的映像进入sources文件夹，选择boot.wim文件，等待映像信息读取完成后，修改映像名称，一直下一步完成即可。</p>
-<p>10.右键添加安装镜像，创建一个映像组名，下一步，文件位置选择刚刚装载好的映像进入sources文件夹，选择install.wim文件，可用映像选择需要的版本，下一步完成。（同一映像组可以添加多个系统镜像）</p>
-<p>11.选择对应服务器右键选择所有任务，启动（启动WDS部署服务）。</p>
-<p><strong>注意事项</strong>:</p>
-<p>1.如果需要同时装很多台电脑需要创建多播传输功能，一直下一步即可。</p>
-<p>2.客户机安装系统需要输入服务器管理员账号密码，账户名称为域名\administrator</p>
-<p>3.在此操作前需要先搭建好AD域。</p>
-<p>4.若想修改客户机安装系统时不需要输入服务器账号密码和选择操作，可以参考执行无人参与安装 （<a href="https://go.microsoft.com/fwlink/?linkid=89226">https://go.microsoft.com/fwlink/?LinkId=89226</a>） 和示例无人参与文件 （<a href="https://go.microsoft.com/fwlink/?linkid=122642">https://go.microsoft.com/fwlink/?LinkId=122642</a>）进行配置修改。</p>
-<h2 id="客户机重装操作"><a href="#客户机重装操作" class="headerlink" title="客户机重装操作"></a>客户机重装操作</h2><p>开机按F11（不用主板电脑启动项选项按键不同，需查看对应手册）选择网卡启动，选择对应服务器的IP地址，选择对应系统安装即可</p>
-]]></content>
-      <categories>
-        <category>系统</category>
-      </categories>
-      <tags>
-        <tag>系统</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>UE虚拟制片学习手册</title>
     <url>/2022/07/01/UE%E8%99%9A%E6%8B%9F%E5%88%B6%E7%89%87/</url>
     <content><![CDATA[<p>UE虚拟制片</p>
@@ -207,18 +179,25 @@
       </tags>
   </entry>
   <entry>
-    <title>使用Colab挂Sheepit积分</title>
-    <url>/2023/07/20/%E4%BD%BF%E7%94%A8Colab%E6%8C%82Sheepit%E7%A7%AF%E5%88%86/</url>
-    <content><![CDATA[<h2 id="打开Colab项目复制一个副本"><a href="#打开Colab项目复制一个副本" class="headerlink" title="打开Colab项目复制一个副本"></a>打开Colab项目复制一个副本</h2><a class="btn-anzhiyu outline larger" href="https://colab.research.google.com/drive/1JQzTIxAnC6dQc88MJi3UwurlIS8kJpJG?usp=sharing" 
-  title="Colab项目"><i class="fa-brands fa-google-drive"></i><span>Colab项目</span></a>
-
-<h2 id="打开Sheepit官网，并登录账号"><a href="#打开Sheepit官网，并登录账号" class="headerlink" title="打开Sheepit官网，并登录账号"></a>打开Sheepit官网，并登录账号</h2><a class="btn-anzhiyu outline larger" href="https://www.sheepit-renderfarm.com/home" 
-  title="SheepIt官网"><i class="fa-solid fa-cube"></i><span>SheepIt官网</span></a>
-
-<p>点击右上角头像选择Edit profile进入</p>
-<p>点击Render keys复制左下角<strong>Public key（公钥）</strong>到Colab项目中（公钥比填写密码更安全）</p>
-<p>填写用户名</p>
-<h2 id="依次运行三组代码"><a href="#依次运行三组代码" class="headerlink" title="依次运行三组代码"></a>依次运行三组代码</h2><p>这时打开Sheepit官网，点击头像My account，如果已连接的机器显示Tesla T4即可</p>
+    <title>Windows server WDS部署服务</title>
+    <url>/2016/09/02/Windows%20server%20WDS%E9%83%A8%E7%BD%B2%E6%9C%8D%E5%8A%A1/</url>
+    <content><![CDATA[<h2 id="WDS的创建"><a href="#WDS的创建" class="headerlink" title="WDS的创建"></a>WDS的创建</h2><p>1.在Windows server仪表盘中添加角色和功能。</p>
+<p>2.下一步到服务器角色勾选[工具]Windows部署服务工具，选择添加功能。 </p>
+<p>3.勾选[工具]DHCP服务器。</p>
+<p>4.修改服务器IP地址为固定IP，子网掩码255.255.255.0。</p>
+<p>5.一直下一步最后点击安装，安装完成后在仪表盘右上角通知中完成DHCP配置。</p>
+<p>6.在仪表盘右上角工具选项中打开DHCP工具，在IPv4右键新建作用域向导名称为x.x.x.0&#x2F;24(如：192.168.1.0&#x2F;24)，路由器（默认网关）输入刚刚设置的固定IP点击添加，下一步直至完成。</p>
+<p>7.在仪表盘点击WDS，在右侧服务器列表里找到创建好的服务器，右键打开Windows部署服务管理控制台，选择刚刚的服务器右键配置服务器，下一步，选择独立服务器，远程安装文件夹的位置选择一个非系统盘，下一步，PXE服务器初始设置选择响应所有客户端（已知和未知），下一步完成。</p>
+<p>8.拷贝系统镜像到D盘后右键装载（可多版本系统）。</p>
+<p>9.返回Windows部署服务中选择启动映像，添加启动映像，选择刚刚装载好的映像进入sources文件夹，选择boot.wim文件，等待映像信息读取完成后，修改映像名称，一直下一步完成即可。</p>
+<p>10.右键添加安装镜像，创建一个映像组名，下一步，文件位置选择刚刚装载好的映像进入sources文件夹，选择install.wim文件，可用映像选择需要的版本，下一步完成。（同一映像组可以添加多个系统镜像）</p>
+<p>11.选择对应服务器右键选择所有任务，启动（启动WDS部署服务）。</p>
+<p><strong>注意事项</strong>:</p>
+<p>1.如果需要同时装很多台电脑需要创建多播传输功能，一直下一步即可。</p>
+<p>2.客户机安装系统需要输入服务器管理员账号密码，账户名称为域名\administrator</p>
+<p>3.在此操作前需要先搭建好AD域。</p>
+<p>4.若想修改客户机安装系统时不需要输入服务器账号密码和选择操作，可以参考执行无人参与安装 （<a href="https://go.microsoft.com/fwlink/?linkid=89226">https://go.microsoft.com/fwlink/?LinkId=89226</a>） 和示例无人参与文件 （<a href="https://go.microsoft.com/fwlink/?linkid=122642">https://go.microsoft.com/fwlink/?LinkId=122642</a>）进行配置修改。</p>
+<h2 id="客户机重装操作"><a href="#客户机重装操作" class="headerlink" title="客户机重装操作"></a>客户机重装操作</h2><p>开机按F11（不用主板电脑启动项选项按键不同，需查看对应手册）选择网卡启动，选择对应服务器的IP地址，选择对应系统安装即可</p>
 ]]></content>
       <categories>
         <category>系统</category>
@@ -266,6 +245,27 @@
       </tags>
   </entry>
   <entry>
+    <title>使用Colab挂Sheepit积分</title>
+    <url>/2023/07/20/%E4%BD%BF%E7%94%A8Colab%E6%8C%82Sheepit%E7%A7%AF%E5%88%86/</url>
+    <content><![CDATA[<h2 id="打开Colab项目复制一个副本"><a href="#打开Colab项目复制一个副本" class="headerlink" title="打开Colab项目复制一个副本"></a>打开Colab项目复制一个副本</h2><a class="btn-anzhiyu outline larger" href="https://colab.research.google.com/drive/1JQzTIxAnC6dQc88MJi3UwurlIS8kJpJG?usp=sharing" 
+  title="Colab项目"><i class="fa-brands fa-google-drive"></i><span>Colab项目</span></a>
+
+<h2 id="打开Sheepit官网，并登录账号"><a href="#打开Sheepit官网，并登录账号" class="headerlink" title="打开Sheepit官网，并登录账号"></a>打开Sheepit官网，并登录账号</h2><a class="btn-anzhiyu outline larger" href="https://www.sheepit-renderfarm.com/home" 
+  title="SheepIt官网"><i class="fa-solid fa-cube"></i><span>SheepIt官网</span></a>
+
+<p>点击右上角头像选择Edit profile进入</p>
+<p>点击Render keys复制左下角<strong>Public key（公钥）</strong>到Colab项目中（公钥比填写密码更安全）</p>
+<p>填写用户名</p>
+<h2 id="依次运行三组代码"><a href="#依次运行三组代码" class="headerlink" title="依次运行三组代码"></a>依次运行三组代码</h2><p>这时打开Sheepit官网，点击头像My account，如果已连接的机器显示Tesla T4即可</p>
+]]></content>
+      <categories>
+        <category>系统</category>
+      </categories>
+      <tags>
+        <tag>系统</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>卖奶茶的小女孩</title>
     <url>/2023/03/06/%E5%8D%96%E5%A5%B6%E8%8C%B6%E7%9A%84%E5%B0%8F%E5%A5%B3%E5%AD%A9/</url>
     <content><![CDATA[<h2 id="买奶茶的小女孩"><a href="#买奶茶的小女孩" class="headerlink" title="买奶茶的小女孩"></a>买奶茶的小女孩</h2><p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E4%25B9%25B0%25E5%25A5%25B6%25E8%258C%25B6%25E7%259A%2584%25E5%25B0%258F%25E5%25A5%25B3%25E5%25AD%25A9_%25E9%25A1%25B5%25E9%259D%25A2_1-tuya.jpg" alt="买奶茶的小女孩_页面_1-tuya"></p>
@@ -281,22 +281,6 @@
       </categories>
       <tags>
         <tag>项目</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>第五届黑龙江省旅发大会</title>
-    <url>/2022/05/07/%E5%A4%A7%E5%BA%86%E6%97%85%E6%B8%B8%E5%8F%91%E5%B1%95%E5%A4%A7%E4%BC%9A/</url>
-    <content><![CDATA[<h2 id="片头分镜"><a href="#片头分镜" class="headerlink" title="片头分镜"></a>片头分镜</h2><p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E6%2580%25BB.jpg" alt="总"></p>
-<h2 id="效果图"><a href="#效果图" class="headerlink" title="效果图"></a>效果图</h2><h3 id="定居"><a href="#定居" class="headerlink" title="定居"></a>定居</h3><p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E7%25AF%2587%25E7%25AB%25A01-4%25E5%25AE%259A%25E5%25B1%2585-%25E8%258D%2589%25E5%258E%259F%25E6%2595%2596%25E5%258C%25855.jpg" alt="篇章1-4定居-草原敖包5"></p>
-<h3 id="欢腾“骏马归来”"><a href="#欢腾“骏马归来”" class="headerlink" title="欢腾“骏马归来”"></a>欢腾“骏马归来”</h3><p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/1212312123.jpg" alt="1212312123"></p>
-<h3 id="三代铁人-现代化建设环境"><a href="#三代铁人-现代化建设环境" class="headerlink" title="三代铁人-现代化建设环境"></a>三代铁人-现代化建设环境</h3><p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E7%25AC%25AC%25E4%25B8%2589%25E4%25BB%25A3%25E9%2593%2581%25E4%25BA%25BA%25E6%259D%258E%25E6%2596%25B0%25E6%25B0%2591.jpg" alt="第三代铁人李新民"></p>
-<h3 id="我的家-百湖美景"><a href="#我的家-百湖美景" class="headerlink" title="我的家-百湖美景"></a>我的家-百湖美景</h3><p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E6%2588%2591%25E7%259A%2584%25E5%25AE%25B62.jpg" alt="我的家2"></p>
-]]></content>
-      <categories>
-        <category>舞台</category>
-      </categories>
-      <tags>
-        <tag>舞台</tag>
       </tags>
   </entry>
   <entry>
@@ -359,13 +343,13 @@
       </tags>
   </entry>
   <entry>
-    <title>安徽省第十五届运动会开幕式</title>
-    <url>/2022/05/07/%E5%AE%89%E5%BE%BD%E7%9C%81%E8%BF%90%E5%8A%A8%E4%BC%9A/</url>
-    <content><![CDATA[<h2 id="项目背景"><a href="#项目背景" class="headerlink" title="项目背景"></a>项目背景</h2><p>“体育强则中国强，国运兴则体育兴”，近年来国家始终强调和重视体育事业，恰逢滁州建市三十周年，本次安徽省十五运在滁州盛大举办，也成为了一扇对外展示滁州特色的重要窗口。</p>
-<h3 id="《惊雷之声》"><a href="#《惊雷之声》" class="headerlink" title="《惊雷之声》"></a><strong>《惊雷之声》</strong></h3><p>以充满张力的群体戏剧表演配合投影画面、大视觉装置，用艺术手段再现“18手印”的壮举，展现滁州人民敢为人先的开创精神，以及这片江淮大地上孕育的热血豪情。</p>
-<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E7%25A0%25B4%25E5%2586%25B0%25E4%25B9%258B%25E5%258B%2587_%25E6%2596%2587%25E5%25AD%2597-tuya.jpg" alt="破冰之勇_文字-tuya"></p>
-<img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/640.gif" alt="640" style="zoom:200%;" />
-
+    <title>第五届黑龙江省旅发大会</title>
+    <url>/2022/05/07/%E5%A4%A7%E5%BA%86%E6%97%85%E6%B8%B8%E5%8F%91%E5%B1%95%E5%A4%A7%E4%BC%9A/</url>
+    <content><![CDATA[<h2 id="片头分镜"><a href="#片头分镜" class="headerlink" title="片头分镜"></a>片头分镜</h2><p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E6%2580%25BB.jpg" alt="总"></p>
+<h2 id="效果图"><a href="#效果图" class="headerlink" title="效果图"></a>效果图</h2><h3 id="定居"><a href="#定居" class="headerlink" title="定居"></a>定居</h3><p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E7%25AF%2587%25E7%25AB%25A01-4%25E5%25AE%259A%25E5%25B1%2585-%25E8%258D%2589%25E5%258E%259F%25E6%2595%2596%25E5%258C%25855.jpg" alt="篇章1-4定居-草原敖包5"></p>
+<h3 id="欢腾“骏马归来”"><a href="#欢腾“骏马归来”" class="headerlink" title="欢腾“骏马归来”"></a>欢腾“骏马归来”</h3><p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/1212312123.jpg" alt="1212312123"></p>
+<h3 id="三代铁人-现代化建设环境"><a href="#三代铁人-现代化建设环境" class="headerlink" title="三代铁人-现代化建设环境"></a>三代铁人-现代化建设环境</h3><p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E7%25AC%25AC%25E4%25B8%2589%25E4%25BB%25A3%25E9%2593%2581%25E4%25BA%25BA%25E6%259D%258E%25E6%2596%25B0%25E6%25B0%2591.jpg" alt="第三代铁人李新民"></p>
+<h3 id="我的家-百湖美景"><a href="#我的家-百湖美景" class="headerlink" title="我的家-百湖美景"></a>我的家-百湖美景</h3><p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E6%2588%2591%25E7%259A%2584%25E5%25AE%25B62.jpg" alt="我的家2"></p>
 ]]></content>
       <categories>
         <category>舞台</category>
@@ -398,6 +382,22 @@
 </ol>
 <p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/image-20230610171713320.png" alt="image-20230610171713320"></p>
 <p>注意：要保存直播的话，视频开始播放了就尽快开始“保存流”，或者准备保存前，按Ctrl+Y重载一下链接（双击播放列表的链接也行），再点开始。不要等播放了好几分钟才点开始，因为输出的会是无效文件，播放不了。</p>
+]]></content>
+      <categories>
+        <category>舞台</category>
+      </categories>
+      <tags>
+        <tag>舞台</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>安徽省第十五届运动会开幕式</title>
+    <url>/2022/05/07/%E5%AE%89%E5%BE%BD%E7%9C%81%E8%BF%90%E5%8A%A8%E4%BC%9A/</url>
+    <content><![CDATA[<h2 id="项目背景"><a href="#项目背景" class="headerlink" title="项目背景"></a>项目背景</h2><p>“体育强则中国强，国运兴则体育兴”，近年来国家始终强调和重视体育事业，恰逢滁州建市三十周年，本次安徽省十五运在滁州盛大举办，也成为了一扇对外展示滁州特色的重要窗口。</p>
+<h3 id="《惊雷之声》"><a href="#《惊雷之声》" class="headerlink" title="《惊雷之声》"></a><strong>《惊雷之声》</strong></h3><p>以充满张力的群体戏剧表演配合投影画面、大视觉装置，用艺术手段再现“18手印”的壮举，展现滁州人民敢为人先的开创精神，以及这片江淮大地上孕育的热血豪情。</p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E7%25A0%25B4%25E5%2586%25B0%25E4%25B9%258B%25E5%258B%2587_%25E6%2596%2587%25E5%25AD%2597-tuya.jpg" alt="破冰之勇_文字-tuya"></p>
+<img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/640.gif" alt="640" style="zoom:200%;" />
+
 ]]></content>
       <categories>
         <category>舞台</category>
@@ -557,19 +557,6 @@
 <a class="btn-anzhiyu outline larger" href="https://appgallery.huawei.com/app/C105870855" 
   title="华为应用市场"><i class="fa-brands fa-android"></i><span>华为应用市场</span></a>
 
-]]></content>
-      <categories>
-        <category>舞台</category>
-      </categories>
-      <tags>
-        <tag>舞台</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>茅台茅韵宣传片</title>
-    <url>/2022/05/07/%E8%8C%85%E5%8F%B0%E8%8C%85%E9%9F%B5%E5%AE%A3%E4%BC%A0%E7%89%87/</url>
-    <content><![CDATA[<h2 id="前期设计"><a href="#前期设计" class="headerlink" title="前期设计"></a>前期设计</h2><p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E8%258C%2585%25E5%258F%25B0.jpg" alt="茅台"></p>
-<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E6%25AF%259B%25E9%259F%25B5.jpg" alt="毛韵"></p>
 ]]></content>
       <categories>
         <category>舞台</category>
@@ -1677,6 +1664,19 @@
       </categories>
       <tags>
         <tag>项目</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>茅台茅韵宣传片</title>
+    <url>/2022/05/07/%E8%8C%85%E5%8F%B0%E8%8C%85%E9%9F%B5%E5%AE%A3%E4%BC%A0%E7%89%87/</url>
+    <content><![CDATA[<h2 id="前期设计"><a href="#前期设计" class="headerlink" title="前期设计"></a>前期设计</h2><p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E8%258C%2585%25E5%258F%25B0.jpg" alt="茅台"></p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E6%25AF%259B%25E9%259F%25B5.jpg" alt="毛韵"></p>
+]]></content>
+      <categories>
+        <category>舞台</category>
+      </categories>
+      <tags>
+        <tag>舞台</tag>
       </tags>
   </entry>
   <entry>
