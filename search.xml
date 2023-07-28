@@ -135,6 +135,34 @@
       </tags>
   </entry>
   <entry>
+    <title>Windows server WDS部署服务</title>
+    <url>/2016/09/02/Windows%20server%20WDS%E9%83%A8%E7%BD%B2%E6%9C%8D%E5%8A%A1/</url>
+    <content><![CDATA[<h2 id="WDS的创建"><a href="#WDS的创建" class="headerlink" title="WDS的创建"></a>WDS的创建</h2><p>1.在Windows server仪表盘中添加角色和功能。</p>
+<p>2.下一步到服务器角色勾选[工具]Windows部署服务工具，选择添加功能。 </p>
+<p>3.勾选[工具]DHCP服务器。</p>
+<p>4.修改服务器IP地址为固定IP，子网掩码255.255.255.0。</p>
+<p>5.一直下一步最后点击安装，安装完成后在仪表盘右上角通知中完成DHCP配置。</p>
+<p>6.在仪表盘右上角工具选项中打开DHCP工具，在IPv4右键新建作用域向导名称为x.x.x.0&#x2F;24(如：192.168.1.0&#x2F;24)，路由器（默认网关）输入刚刚设置的固定IP点击添加，下一步直至完成。</p>
+<p>7.在仪表盘点击WDS，在右侧服务器列表里找到创建好的服务器，右键打开Windows部署服务管理控制台，选择刚刚的服务器右键配置服务器，下一步，选择独立服务器，远程安装文件夹的位置选择一个非系统盘，下一步，PXE服务器初始设置选择响应所有客户端（已知和未知），下一步完成。</p>
+<p>8.拷贝系统镜像到D盘后右键装载（可多版本系统）。</p>
+<p>9.返回Windows部署服务中选择启动映像，添加启动映像，选择刚刚装载好的映像进入sources文件夹，选择boot.wim文件，等待映像信息读取完成后，修改映像名称，一直下一步完成即可。</p>
+<p>10.右键添加安装镜像，创建一个映像组名，下一步，文件位置选择刚刚装载好的映像进入sources文件夹，选择install.wim文件，可用映像选择需要的版本，下一步完成。（同一映像组可以添加多个系统镜像）</p>
+<p>11.选择对应服务器右键选择所有任务，启动（启动WDS部署服务）。</p>
+<p><strong>注意事项</strong>:</p>
+<p>1.如果需要同时装很多台电脑需要创建多播传输功能，一直下一步即可。</p>
+<p>2.客户机安装系统需要输入服务器管理员账号密码，账户名称为域名\administrator</p>
+<p>3.在此操作前需要先搭建好AD域。</p>
+<p>4.若想修改客户机安装系统时不需要输入服务器账号密码和选择操作，可以参考执行无人参与安装 （<a href="https://go.microsoft.com/fwlink/?linkid=89226">https://go.microsoft.com/fwlink/?LinkId=89226</a>） 和示例无人参与文件 （<a href="https://go.microsoft.com/fwlink/?linkid=122642">https://go.microsoft.com/fwlink/?LinkId=122642</a>）进行配置修改。</p>
+<h2 id="客户机重装操作"><a href="#客户机重装操作" class="headerlink" title="客户机重装操作"></a>客户机重装操作</h2><p>开机按F11（不用主板电脑启动项选项按键不同，需查看对应手册）选择网卡启动，选择对应服务器的IP地址，选择对应系统安装即可</p>
+]]></content>
+      <categories>
+        <category>系统</category>
+      </categories>
+      <tags>
+        <tag>系统</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>UE虚拟制片学习手册</title>
     <url>/2022/07/01/UE%E8%99%9A%E6%8B%9F%E5%88%B6%E7%89%87/</url>
     <content><![CDATA[<p>UE虚拟制片</p>
@@ -179,52 +207,41 @@
       </tags>
   </entry>
   <entry>
-    <title>Windows server WDS部署服务</title>
-    <url>/2016/09/02/Windows%20server%20WDS%E9%83%A8%E7%BD%B2%E6%9C%8D%E5%8A%A1/</url>
-    <content><![CDATA[<h2 id="WDS的创建"><a href="#WDS的创建" class="headerlink" title="WDS的创建"></a>WDS的创建</h2><p>1.在Windows server仪表盘中添加角色和功能。</p>
-<p>2.下一步到服务器角色勾选[工具]Windows部署服务工具，选择添加功能。 </p>
-<p>3.勾选[工具]DHCP服务器。</p>
-<p>4.修改服务器IP地址为固定IP，子网掩码255.255.255.0。</p>
-<p>5.一直下一步最后点击安装，安装完成后在仪表盘右上角通知中完成DHCP配置。</p>
-<p>6.在仪表盘右上角工具选项中打开DHCP工具，在IPv4右键新建作用域向导名称为x.x.x.0&#x2F;24(如：192.168.1.0&#x2F;24)，路由器（默认网关）输入刚刚设置的固定IP点击添加，下一步直至完成。</p>
-<p>7.在仪表盘点击WDS，在右侧服务器列表里找到创建好的服务器，右键打开Windows部署服务管理控制台，选择刚刚的服务器右键配置服务器，下一步，选择独立服务器，远程安装文件夹的位置选择一个非系统盘，下一步，PXE服务器初始设置选择响应所有客户端（已知和未知），下一步完成。</p>
-<p>8.拷贝系统镜像到D盘后右键装载（可多版本系统）。</p>
-<p>9.返回Windows部署服务中选择启动映像，添加启动映像，选择刚刚装载好的映像进入sources文件夹，选择boot.wim文件，等待映像信息读取完成后，修改映像名称，一直下一步完成即可。</p>
-<p>10.右键添加安装镜像，创建一个映像组名，下一步，文件位置选择刚刚装载好的映像进入sources文件夹，选择install.wim文件，可用映像选择需要的版本，下一步完成。（同一映像组可以添加多个系统镜像）</p>
-<p>11.选择对应服务器右键选择所有任务，启动（启动WDS部署服务）。</p>
-<p><strong>注意事项</strong>:</p>
-<p>1.如果需要同时装很多台电脑需要创建多播传输功能，一直下一步即可。</p>
-<p>2.客户机安装系统需要输入服务器管理员账号密码，账户名称为域名\administrator</p>
-<p>3.在此操作前需要先搭建好AD域。</p>
-<p>4.若想修改客户机安装系统时不需要输入服务器账号密码和选择操作，可以参考执行无人参与安装 （<a href="https://go.microsoft.com/fwlink/?linkid=89226">https://go.microsoft.com/fwlink/?LinkId=89226</a>） 和示例无人参与文件 （<a href="https://go.microsoft.com/fwlink/?linkid=122642">https://go.microsoft.com/fwlink/?LinkId=122642</a>）进行配置修改。</p>
-<h2 id="客户机重装操作"><a href="#客户机重装操作" class="headerlink" title="客户机重装操作"></a>客户机重装操作</h2><p>开机按F11（不用主板电脑启动项选项按键不同，需查看对应手册）选择网卡启动，选择对应服务器的IP地址，选择对应系统安装即可</p>
+    <title>“五个一百”网络精品年度发布盛典</title>
+    <url>/2021/12/08/%E2%80%9C%E4%BA%94%E4%B8%AA%E4%B8%80%E7%99%BE%E2%80%9D%E7%BD%91%E7%BB%9C%E7%B2%BE%E5%93%81%E5%B9%B4%E5%BA%A6%E5%8F%91%E5%B8%83%E7%9B%9B%E5%85%B8/</url>
+    <content><![CDATA[<h2 id="项目背景"><a href="#项目背景" class="headerlink" title="项目背景"></a>项目背景</h2><p>中国正能量2021“五个一百”网络精品征集评选展播活动由中央网信办主办，中央网信办网络传播局、中国互联网发展基金会、央视网承办。活动自2016年启动以来历经六届，影响力号召力不断增强，网络同心圆越画越大，汇聚起了奋进新时代、谱写新篇章的磅礴力量。</p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%E6%88%91%E5%B0%B1%E6%98%AF%E4%B8%AD%E5%9B%BD.jpg"></p>
+<p>今年以<strong>“奋斗的人民、奋进的中国”</strong>为主题，突出共建共享，让正能量催生强大热量。聚焦庆祝中国共产党成立100周年、脱贫攻坚、抗疫成果等重大主题，广泛征集正能量作品，通过各环节评定，最终评出了榜样和作品并于1月28播出年度发布盛典。</p>
+<p>视觉设计思路上，紧扣颁奖盛典<strong>“奋斗的人民、奋进的中国”</strong>主题，用前沿现代的设计语言来讲述深厚的文化积淀，虚拟技术融汇艺术，打破次元壁，同时保证视觉有力量也有温度，充分展现当下的时代内涵。</p>
+<h2 id="效果图"><a href="#效果图" class="headerlink" title="效果图"></a>效果图</h2><h3 id="我的祖国"><a href="#我的祖国" class="headerlink" title="我的祖国"></a>我的祖国</h3><p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E4%25B8%2580%25E6%259D%25A1%25E5%25A4%25A7%25E6%25B2%25B3-tuya.jpg" alt="一条大河-tuya"></p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E4%25B8%2580%25E6%259D%25A1%25E5%25A4%25A7%25E6%25B2%25B3%25E4%25B8%25BB%25E5%25B1%258F2-tuya.jpg" alt="一条大河主屏2-tuya"></p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E4%25B8%2580%25E6%259D%25A1%25E5%25A4%25A7%25E6%25B2%25B3%25E4%25B8%25BB%25E5%25B1%258F4-tuya.jpg" alt="一条大河主屏4-tuya"></p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E4%25B8%2580%25E6%259D%25A1%25E5%25A4%25A7%25E6%25B2%25B3%25E4%25B8%25BB%25E5%25B1%258F5-tuya.jpg" alt="一条大河主屏5-tuya"></p>
+<h3 id="生命之河"><a href="#生命之河" class="headerlink" title="生命之河"></a>生命之河</h3><p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E7%2594%259F%25E5%2591%25BD%25E4%25B9%258B%25E6%25B2%25B3-tuya.jpg" alt="生命之河-tuya"></p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E7%2594%259F%25E5%2591%25BD%25E4%25B9%258B%25E6%25B2%25B33-tuya.jpg" alt="生命之河3-tuya"></p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E6%2588%2591%25E5%25B0%25B1%25E6%2598%25AF%25E4%25B8%25AD%25E5%259B%25BD-3.gif" alt="我就是中国-3"></p>
+<h3 id="我有一个梦"><a href="#我有一个梦" class="headerlink" title="我有一个梦"></a>我有一个梦</h3><p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E6%2588%2591%25E6%259C%2589%25E4%25B8%2580%25E4%25B8%25AA%25E6%25A2%25A6-%25E8%2588%259E%25E7%25BE%258E9-tuya.jpg" alt="我有一个梦-舞美9-tuya"></p>
+<h3 id="扶贫日记"><a href="#扶贫日记" class="headerlink" title="扶贫日记"></a>扶贫日记</h3><p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E6%2589%25B6%25E8%25B4%25AB%25E6%2597%25A5%25E8%25AE%25B0%25E8%2588%259E%25E7%25BE%258E2-tuya.jpg" alt="扶贫日记舞美2-tuya"></p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E6%2589%25B6%25E8%25B4%25AB%25E6%2597%25A5%25E8%25AE%25B0%25E8%2588%259E%25E7%25BE%258E1-tuya.jpg" alt="扶贫日记舞美1-tuya"></p>
+<h3 id="瞬间·中国"><a href="#瞬间·中国" class="headerlink" title="瞬间·中国"></a>瞬间·中国</h3><p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E7%25BD%2591%25E7%25BB%259C%25E6%2597%25B6%25E4%25BB%25A3%25E7%25B4%25A0%25E4%25BA%25BA%25E8%2588%259E%25E7%25BE%258E3-tuya.jpg" alt="网络时代素人舞美3-tuya"></p>
+<h3 id="我和我的祖国"><a href="#我和我的祖国" class="headerlink" title="我和我的祖国"></a>我和我的祖国</h3><p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E6%25B2%2599%25E7%2594%25BB5-tuya.jpg" alt="沙画5-tuya"></p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E6%25B2%2599%25E7%2594%25BB8-tuya.jpg" alt="沙画8-tuya"></p>
+<h2 id="现场效果"><a href="#现场效果" class="headerlink" title="现场效果"></a>现场效果</h2><p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E6%2588%2591%25E5%25B0%25B1%25E6%2598%25AF%25E4%25B8%25AD%25E5%259B%25BD-1.gif" alt="我就是中国-1"></p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E6%2588%2591%25E5%25B0%25B1%25E6%2598%25AF%25E4%25B8%25AD%25E5%259B%25BD-2.gif" alt="我就是中国-2"></p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E6%2588%2591%25E5%25B0%25B1%25E6%2598%25AF%25E4%25B8%25AD%25E5%259B%25BD-4.gif" alt="我就是中国-4"></p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%E6%88%91%E5%B0%B1%E6%98%AF%E4%B8%AD%E5%9B%BD-5.gif"></p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%E6%88%91%E5%B0%B1%E6%98%AF%E4%B8%AD%E5%9B%BD-6.gif"></p>
+<img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E6%2588%2591%25E5%25B0%25B1%25E6%2598%25AF%25E4%25B8%25AD%25E5%259B%25BD-7.gif"/>
+
+<h2 id="用户反馈"><a href="#用户反馈" class="headerlink" title="用户反馈"></a>用户反馈</h2><iframe src="//player.bilibili.com/player.html?aid=593607723&bvid=BV1Tq4y1h7mZ&cid=494938533&page=1" scrolling="no" border="0" height="800" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+
+
 ]]></content>
       <categories>
-        <category>系统</category>
+        <category>舞台</category>
       </categories>
       <tags>
-        <tag>系统</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>使用Colab挂Sheepit积分</title>
-    <url>/2023/07/20/%E4%BD%BF%E7%94%A8Colab%E6%8C%82Sheepit%E7%A7%AF%E5%88%86/</url>
-    <content><![CDATA[<h2 id="打开Colab项目复制一个副本"><a href="#打开Colab项目复制一个副本" class="headerlink" title="打开Colab项目复制一个副本"></a>打开Colab项目复制一个副本</h2><a class="btn-anzhiyu outline larger" href="https://colab.research.google.com/drive/1JQzTIxAnC6dQc88MJi3UwurlIS8kJpJG?usp=sharing" 
-  title="Colab项目"><i class="fa-brands fa-google-drive"></i><span>Colab项目</span></a>
-
-<h2 id="打开Sheepit官网，并登录账号"><a href="#打开Sheepit官网，并登录账号" class="headerlink" title="打开Sheepit官网，并登录账号"></a>打开Sheepit官网，并登录账号</h2><a class="btn-anzhiyu outline larger" href="https://www.sheepit-renderfarm.com/home" 
-  title="SheepIt官网"><i class="fa-solid fa-cube"></i><span>SheepIt官网</span></a>
-
-<p>点击右上角头像选择Edit profile进入</p>
-<p>点击Render keys复制左下角<strong>Public key（公钥）</strong>到Colab项目中（公钥比填写密码更安全）</p>
-<p>填写用户名</p>
-<h2 id="依次运行三组代码"><a href="#依次运行三组代码" class="headerlink" title="依次运行三组代码"></a>依次运行三组代码</h2><p>这时打开Sheepit官网，点击头像My account，如果已连接的机器显示Tesla T4即可</p>
-]]></content>
-      <categories>
-        <category>系统</category>
-      </categories>
-      <tags>
-        <tag>系统</tag>
+        <tag>舞台</tag>
       </tags>
   </entry>
   <entry>
@@ -287,35 +304,13 @@
       </tags>
   </entry>
   <entry>
-    <title>“五个一百”网络精品年度发布盛典</title>
-    <url>/2021/12/08/%E2%80%9C%E4%BA%94%E4%B8%AA%E4%B8%80%E7%99%BE%E2%80%9D%E7%BD%91%E7%BB%9C%E7%B2%BE%E5%93%81%E5%B9%B4%E5%BA%A6%E5%8F%91%E5%B8%83%E7%9B%9B%E5%85%B8/</url>
-    <content><![CDATA[<h2 id="项目背景"><a href="#项目背景" class="headerlink" title="项目背景"></a>项目背景</h2><p>中国正能量2021“五个一百”网络精品征集评选展播活动由中央网信办主办，中央网信办网络传播局、中国互联网发展基金会、央视网承办。活动自2016年启动以来历经六届，影响力号召力不断增强，网络同心圆越画越大，汇聚起了奋进新时代、谱写新篇章的磅礴力量。</p>
-<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%E6%88%91%E5%B0%B1%E6%98%AF%E4%B8%AD%E5%9B%BD.jpg"></p>
-<p>今年以<strong>“奋斗的人民、奋进的中国”</strong>为主题，突出共建共享，让正能量催生强大热量。聚焦庆祝中国共产党成立100周年、脱贫攻坚、抗疫成果等重大主题，广泛征集正能量作品，通过各环节评定，最终评出了榜样和作品并于1月28播出年度发布盛典。</p>
-<p>视觉设计思路上，紧扣颁奖盛典<strong>“奋斗的人民、奋进的中国”</strong>主题，用前沿现代的设计语言来讲述深厚的文化积淀，虚拟技术融汇艺术，打破次元壁，同时保证视觉有力量也有温度，充分展现当下的时代内涵。</p>
-<h2 id="效果图"><a href="#效果图" class="headerlink" title="效果图"></a>效果图</h2><h3 id="我的祖国"><a href="#我的祖国" class="headerlink" title="我的祖国"></a>我的祖国</h3><p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E4%25B8%2580%25E6%259D%25A1%25E5%25A4%25A7%25E6%25B2%25B3-tuya.jpg" alt="一条大河-tuya"></p>
-<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E4%25B8%2580%25E6%259D%25A1%25E5%25A4%25A7%25E6%25B2%25B3%25E4%25B8%25BB%25E5%25B1%258F2-tuya.jpg" alt="一条大河主屏2-tuya"></p>
-<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E4%25B8%2580%25E6%259D%25A1%25E5%25A4%25A7%25E6%25B2%25B3%25E4%25B8%25BB%25E5%25B1%258F4-tuya.jpg" alt="一条大河主屏4-tuya"></p>
-<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E4%25B8%2580%25E6%259D%25A1%25E5%25A4%25A7%25E6%25B2%25B3%25E4%25B8%25BB%25E5%25B1%258F5-tuya.jpg" alt="一条大河主屏5-tuya"></p>
-<h3 id="生命之河"><a href="#生命之河" class="headerlink" title="生命之河"></a>生命之河</h3><p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E7%2594%259F%25E5%2591%25BD%25E4%25B9%258B%25E6%25B2%25B3-tuya.jpg" alt="生命之河-tuya"></p>
-<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E7%2594%259F%25E5%2591%25BD%25E4%25B9%258B%25E6%25B2%25B33-tuya.jpg" alt="生命之河3-tuya"></p>
-<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E6%2588%2591%25E5%25B0%25B1%25E6%2598%25AF%25E4%25B8%25AD%25E5%259B%25BD-3.gif" alt="我就是中国-3"></p>
-<h3 id="我有一个梦"><a href="#我有一个梦" class="headerlink" title="我有一个梦"></a>我有一个梦</h3><p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E6%2588%2591%25E6%259C%2589%25E4%25B8%2580%25E4%25B8%25AA%25E6%25A2%25A6-%25E8%2588%259E%25E7%25BE%258E9-tuya.jpg" alt="我有一个梦-舞美9-tuya"></p>
-<h3 id="扶贫日记"><a href="#扶贫日记" class="headerlink" title="扶贫日记"></a>扶贫日记</h3><p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E6%2589%25B6%25E8%25B4%25AB%25E6%2597%25A5%25E8%25AE%25B0%25E8%2588%259E%25E7%25BE%258E2-tuya.jpg" alt="扶贫日记舞美2-tuya"></p>
-<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E6%2589%25B6%25E8%25B4%25AB%25E6%2597%25A5%25E8%25AE%25B0%25E8%2588%259E%25E7%25BE%258E1-tuya.jpg" alt="扶贫日记舞美1-tuya"></p>
-<h3 id="瞬间·中国"><a href="#瞬间·中国" class="headerlink" title="瞬间·中国"></a>瞬间·中国</h3><p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E7%25BD%2591%25E7%25BB%259C%25E6%2597%25B6%25E4%25BB%25A3%25E7%25B4%25A0%25E4%25BA%25BA%25E8%2588%259E%25E7%25BE%258E3-tuya.jpg" alt="网络时代素人舞美3-tuya"></p>
-<h3 id="我和我的祖国"><a href="#我和我的祖国" class="headerlink" title="我和我的祖国"></a>我和我的祖国</h3><p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E6%25B2%2599%25E7%2594%25BB5-tuya.jpg" alt="沙画5-tuya"></p>
-<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E6%25B2%2599%25E7%2594%25BB8-tuya.jpg" alt="沙画8-tuya"></p>
-<h2 id="现场效果"><a href="#现场效果" class="headerlink" title="现场效果"></a>现场效果</h2><p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E6%2588%2591%25E5%25B0%25B1%25E6%2598%25AF%25E4%25B8%25AD%25E5%259B%25BD-1.gif" alt="我就是中国-1"></p>
-<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E6%2588%2591%25E5%25B0%25B1%25E6%2598%25AF%25E4%25B8%25AD%25E5%259B%25BD-2.gif" alt="我就是中国-2"></p>
-<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E6%2588%2591%25E5%25B0%25B1%25E6%2598%25AF%25E4%25B8%25AD%25E5%259B%25BD-4.gif" alt="我就是中国-4"></p>
-<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%E6%88%91%E5%B0%B1%E6%98%AF%E4%B8%AD%E5%9B%BD-5.gif"></p>
-<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%E6%88%91%E5%B0%B1%E6%98%AF%E4%B8%AD%E5%9B%BD-6.gif"></p>
-<img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E6%2588%2591%25E5%25B0%25B1%25E6%2598%25AF%25E4%25B8%25AD%25E5%259B%25BD-7.gif"/>
-
-<h2 id="用户反馈"><a href="#用户反馈" class="headerlink" title="用户反馈"></a>用户反馈</h2><iframe src="//player.bilibili.com/player.html?aid=593607723&bvid=BV1Tq4y1h7mZ&cid=494938533&page=1" scrolling="no" border="0" height="800" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
-
-
+    <title>第五届黑龙江省旅发大会</title>
+    <url>/2022/05/07/%E5%A4%A7%E5%BA%86%E6%97%85%E6%B8%B8%E5%8F%91%E5%B1%95%E5%A4%A7%E4%BC%9A/</url>
+    <content><![CDATA[<h2 id="片头分镜"><a href="#片头分镜" class="headerlink" title="片头分镜"></a>片头分镜</h2><p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E6%2580%25BB.jpg" alt="总"></p>
+<h2 id="效果图"><a href="#效果图" class="headerlink" title="效果图"></a>效果图</h2><h3 id="定居"><a href="#定居" class="headerlink" title="定居"></a>定居</h3><p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E7%25AF%2587%25E7%25AB%25A01-4%25E5%25AE%259A%25E5%25B1%2585-%25E8%258D%2589%25E5%258E%259F%25E6%2595%2596%25E5%258C%25855.jpg" alt="篇章1-4定居-草原敖包5"></p>
+<h3 id="欢腾“骏马归来”"><a href="#欢腾“骏马归来”" class="headerlink" title="欢腾“骏马归来”"></a>欢腾“骏马归来”</h3><p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/1212312123.jpg" alt="1212312123"></p>
+<h3 id="三代铁人-现代化建设环境"><a href="#三代铁人-现代化建设环境" class="headerlink" title="三代铁人-现代化建设环境"></a>三代铁人-现代化建设环境</h3><p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E7%25AC%25AC%25E4%25B8%2589%25E4%25BB%25A3%25E9%2593%2581%25E4%25BA%25BA%25E6%259D%258E%25E6%2596%25B0%25E6%25B0%2591.jpg" alt="第三代铁人李新民"></p>
+<h3 id="我的家-百湖美景"><a href="#我的家-百湖美景" class="headerlink" title="我的家-百湖美景"></a>我的家-百湖美景</h3><p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E6%2588%2591%25E7%259A%2584%25E5%25AE%25B62.jpg" alt="我的家2"></p>
 ]]></content>
       <categories>
         <category>舞台</category>
@@ -340,38 +335,6 @@
       </categories>
       <tags>
         <tag>项目</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>第五届黑龙江省旅发大会</title>
-    <url>/2022/05/07/%E5%A4%A7%E5%BA%86%E6%97%85%E6%B8%B8%E5%8F%91%E5%B1%95%E5%A4%A7%E4%BC%9A/</url>
-    <content><![CDATA[<h2 id="片头分镜"><a href="#片头分镜" class="headerlink" title="片头分镜"></a>片头分镜</h2><p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E6%2580%25BB.jpg" alt="总"></p>
-<h2 id="效果图"><a href="#效果图" class="headerlink" title="效果图"></a>效果图</h2><h3 id="定居"><a href="#定居" class="headerlink" title="定居"></a>定居</h3><p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E7%25AF%2587%25E7%25AB%25A01-4%25E5%25AE%259A%25E5%25B1%2585-%25E8%258D%2589%25E5%258E%259F%25E6%2595%2596%25E5%258C%25855.jpg" alt="篇章1-4定居-草原敖包5"></p>
-<h3 id="欢腾“骏马归来”"><a href="#欢腾“骏马归来”" class="headerlink" title="欢腾“骏马归来”"></a>欢腾“骏马归来”</h3><p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/1212312123.jpg" alt="1212312123"></p>
-<h3 id="三代铁人-现代化建设环境"><a href="#三代铁人-现代化建设环境" class="headerlink" title="三代铁人-现代化建设环境"></a>三代铁人-现代化建设环境</h3><p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E7%25AC%25AC%25E4%25B8%2589%25E4%25BB%25A3%25E9%2593%2581%25E4%25BA%25BA%25E6%259D%258E%25E6%2596%25B0%25E6%25B0%2591.jpg" alt="第三代铁人李新民"></p>
-<h3 id="我的家-百湖美景"><a href="#我的家-百湖美景" class="headerlink" title="我的家-百湖美景"></a>我的家-百湖美景</h3><p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E6%2588%2591%25E7%259A%2584%25E5%25AE%25B62.jpg" alt="我的家2"></p>
-]]></content>
-      <categories>
-        <category>舞台</category>
-      </categories>
-      <tags>
-        <tag>舞台</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>安徽省第十五届运动会开幕式</title>
-    <url>/2022/05/07/%E5%AE%89%E5%BE%BD%E7%9C%81%E8%BF%90%E5%8A%A8%E4%BC%9A/</url>
-    <content><![CDATA[<h2 id="项目背景"><a href="#项目背景" class="headerlink" title="项目背景"></a>项目背景</h2><p>“体育强则中国强，国运兴则体育兴”，近年来国家始终强调和重视体育事业，恰逢滁州建市三十周年，本次安徽省十五运在滁州盛大举办，也成为了一扇对外展示滁州特色的重要窗口。</p>
-<h3 id="《惊雷之声》"><a href="#《惊雷之声》" class="headerlink" title="《惊雷之声》"></a><strong>《惊雷之声》</strong></h3><p>以充满张力的群体戏剧表演配合投影画面、大视觉装置，用艺术手段再现“18手印”的壮举，展现滁州人民敢为人先的开创精神，以及这片江淮大地上孕育的热血豪情。</p>
-<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E7%25A0%25B4%25E5%2586%25B0%25E4%25B9%258B%25E5%258B%2587_%25E6%2596%2587%25E5%25AD%2597-tuya.jpg" alt="破冰之勇_文字-tuya"></p>
-<img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/640.gif" alt="640" style="zoom:200%;" />
-
-]]></content>
-      <categories>
-        <category>舞台</category>
-      </categories>
-      <tags>
-        <tag>舞台</tag>
       </tags>
   </entry>
   <entry>
@@ -404,6 +367,43 @@
       </categories>
       <tags>
         <tag>舞台</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>安徽省第十五届运动会开幕式</title>
+    <url>/2022/05/07/%E5%AE%89%E5%BE%BD%E7%9C%81%E8%BF%90%E5%8A%A8%E4%BC%9A/</url>
+    <content><![CDATA[<h2 id="项目背景"><a href="#项目背景" class="headerlink" title="项目背景"></a>项目背景</h2><p>“体育强则中国强，国运兴则体育兴”，近年来国家始终强调和重视体育事业，恰逢滁州建市三十周年，本次安徽省十五运在滁州盛大举办，也成为了一扇对外展示滁州特色的重要窗口。</p>
+<h3 id="《惊雷之声》"><a href="#《惊雷之声》" class="headerlink" title="《惊雷之声》"></a><strong>《惊雷之声》</strong></h3><p>以充满张力的群体戏剧表演配合投影画面、大视觉装置，用艺术手段再现“18手印”的壮举，展现滁州人民敢为人先的开创精神，以及这片江淮大地上孕育的热血豪情。</p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E7%25A0%25B4%25E5%2586%25B0%25E4%25B9%258B%25E5%258B%2587_%25E6%2596%2587%25E5%25AD%2597-tuya.jpg" alt="破冰之勇_文字-tuya"></p>
+<img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/640.gif" alt="640" style="zoom:200%;" />
+
+]]></content>
+      <categories>
+        <category>舞台</category>
+      </categories>
+      <tags>
+        <tag>舞台</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>使用Colab挂Sheepit积分</title>
+    <url>/2023/07/20/%E4%BD%BF%E7%94%A8Colab%E6%8C%82Sheepit%E7%A7%AF%E5%88%86/</url>
+    <content><![CDATA[<h2 id="打开Colab项目复制一个副本"><a href="#打开Colab项目复制一个副本" class="headerlink" title="打开Colab项目复制一个副本"></a>打开Colab项目复制一个副本</h2><a class="btn-anzhiyu outline larger" href="https://colab.research.google.com/drive/1JQzTIxAnC6dQc88MJi3UwurlIS8kJpJG?usp=sharing" 
+  title="Colab项目"><i class="fa-brands fa-google-drive"></i><span>Colab项目</span></a>
+
+<h2 id="打开Sheepit官网，并登录账号"><a href="#打开Sheepit官网，并登录账号" class="headerlink" title="打开Sheepit官网，并登录账号"></a>打开Sheepit官网，并登录账号</h2><a class="btn-anzhiyu outline larger" href="https://www.sheepit-renderfarm.com/home" 
+  title="SheepIt官网"><i class="fa-solid fa-cube"></i><span>SheepIt官网</span></a>
+
+<p>点击右上角头像选择Edit profile进入</p>
+<p>点击Render keys复制左下角<strong>Public key（公钥）</strong>到Colab项目中（公钥比填写密码更安全）</p>
+<p>填写用户名</p>
+<h2 id="依次运行三组代码"><a href="#依次运行三组代码" class="headerlink" title="依次运行三组代码"></a>依次运行三组代码</h2><p>这时打开Sheepit官网，点击头像My account，如果已连接的机器显示Tesla T4即可</p>
+]]></content>
+      <categories>
+        <category>系统</category>
+      </categories>
+      <tags>
+        <tag>系统</tag>
       </tags>
   </entry>
   <entry>
@@ -563,6 +563,92 @@
       </categories>
       <tags>
         <tag>舞台</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>过年啦-冬奥一起玩</title>
+    <url>/2022/05/07/%E8%BF%87%E5%B9%B4%E5%95%A6-%E5%86%AC%E5%A5%A5%E4%B8%80%E8%B5%B7%E7%8E%A9/</url>
+    <content><![CDATA[<h2 id="效果图"><a href="#效果图" class="headerlink" title="效果图"></a>效果图</h2><p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E6%25BB%2591%25E5%2586%25B0%25E5%259C%25BA0027.jpg" alt="滑冰场0027"></p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E5%25BE%25AE%25E4%25BF%25A1%25E5%259B%25BE%25E7%2589%2587_20220117234737.jpg" alt="微信图片_20220117234737"></p>
+<p><a href="https://www.mxdia.com/posts/Yb9A43zKzyZz">过年啦-冬奥一起玩 - 不业文化 -MXDIA乂媒体</a></p>
+]]></content>
+      <categories>
+        <category>舞台</category>
+      </categories>
+      <tags>
+        <tag>舞台</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>阿云嘎-心岛</title>
+    <url>/2022/05/07/%E9%98%BF%E4%BA%91%E5%98%8E-%E5%BF%83%E5%B2%9B/</url>
+    <content><![CDATA[<h2 id="效果图"><a href="#效果图" class="headerlink" title="效果图"></a>效果图</h2><p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E5%25BF%2583%25E5%25B2%259B4.jpg"></p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E5%25BF%2583%25E5%25B2%259B5.jpg"></p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E9%2598%25BF%25E4%25BA%2591%25E5%2598%258E4.gif"></p>
+<h2 id="现场效果"><a href="#现场效果" class="headerlink" title="现场效果"></a>现场效果</h2><p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E9%2598%25BF%25E4%25BA%2591%25E5%2598%258E2.gif"></p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E9%2598%25BF%25E4%25BA%2591%25E5%2598%258E1.gif"></p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E9%2598%25BF%25E4%25BA%2591%25E5%2598%258E3.gif"></p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E9%2598%25BF%25E4%25BA%2591%25E5%2598%258E%25E5%25B9%2595%25E5%2590%258E.png"></p>
+<h2 id="用户反馈"><a href="#用户反馈" class="headerlink" title="用户反馈"></a>用户反馈</h2><p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E5%25BF%2583%25E5%25B2%259B22.png"></p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E5%25BF%2583%25E5%25B2%259B33.png"></p>
+<iframe src="https://v6.stream.tencentmusic.com/0b53yeabyaaauaai6gofrjrkdqoddtaqahaa.f160030.mp4?dis_k=580523d3d658d86e2a73b3ddabd65df4&dis_t=1686102385&local=1&fromtag=1061014" scrolling="no" border="0" height="800" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+
+]]></content>
+      <categories>
+        <category>舞台</category>
+      </categories>
+      <tags>
+        <tag>舞台</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>茅台茅韵宣传片</title>
+    <url>/2022/05/07/%E8%8C%85%E5%8F%B0%E8%8C%85%E9%9F%B5%E5%AE%A3%E4%BC%A0%E7%89%87/</url>
+    <content><![CDATA[<h2 id="前期设计"><a href="#前期设计" class="headerlink" title="前期设计"></a>前期设计</h2><p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E8%258C%2585%25E5%258F%25B0.jpg" alt="茅台"></p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E6%25AF%259B%25E9%259F%25B5.jpg" alt="毛韵"></p>
+]]></content>
+      <categories>
+        <category>舞台</category>
+      </categories>
+      <tags>
+        <tag>舞台</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>黑群晖无损降级</title>
+    <url>/2023/03/06/%E9%BB%91%E7%BE%A4%E6%99%96%E6%97%A0%E6%8D%9F%E9%99%8D%E7%BA%A7/</url>
+    <content><![CDATA[<p><strong>无损的降级重装黑群晖系统：</strong></p>
+<p>一、物理机安装的，需要找一个U盘，刷PE系统到U盘。</p>
+<p>​       虚拟机安装的，只需要找一个PE的ISO镜像，不需要用到U盘。</p>
+<p>二、物理机安装的群晖，把刷好PE系统的U盘拿到安装群晖的主机插上，开机进BIOS设置从PE这个U盘启动。</p>
+<p>​       虚拟机安装群晖的，把虚拟机关机，把PE镜像的ISO挂到群晖虚拟机上，设置从ISO镜像启动。</p>
+<p>三、进入PE后，运行Diskgenius，在左边找到群晖的存储硬盘（标有1.42.6字样的分区）找到 etc 文件夹浏览文件，右键强制删除文件夹里VERSION 这个文件。</p>
+<p>四、在左边找到 etc.defaults 这个文件夹，右键强制删除文件夹里VERSION 这个文件。</p>
+<p>六、如果你有多个存储硬盘，把每个硬盘的 etc 和 etc.defaults 这两个文件夹的 VERSION 这个文件，强制删除，一个不留。</p>
+<p>七、如果你的群晖是用固态硬盘做引导或者你的群晖是用虚拟机安装的，找到 HD0 这个磁盘（标记有 ESP 字样的），右键，删除所有的分区。删除分区后，记得点一下左上角的“保存更改”。</p>
+<p>九、引导盘的所有分区删除了就行，不需要再建立，留空。</p>
+<p>十、固态硬盘做引导或者你的群晖是用虚拟机安装的，此时可以用写镜像软件把升级之前用的群晖引导文件刷到引导盘上。</p>
+<p>​       U盘做引导，此时你可以去把U盘还原空间， 然后把升级之前用的群晖引导文件刷到U盘上。</p>
+<p>十一、引导盘做好了以后，重启，设置从引导盘启动，会出现群晖引导菜单，手动选第二项（群晖型号版本号 Baremetal with Jun&#96;s Mod 版本号 Reinstall)回车。</p>
+<p>十二、在电脑上用群晖助手搜索，会搜索到群晖的IP地址，此时状态为可转移。此时显示的版本最低版本要求，低于此版本是无法安装的。</p>
+<p>十三、在浏览器输入群晖的IP打开，会出现群晖的安装界面，点：安装。</p>
+<p>十四、选择安装类型：选择“迁移” &gt; 手动安装 &gt; 浏览 &gt; 找到对应安装包（需与引导文件匹配） &gt; 立即安装</p>
+<table>
+    <tr>
+        <td>（1）DS3615、DS3617、DS916的1.02b引导，与之对应的系统安装包版本为该型号的6.1-15047至6.17-15284之间；</td>
+        <td>（2）DS3615和DS3617的1.03b引导，与之对应的系统安装包版本为该型号的6.2-23739至6.23-25426之间；</td>
+        <td>（3）DS918的1.04b引导，与之对应的系统安装包版本为该型号的6.2-23739至6.23-25426之间；</td>
+    </tr>
+</table>
+
+<p>十五、等到安装完成后群晖会自动重启，耐心等待几分钟，重新搜索后直到群晖显示“已就绪”就表示降级重装成功！（DS918重装时，如果是手动上传6.23版本的安装包，安装完成后系统会显示是6.23up3版本；而DS3615和DS3617重装6.23完成后，显示6.23版本而不是6.23up3版本。这是正常现象，无须担心。）</p>
+<p>十六、如果NAS主机配置有nvme固态硬盘给群晖做缓存盘，降级重装系统后有可能系统会提示缓存盘损毁，只需要重新打上nvme的补丁，重启后就正常了。如果NAS主机配置有nvme固态硬盘给群晖做存储盘的，降级重装系统后重新打上nvme的补丁，重启后nvme的存储盘也会正常显示的。</p>
+]]></content>
+      <categories>
+        <category>系统</category>
+      </categories>
+      <tags>
+        <tag>系统</tag>
       </tags>
   </entry>
   <entry>
@@ -1664,92 +1750,6 @@
       </categories>
       <tags>
         <tag>项目</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>茅台茅韵宣传片</title>
-    <url>/2022/05/07/%E8%8C%85%E5%8F%B0%E8%8C%85%E9%9F%B5%E5%AE%A3%E4%BC%A0%E7%89%87/</url>
-    <content><![CDATA[<h2 id="前期设计"><a href="#前期设计" class="headerlink" title="前期设计"></a>前期设计</h2><p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E8%258C%2585%25E5%258F%25B0.jpg" alt="茅台"></p>
-<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E6%25AF%259B%25E9%259F%25B5.jpg" alt="毛韵"></p>
-]]></content>
-      <categories>
-        <category>舞台</category>
-      </categories>
-      <tags>
-        <tag>舞台</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>阿云嘎-心岛</title>
-    <url>/2022/05/07/%E9%98%BF%E4%BA%91%E5%98%8E-%E5%BF%83%E5%B2%9B/</url>
-    <content><![CDATA[<h2 id="效果图"><a href="#效果图" class="headerlink" title="效果图"></a>效果图</h2><p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E5%25BF%2583%25E5%25B2%259B4.jpg"></p>
-<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E5%25BF%2583%25E5%25B2%259B5.jpg"></p>
-<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E9%2598%25BF%25E4%25BA%2591%25E5%2598%258E4.gif"></p>
-<h2 id="现场效果"><a href="#现场效果" class="headerlink" title="现场效果"></a>现场效果</h2><p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E9%2598%25BF%25E4%25BA%2591%25E5%2598%258E2.gif"></p>
-<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E9%2598%25BF%25E4%25BA%2591%25E5%2598%258E1.gif"></p>
-<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E9%2598%25BF%25E4%25BA%2591%25E5%2598%258E3.gif"></p>
-<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E9%2598%25BF%25E4%25BA%2591%25E5%2598%258E%25E5%25B9%2595%25E5%2590%258E.png"></p>
-<h2 id="用户反馈"><a href="#用户反馈" class="headerlink" title="用户反馈"></a>用户反馈</h2><p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E5%25BF%2583%25E5%25B2%259B22.png"></p>
-<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E5%25BF%2583%25E5%25B2%259B33.png"></p>
-<iframe src="https://v6.stream.tencentmusic.com/0b53yeabyaaauaai6gofrjrkdqoddtaqahaa.f160030.mp4?dis_k=580523d3d658d86e2a73b3ddabd65df4&dis_t=1686102385&local=1&fromtag=1061014" scrolling="no" border="0" height="800" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
-
-]]></content>
-      <categories>
-        <category>舞台</category>
-      </categories>
-      <tags>
-        <tag>舞台</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>过年啦-冬奥一起玩</title>
-    <url>/2022/05/07/%E8%BF%87%E5%B9%B4%E5%95%A6-%E5%86%AC%E5%A5%A5%E4%B8%80%E8%B5%B7%E7%8E%A9/</url>
-    <content><![CDATA[<h2 id="效果图"><a href="#效果图" class="headerlink" title="效果图"></a>效果图</h2><p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E6%25BB%2591%25E5%2586%25B0%25E5%259C%25BA0027.jpg" alt="滑冰场0027"></p>
-<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E5%25BE%25AE%25E4%25BF%25A1%25E5%259B%25BE%25E7%2589%2587_20220117234737.jpg" alt="微信图片_20220117234737"></p>
-<p><a href="https://www.mxdia.com/posts/Yb9A43zKzyZz">过年啦-冬奥一起玩 - 不业文化 -MXDIA乂媒体</a></p>
-]]></content>
-      <categories>
-        <category>舞台</category>
-      </categories>
-      <tags>
-        <tag>舞台</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>黑群晖无损降级</title>
-    <url>/2023/03/06/%E9%BB%91%E7%BE%A4%E6%99%96%E6%97%A0%E6%8D%9F%E9%99%8D%E7%BA%A7/</url>
-    <content><![CDATA[<p><strong>无损的降级重装黑群晖系统：</strong></p>
-<p>一、物理机安装的，需要找一个U盘，刷PE系统到U盘。</p>
-<p>​       虚拟机安装的，只需要找一个PE的ISO镜像，不需要用到U盘。</p>
-<p>二、物理机安装的群晖，把刷好PE系统的U盘拿到安装群晖的主机插上，开机进BIOS设置从PE这个U盘启动。</p>
-<p>​       虚拟机安装群晖的，把虚拟机关机，把PE镜像的ISO挂到群晖虚拟机上，设置从ISO镜像启动。</p>
-<p>三、进入PE后，运行Diskgenius，在左边找到群晖的存储硬盘（标有1.42.6字样的分区）找到 etc 文件夹浏览文件，右键强制删除文件夹里VERSION 这个文件。</p>
-<p>四、在左边找到 etc.defaults 这个文件夹，右键强制删除文件夹里VERSION 这个文件。</p>
-<p>六、如果你有多个存储硬盘，把每个硬盘的 etc 和 etc.defaults 这两个文件夹的 VERSION 这个文件，强制删除，一个不留。</p>
-<p>七、如果你的群晖是用固态硬盘做引导或者你的群晖是用虚拟机安装的，找到 HD0 这个磁盘（标记有 ESP 字样的），右键，删除所有的分区。删除分区后，记得点一下左上角的“保存更改”。</p>
-<p>九、引导盘的所有分区删除了就行，不需要再建立，留空。</p>
-<p>十、固态硬盘做引导或者你的群晖是用虚拟机安装的，此时可以用写镜像软件把升级之前用的群晖引导文件刷到引导盘上。</p>
-<p>​       U盘做引导，此时你可以去把U盘还原空间， 然后把升级之前用的群晖引导文件刷到U盘上。</p>
-<p>十一、引导盘做好了以后，重启，设置从引导盘启动，会出现群晖引导菜单，手动选第二项（群晖型号版本号 Baremetal with Jun&#96;s Mod 版本号 Reinstall)回车。</p>
-<p>十二、在电脑上用群晖助手搜索，会搜索到群晖的IP地址，此时状态为可转移。此时显示的版本最低版本要求，低于此版本是无法安装的。</p>
-<p>十三、在浏览器输入群晖的IP打开，会出现群晖的安装界面，点：安装。</p>
-<p>十四、选择安装类型：选择“迁移” &gt; 手动安装 &gt; 浏览 &gt; 找到对应安装包（需与引导文件匹配） &gt; 立即安装</p>
-<table>
-    <tr>
-        <td>（1）DS3615、DS3617、DS916的1.02b引导，与之对应的系统安装包版本为该型号的6.1-15047至6.17-15284之间；</td>
-        <td>（2）DS3615和DS3617的1.03b引导，与之对应的系统安装包版本为该型号的6.2-23739至6.23-25426之间；</td>
-        <td>（3）DS918的1.04b引导，与之对应的系统安装包版本为该型号的6.2-23739至6.23-25426之间；</td>
-    </tr>
-</table>
-
-<p>十五、等到安装完成后群晖会自动重启，耐心等待几分钟，重新搜索后直到群晖显示“已就绪”就表示降级重装成功！（DS918重装时，如果是手动上传6.23版本的安装包，安装完成后系统会显示是6.23up3版本；而DS3615和DS3617重装6.23完成后，显示6.23版本而不是6.23up3版本。这是正常现象，无须担心。）</p>
-<p>十六、如果NAS主机配置有nvme固态硬盘给群晖做缓存盘，降级重装系统后有可能系统会提示缓存盘损毁，只需要重新打上nvme的补丁，重启后就正常了。如果NAS主机配置有nvme固态硬盘给群晖做存储盘的，降级重装系统后重新打上nvme的补丁，重启后nvme的存储盘也会正常显示的。</p>
-]]></content>
-      <categories>
-        <category>系统</category>
-      </categories>
-      <tags>
-        <tag>系统</tag>
       </tags>
   </entry>
 </search>
