@@ -1,6 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>UE虚拟制片学习手册</title>
+    <url>/2022/07/01/UE%E8%99%9A%E6%8B%9F%E5%88%B6%E7%89%87/</url>
+    <content><![CDATA[<p>UE虚拟制片</p>
+<p>虚拟制片流程</p>
+<h2 id="一、虚拟舞台-x2F-舞台预演"><a href="#一、虚拟舞台-x2F-舞台预演" class="headerlink" title="一、虚拟舞台&#x2F;舞台预演"></a>一、虚拟舞台&#x2F;舞台预演</h2><h3 id="模型导入导出"><a href="#模型导入导出" class="headerlink" title="模型导入导出"></a>模型导入导出</h3><p>插件下载：<a href="https://www.unrealengine.com/zh-CN/datasmith/plugins">https://www.unrealengine.com/zh-CN/datasmith/plugins</a></p>
+<h3 id=""><a href="#" class="headerlink" title=""></a></h3><h3 id="灯具、效果详解"><a href="#灯具、效果详解" class="headerlink" title="灯具、效果详解"></a>灯具、效果详解</h3><h4 id="电脑摇头灯与频闪灯"><a href="#电脑摇头灯与频闪灯" class="headerlink" title="电脑摇头灯与频闪灯"></a>电脑摇头灯与频闪灯</h4><h4 id="Gobo图案盘替换"><a href="#Gobo图案盘替换" class="headerlink" title="Gobo图案盘替换"></a>Gobo图案盘替换</h4><h4 id="扫描灯与帕灯"><a href="#扫描灯与帕灯" class="headerlink" title="扫描灯与帕灯"></a>扫描灯与帕灯</h4><h4 id="矩阵灯"><a href="#矩阵灯" class="headerlink" title="矩阵灯"></a>矩阵灯</h4><h4 id="摇头矩阵灯"><a href="#摇头矩阵灯" class="headerlink" title="摇头矩阵灯"></a>摇头矩阵灯</h4><h4 id="特效烟花"><a href="#特效烟花" class="headerlink" title="特效烟花"></a>特效烟花</h4><h4 id="特效冷焰火"><a href="#特效冷焰火" class="headerlink" title="特效冷焰火"></a>特效冷焰火</h4><h4 id="特效喷泉"><a href="#特效喷泉" class="headerlink" title="特效喷泉"></a>特效喷泉</h4><h4 id="特效激光灯"><a href="#特效激光灯" class="headerlink" title="特效激光灯"></a>特效激光灯</h4><h4 id="自制DMX灯具"><a href="#自制DMX灯具" class="headerlink" title="自制DMX灯具"></a>自制DMX灯具</h4><h4 id="自发光材质"><a href="#自发光材质" class="headerlink" title="自发光材质"></a>自发光材质</h4><p>内容浏览器右键新建材质</p>
+<p>颜色与亮度数值相乘给到自发光材质</p>
+<h4 id="粒子系统（观众-x2F-特效）"><a href="#粒子系统（观众-x2F-特效）" class="headerlink" title="粒子系统（观众&#x2F;特效）"></a>粒子系统（观众&#x2F;特效）</h4><h4 id="音频可视化"><a href="#音频可视化" class="headerlink" title="音频可视化"></a>音频可视化</h4><h3 id="-1"><a href="#-1" class="headerlink" title=""></a></h3><h3 id="替换灯具"><a href="#替换灯具" class="headerlink" title="替换灯具"></a>替换灯具</h3><p>1.右键视图勾选内容</p>
+<p>2.在自己工程中新建文件夹存放灯具</p>
+<p>3.复制官方灯具-DMXFixtures内容中的灯具到自己工程中的灯具目录（方便修改灯具数据）</p>
+<p>4.选择内容浏览器灯具目录中对应灯具，在世界大纲视图中多选对应灯具</p>
+<p>5.右键替换选中的Actor</p>
+<h3 id="灯具配接"><a href="#灯具配接" class="headerlink" title="灯具配接"></a>灯具配接</h3><p>1.在内容浏览器中新建DMX库</p>
+<p>2.添加控制器 Universe Start（起始域）Amount of Universe(域数量）</p>
+<p>3.打开灯具蓝图，查看灯具通道类型（对应灯具功能）</p>
+<p>Pan（P轴）Tilt（T轴）Color（颜色盘，可删除&#x2F;关闭）Gobo（图案盘）</p>
+<p>Dimmer（亮度）Strobe（屏闪） Zoom（聚焦）Frost（雾化）</p>
+<p>Color Component（RGB添加组件中）</p>
+<p>4.根据灯光通道类型在DMX库中新建Fixture类型（对应几种灯具），选择对应灯具类别</p>
+<p>5.添加Modes通道模式</p>
+<p>6.添加函数并选择对应通道名称（对应灯具功能，顺序需与MA2创建的灯库顺序相同）</p>
+<p>注：1.RGB占三个通道</p>
+<p>2.T轴P轴需设置16Bit</p>
+<p>7.Fixture补丁（对应拨地址码）</p>
+<p>添加Fixture（添加灯具）命名格式XXX_1（方便计算灯具数量）Ctrl+W复制灯具 Universe（域,对应灯具分组）</p>
+<p>8.保存DMX</p>
+<p>9.（1）插件配接(官方示例中获取）</p>
+<p>按顺序选择灯光</p>
+<p>点击DMXLibrary选择配接好的DMX灯库</p>
+<p>点击FirstFixture选择对应的灯光在灯库中第一个灯</p>
+<p>1.按顺序配接不改名 2.配接为一个地址码</p>
+<p>3.按顺序配接地址码并重命名</p>
+<p>（2）手动配接</p>
+<p>选择对应灯具在细节面板中修改DMX内容，Library选择配接好的DMX灯库，补丁选</p>
+<p>择灯具在灯库中对应的灯具。</p>
+<h3 id="-2"><a href="#-2" class="headerlink" title=""></a></h3><h3 id="材质修改"><a href="#材质修改" class="headerlink" title="材质修改"></a>材质修改</h3><h3 id="NDI控制屏幕"><a href="#NDI控制屏幕" class="headerlink" title="NDI控制屏幕"></a>NDI控制屏幕</h3>]]></content>
+      <categories>
+        <category>舞美</category>
+      </categories>
+      <tags>
+        <tag>舞美</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>PC局域网搭建可道云</title>
     <url>/2018/05/02/PC%E5%B1%80%E5%9F%9F%E7%BD%91%E6%90%AD%E5%BB%BA%E5%8F%AF%E9%81%93%E4%BA%91/</url>
     <content><![CDATA[<h2 id="UPUPW搭建"><a href="#UPUPW搭建" class="headerlink" title="UPUPW搭建"></a>UPUPW搭建</h2><p>1.下载UPUPW套件<br> 下载地址：<a href="http://www.upupw.net/nphp70/n130.html"><strong>http://www.upupw.net/nphp70/n130.html</strong></a><br> 点击云端下载。</p>
@@ -135,50 +179,6 @@
       </tags>
   </entry>
   <entry>
-    <title>UE虚拟制片学习手册</title>
-    <url>/2022/07/01/UE%E8%99%9A%E6%8B%9F%E5%88%B6%E7%89%87/</url>
-    <content><![CDATA[<p>UE虚拟制片</p>
-<p>虚拟制片流程</p>
-<h2 id="一、虚拟舞台-x2F-舞台预演"><a href="#一、虚拟舞台-x2F-舞台预演" class="headerlink" title="一、虚拟舞台&#x2F;舞台预演"></a>一、虚拟舞台&#x2F;舞台预演</h2><h3 id="模型导入导出"><a href="#模型导入导出" class="headerlink" title="模型导入导出"></a>模型导入导出</h3><p>插件下载：<a href="https://www.unrealengine.com/zh-CN/datasmith/plugins">https://www.unrealengine.com/zh-CN/datasmith/plugins</a></p>
-<h3 id=""><a href="#" class="headerlink" title=""></a></h3><h3 id="灯具、效果详解"><a href="#灯具、效果详解" class="headerlink" title="灯具、效果详解"></a>灯具、效果详解</h3><h4 id="电脑摇头灯与频闪灯"><a href="#电脑摇头灯与频闪灯" class="headerlink" title="电脑摇头灯与频闪灯"></a>电脑摇头灯与频闪灯</h4><h4 id="Gobo图案盘替换"><a href="#Gobo图案盘替换" class="headerlink" title="Gobo图案盘替换"></a>Gobo图案盘替换</h4><h4 id="扫描灯与帕灯"><a href="#扫描灯与帕灯" class="headerlink" title="扫描灯与帕灯"></a>扫描灯与帕灯</h4><h4 id="矩阵灯"><a href="#矩阵灯" class="headerlink" title="矩阵灯"></a>矩阵灯</h4><h4 id="摇头矩阵灯"><a href="#摇头矩阵灯" class="headerlink" title="摇头矩阵灯"></a>摇头矩阵灯</h4><h4 id="特效烟花"><a href="#特效烟花" class="headerlink" title="特效烟花"></a>特效烟花</h4><h4 id="特效冷焰火"><a href="#特效冷焰火" class="headerlink" title="特效冷焰火"></a>特效冷焰火</h4><h4 id="特效喷泉"><a href="#特效喷泉" class="headerlink" title="特效喷泉"></a>特效喷泉</h4><h4 id="特效激光灯"><a href="#特效激光灯" class="headerlink" title="特效激光灯"></a>特效激光灯</h4><h4 id="自制DMX灯具"><a href="#自制DMX灯具" class="headerlink" title="自制DMX灯具"></a>自制DMX灯具</h4><h4 id="自发光材质"><a href="#自发光材质" class="headerlink" title="自发光材质"></a>自发光材质</h4><p>内容浏览器右键新建材质</p>
-<p>颜色与亮度数值相乘给到自发光材质</p>
-<h4 id="粒子系统（观众-x2F-特效）"><a href="#粒子系统（观众-x2F-特效）" class="headerlink" title="粒子系统（观众&#x2F;特效）"></a>粒子系统（观众&#x2F;特效）</h4><h4 id="音频可视化"><a href="#音频可视化" class="headerlink" title="音频可视化"></a>音频可视化</h4><h3 id="-1"><a href="#-1" class="headerlink" title=""></a></h3><h3 id="替换灯具"><a href="#替换灯具" class="headerlink" title="替换灯具"></a>替换灯具</h3><p>1.右键视图勾选内容</p>
-<p>2.在自己工程中新建文件夹存放灯具</p>
-<p>3.复制官方灯具-DMXFixtures内容中的灯具到自己工程中的灯具目录（方便修改灯具数据）</p>
-<p>4.选择内容浏览器灯具目录中对应灯具，在世界大纲视图中多选对应灯具</p>
-<p>5.右键替换选中的Actor</p>
-<h3 id="灯具配接"><a href="#灯具配接" class="headerlink" title="灯具配接"></a>灯具配接</h3><p>1.在内容浏览器中新建DMX库</p>
-<p>2.添加控制器 Universe Start（起始域）Amount of Universe(域数量）</p>
-<p>3.打开灯具蓝图，查看灯具通道类型（对应灯具功能）</p>
-<p>Pan（P轴）Tilt（T轴）Color（颜色盘，可删除&#x2F;关闭）Gobo（图案盘）</p>
-<p>Dimmer（亮度）Strobe（屏闪） Zoom（聚焦）Frost（雾化）</p>
-<p>Color Component（RGB添加组件中）</p>
-<p>4.根据灯光通道类型在DMX库中新建Fixture类型（对应几种灯具），选择对应灯具类别</p>
-<p>5.添加Modes通道模式</p>
-<p>6.添加函数并选择对应通道名称（对应灯具功能，顺序需与MA2创建的灯库顺序相同）</p>
-<p>注：1.RGB占三个通道</p>
-<p>2.T轴P轴需设置16Bit</p>
-<p>7.Fixture补丁（对应拨地址码）</p>
-<p>添加Fixture（添加灯具）命名格式XXX_1（方便计算灯具数量）Ctrl+W复制灯具 Universe（域,对应灯具分组）</p>
-<p>8.保存DMX</p>
-<p>9.（1）插件配接(官方示例中获取）</p>
-<p>按顺序选择灯光</p>
-<p>点击DMXLibrary选择配接好的DMX灯库</p>
-<p>点击FirstFixture选择对应的灯光在灯库中第一个灯</p>
-<p>1.按顺序配接不改名 2.配接为一个地址码</p>
-<p>3.按顺序配接地址码并重命名</p>
-<p>（2）手动配接</p>
-<p>选择对应灯具在细节面板中修改DMX内容，Library选择配接好的DMX灯库，补丁选</p>
-<p>择灯具在灯库中对应的灯具。</p>
-<h3 id="-2"><a href="#-2" class="headerlink" title=""></a></h3><h3 id="材质修改"><a href="#材质修改" class="headerlink" title="材质修改"></a>材质修改</h3><h3 id="NDI控制屏幕"><a href="#NDI控制屏幕" class="headerlink" title="NDI控制屏幕"></a>NDI控制屏幕</h3>]]></content>
-      <categories>
-        <category>舞美</category>
-      </categories>
-      <tags>
-        <tag>舞美</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Windows server WDS部署服务</title>
     <url>/2016/09/02/Windows%20server%20WDS%E9%83%A8%E7%BD%B2%E6%9C%8D%E5%8A%A1/</url>
     <content><![CDATA[<h2 id="WDS的创建"><a href="#WDS的创建" class="headerlink" title="WDS的创建"></a>WDS的创建</h2><p>1.在Windows server仪表盘中添加角色和功能。</p>
@@ -204,6 +204,45 @@
       </categories>
       <tags>
         <tag>系统</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>使用Colab挂Sheepit积分</title>
+    <url>/2023/07/20/%E4%BD%BF%E7%94%A8Colab%E6%8C%82Sheepit%E7%A7%AF%E5%88%86/</url>
+    <content><![CDATA[<h2 id="打开Colab项目复制一个副本"><a href="#打开Colab项目复制一个副本" class="headerlink" title="打开Colab项目复制一个副本"></a>打开Colab项目复制一个副本</h2><a class="btn-anzhiyu outline larger" href="https://colab.research.google.com/drive/1JQzTIxAnC6dQc88MJi3UwurlIS8kJpJG?usp=sharing" 
+  title="Colab项目"><i class="fa-brands fa-google-drive"></i><span>Colab项目</span></a>
+
+<h2 id="打开Sheepit官网，并登录账号"><a href="#打开Sheepit官网，并登录账号" class="headerlink" title="打开Sheepit官网，并登录账号"></a>打开Sheepit官网，并登录账号</h2><a class="btn-anzhiyu outline larger" href="https://www.sheepit-renderfarm.com/home" 
+  title="SheepIt官网"><i class="fa-solid fa-cube"></i><span>SheepIt官网</span></a>
+
+<p>点击右上角头像选择Edit profile进入</p>
+<p>点击Render keys复制左下角<strong>Public key（公钥）</strong>到Colab项目中（公钥比填写密码更安全）</p>
+<p>填写用户名</p>
+<h2 id="依次运行三组代码"><a href="#依次运行三组代码" class="headerlink" title="依次运行三组代码"></a>依次运行三组代码</h2><p>这时打开Sheepit官网，点击头像My account，如果已连接的机器显示Tesla T4即可</p>
+]]></content>
+      <categories>
+        <category>系统</category>
+      </categories>
+      <tags>
+        <tag>系统</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>卖奶茶的小女孩</title>
+    <url>/2023/03/06/%E5%8D%96%E5%A5%B6%E8%8C%B6%E7%9A%84%E5%B0%8F%E5%A5%B3%E5%AD%A9/</url>
+    <content><![CDATA[<h2 id="买奶茶的小女孩"><a href="#买奶茶的小女孩" class="headerlink" title="买奶茶的小女孩"></a>买奶茶的小女孩</h2><p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E4%25B9%25B0%25E5%25A5%25B6%25E8%258C%25B6%25E7%259A%2584%25E5%25B0%258F%25E5%25A5%25B3%25E5%25AD%25A9_%25E9%25A1%25B5%25E9%259D%25A2_1-tuya.jpg" alt="买奶茶的小女孩_页面_1-tuya"></p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E4%25B9%25B0%25E5%25A5%25B6%25E8%258C%25B6%25E7%259A%2584%25E5%25B0%258F%25E5%25A5%25B3%25E5%25AD%25A9_%25E9%25A1%25B5%25E9%259D%25A2_2-tuya.jpg" alt="买奶茶的小女孩_页面_2-tuya"></p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E4%25B9%25B0%25E5%25A5%25B6%25E8%258C%25B6%25E7%259A%2584%25E5%25B0%258F%25E5%25A5%25B3%25E5%25AD%25A9_%25E9%25A1%25B5%25E9%259D%25A2_3-tuya.jpg" alt="买奶茶的小女孩_页面_3-tuya"></p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E4%25B9%25B0%25E5%25A5%25B6%25E8%258C%25B6%25E7%259A%2584%25E5%25B0%258F%25E5%25A5%25B3%25E5%25AD%25A9_%25E9%25A1%25B5%25E9%259D%25A2_4-tuya.jpg" alt="买奶茶的小女孩_页面_4-tuya"></p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E4%25B9%25B0%25E5%25A5%25B6%25E8%258C%25B6%25E7%259A%2584%25E5%25B0%258F%25E5%25A5%25B3%25E5%25AD%25A9_%25E9%25A1%25B5%25E9%259D%25A2_6-tuya.jpg" alt="买奶茶的小女孩_页面_6-tuya"></p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E4%25B9%25B0%25E5%25A5%25B6%25E8%258C%25B6%25E7%259A%2584%25E5%25B0%258F%25E5%25A5%25B3%25E5%25AD%25A9_%25E9%25A1%25B5%25E9%259D%25A2_7-tuya.jpg" alt="买奶茶的小女孩_页面_7-tuya"></p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E4%25B9%25B0%25E5%25A5%25B6%25E8%258C%25B6%25E7%259A%2584%25E5%25B0%258F%25E5%25A5%25B3%25E5%25AD%25A9_%25E9%25A1%25B5%25E9%259D%25A2_8-tuya.jpg" alt="买奶茶的小女孩_页面_8-tuya"></p>
+]]></content>
+      <categories>
+        <category>项目</category>
+      </categories>
+      <tags>
+        <tag>项目</tag>
       </tags>
   </entry>
   <entry>
@@ -242,45 +281,6 @@
       </categories>
       <tags>
         <tag>舞台</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>卖奶茶的小女孩</title>
-    <url>/2023/03/06/%E5%8D%96%E5%A5%B6%E8%8C%B6%E7%9A%84%E5%B0%8F%E5%A5%B3%E5%AD%A9/</url>
-    <content><![CDATA[<h2 id="买奶茶的小女孩"><a href="#买奶茶的小女孩" class="headerlink" title="买奶茶的小女孩"></a>买奶茶的小女孩</h2><p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E4%25B9%25B0%25E5%25A5%25B6%25E8%258C%25B6%25E7%259A%2584%25E5%25B0%258F%25E5%25A5%25B3%25E5%25AD%25A9_%25E9%25A1%25B5%25E9%259D%25A2_1-tuya.jpg" alt="买奶茶的小女孩_页面_1-tuya"></p>
-<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E4%25B9%25B0%25E5%25A5%25B6%25E8%258C%25B6%25E7%259A%2584%25E5%25B0%258F%25E5%25A5%25B3%25E5%25AD%25A9_%25E9%25A1%25B5%25E9%259D%25A2_2-tuya.jpg" alt="买奶茶的小女孩_页面_2-tuya"></p>
-<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E4%25B9%25B0%25E5%25A5%25B6%25E8%258C%25B6%25E7%259A%2584%25E5%25B0%258F%25E5%25A5%25B3%25E5%25AD%25A9_%25E9%25A1%25B5%25E9%259D%25A2_3-tuya.jpg" alt="买奶茶的小女孩_页面_3-tuya"></p>
-<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E4%25B9%25B0%25E5%25A5%25B6%25E8%258C%25B6%25E7%259A%2584%25E5%25B0%258F%25E5%25A5%25B3%25E5%25AD%25A9_%25E9%25A1%25B5%25E9%259D%25A2_4-tuya.jpg" alt="买奶茶的小女孩_页面_4-tuya"></p>
-<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E4%25B9%25B0%25E5%25A5%25B6%25E8%258C%25B6%25E7%259A%2584%25E5%25B0%258F%25E5%25A5%25B3%25E5%25AD%25A9_%25E9%25A1%25B5%25E9%259D%25A2_6-tuya.jpg" alt="买奶茶的小女孩_页面_6-tuya"></p>
-<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E4%25B9%25B0%25E5%25A5%25B6%25E8%258C%25B6%25E7%259A%2584%25E5%25B0%258F%25E5%25A5%25B3%25E5%25AD%25A9_%25E9%25A1%25B5%25E9%259D%25A2_7-tuya.jpg" alt="买奶茶的小女孩_页面_7-tuya"></p>
-<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E4%25B9%25B0%25E5%25A5%25B6%25E8%258C%25B6%25E7%259A%2584%25E5%25B0%258F%25E5%25A5%25B3%25E5%25AD%25A9_%25E9%25A1%25B5%25E9%259D%25A2_8-tuya.jpg" alt="买奶茶的小女孩_页面_8-tuya"></p>
-]]></content>
-      <categories>
-        <category>项目</category>
-      </categories>
-      <tags>
-        <tag>项目</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>使用Colab挂Sheepit积分</title>
-    <url>/2023/07/20/%E4%BD%BF%E7%94%A8Colab%E6%8C%82Sheepit%E7%A7%AF%E5%88%86/</url>
-    <content><![CDATA[<h2 id="打开Colab项目复制一个副本"><a href="#打开Colab项目复制一个副本" class="headerlink" title="打开Colab项目复制一个副本"></a>打开Colab项目复制一个副本</h2><a class="btn-anzhiyu outline larger" href="https://colab.research.google.com/drive/1JQzTIxAnC6dQc88MJi3UwurlIS8kJpJG?usp=sharing" 
-  title="Colab项目"><i class="fa-brands fa-google-drive"></i><span>Colab项目</span></a>
-
-<h2 id="打开Sheepit官网，并登录账号"><a href="#打开Sheepit官网，并登录账号" class="headerlink" title="打开Sheepit官网，并登录账号"></a>打开Sheepit官网，并登录账号</h2><a class="btn-anzhiyu outline larger" href="https://www.sheepit-renderfarm.com/home" 
-  title="SheepIt官网"><i class="fa-solid fa-cube"></i><span>SheepIt官网</span></a>
-
-<p>点击右上角头像选择Edit profile进入</p>
-<p>点击Render keys复制左下角<strong>Public key（公钥）</strong>到Colab项目中（公钥比填写密码更安全）</p>
-<p>填写用户名</p>
-<h2 id="依次运行三组代码"><a href="#依次运行三组代码" class="headerlink" title="依次运行三组代码"></a>依次运行三组代码</h2><p>这时打开Sheepit官网，点击头像My account，如果已连接的机器显示Tesla T4即可</p>
-]]></content>
-      <categories>
-        <category>系统</category>
-      </categories>
-      <tags>
-        <tag>系统</tag>
       </tags>
   </entry>
   <entry>
@@ -557,19 +557,6 @@
 <a class="btn-anzhiyu outline larger" href="https://appgallery.huawei.com/app/C105870855" 
   title="华为应用市场"><i class="fa-brands fa-android"></i><span>华为应用市场</span></a>
 
-]]></content>
-      <categories>
-        <category>舞台</category>
-      </categories>
-      <tags>
-        <tag>舞台</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>茅台茅韵宣传片</title>
-    <url>/2022/05/07/%E8%8C%85%E5%8F%B0%E8%8C%85%E9%9F%B5%E5%AE%A3%E4%BC%A0%E7%89%87/</url>
-    <content><![CDATA[<h2 id="前期设计"><a href="#前期设计" class="headerlink" title="前期设计"></a>前期设计</h2><p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E8%258C%2585%25E5%258F%25B0.jpg" alt="茅台"></p>
-<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E6%25AF%259B%25E9%259F%25B5.jpg" alt="毛韵"></p>
 ]]></content>
       <categories>
         <category>舞台</category>
@@ -1680,11 +1667,10 @@
       </tags>
   </entry>
   <entry>
-    <title>过年啦-冬奥一起玩</title>
-    <url>/2022/05/07/%E8%BF%87%E5%B9%B4%E5%95%A6-%E5%86%AC%E5%A5%A5%E4%B8%80%E8%B5%B7%E7%8E%A9/</url>
-    <content><![CDATA[<h2 id="效果图"><a href="#效果图" class="headerlink" title="效果图"></a>效果图</h2><p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E6%25BB%2591%25E5%2586%25B0%25E5%259C%25BA0027.jpg" alt="滑冰场0027"></p>
-<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E5%25BE%25AE%25E4%25BF%25A1%25E5%259B%25BE%25E7%2589%2587_20220117234737.jpg" alt="微信图片_20220117234737"></p>
-<p><a href="https://www.mxdia.com/posts/Yb9A43zKzyZz">过年啦-冬奥一起玩 - 不业文化 -MXDIA乂媒体</a></p>
+    <title>茅台茅韵宣传片</title>
+    <url>/2022/05/07/%E8%8C%85%E5%8F%B0%E8%8C%85%E9%9F%B5%E5%AE%A3%E4%BC%A0%E7%89%87/</url>
+    <content><![CDATA[<h2 id="前期设计"><a href="#前期设计" class="headerlink" title="前期设计"></a>前期设计</h2><p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E8%258C%2585%25E5%258F%25B0.jpg" alt="茅台"></p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E6%25AF%259B%25E9%259F%25B5.jpg" alt="毛韵"></p>
 ]]></content>
       <categories>
         <category>舞台</category>
@@ -1707,6 +1693,20 @@
 <p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E5%25BF%2583%25E5%25B2%259B33.png"></p>
 <iframe src="https://v6.stream.tencentmusic.com/0b53yeabyaaauaai6gofrjrkdqoddtaqahaa.f160030.mp4?dis_k=580523d3d658d86e2a73b3ddabd65df4&dis_t=1686102385&local=1&fromtag=1061014" scrolling="no" border="0" height="800" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
 
+]]></content>
+      <categories>
+        <category>舞台</category>
+      </categories>
+      <tags>
+        <tag>舞台</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>过年啦-冬奥一起玩</title>
+    <url>/2022/05/07/%E8%BF%87%E5%B9%B4%E5%95%A6-%E5%86%AC%E5%A5%A5%E4%B8%80%E8%B5%B7%E7%8E%A9/</url>
+    <content><![CDATA[<h2 id="效果图"><a href="#效果图" class="headerlink" title="效果图"></a>效果图</h2><p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E6%25BB%2591%25E5%2586%25B0%25E5%259C%25BA0027.jpg" alt="滑冰场0027"></p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E5%25BE%25AE%25E4%25BF%25A1%25E5%259B%25BE%25E7%2589%2587_20220117234737.jpg" alt="微信图片_20220117234737"></p>
+<p><a href="https://www.mxdia.com/posts/Yb9A43zKzyZz">过年啦-冬奥一起玩 - 不业文化 -MXDIA乂媒体</a></p>
 ]]></content>
       <categories>
         <category>舞台</category>

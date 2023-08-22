@@ -1,52 +1,49 @@
 const anzhiyu = {
-  debounce: function (func, wait, immediate) {
-    let timeout;
-    return function () {
-      const context = this;
-      const args = arguments;
-      const later = function () {
-        timeout = null;
-        if (!immediate) func.apply(context, args);
-      };
-      const callNow = immediate && !timeout;
-      clearTimeout(timeout);
-      timeout = setTimeout(later, wait);
-      if (callNow) func.apply(context, args);
-    };
+  debounce: (func, wait = 0, immediate = false) => {
+    let timeout
+    return (...args) => {
+      const later = () => {
+        timeout = null
+        if (!immediate) func(...args)
+      }
+      const callNow = immediate && !timeout
+      clearTimeout(timeout)
+      timeout = setTimeout(later, wait)
+      if (callNow) func(...args)
+    }
   },
 
-  throttle: function (func, wait, options) {
-    let timeout, context, args;
-    let previous = 0;
-    if (!options) options = {};
+  throttle: function (func, wait, options = {}) {
+    let timeout, context, args
+    let previous = 0
 
-    const later = function () {
-      previous = options.leading === false ? 0 : new Date().getTime();
-      timeout = null;
-      func.apply(context, args);
-      if (!timeout) context = args = null;
-    };
+    const later = () => {
+      previous = options.leading === false ? 0 : new Date().getTime()
+      timeout = null
+      func.apply(context, args)
+      if (!timeout) context = args = null
+    }
 
-    const throttled = function () {
-      const now = new Date().getTime();
-      if (!previous && options.leading === false) previous = now;
-      const remaining = wait - (now - previous);
-      context = this;
-      args = arguments;
+    const throttled = (...params) => {
+      const now = new Date().getTime()
+      if (!previous && options.leading === false) previous = now
+      const remaining = wait - (now - previous)
+      context = this
+      args = params
       if (remaining <= 0 || remaining > wait) {
         if (timeout) {
-          clearTimeout(timeout);
-          timeout = null;
+          clearTimeout(timeout)
+          timeout = null
         }
-        previous = now;
-        func.apply(context, args);
-        if (!timeout) context = args = null;
+        previous = now
+        func.apply(context, args)
+        if (!timeout) context = args = null
       } else if (!timeout && options.trailing !== false) {
-        timeout = setTimeout(later, remaining);
+        timeout = setTimeout(later, remaining)
       }
-    };
+    }
 
-    return throttled;
+    return throttled
   },
 
   sidebarPaddingR: () => {
@@ -123,6 +120,27 @@ const anzhiyu = {
     });
   },
 
+  initJustifiedGallery: function (selector) {
+    const runJustifiedGallery = i => {
+      if (!anzhiyu.isHidden(i)) {
+        fjGallery(i, {
+          itemSelector: ".fj-gallery-item",
+          rowHeight: i.getAttribute("data-rowHeight"),
+          gutter: 4,
+          onJustify: function () {
+            this.$container.style.opacity = "1";
+          },
+        });
+      }
+    };
+
+    if (Array.from(selector).length === 0) runJustifiedGallery(selector);
+    else
+      selector.forEach(i => {
+        runJustifiedGallery(i);
+      });
+  },
+
   animateIn: (ele, text) => {
     ele.style.display = "block";
     ele.style.animation = text;
@@ -137,22 +155,6 @@ const anzhiyu = {
     ele.style.animation = text;
   },
 
-  getParents: (elem, selector) => {
-    for (; elem && elem !== document; elem = elem.parentNode) {
-      if (elem.matches(selector)) return elem;
-    }
-    return null;
-  },
-
-  siblings: (ele, selector) => {
-    return [...ele.parentNode.children].filter(child => {
-      if (selector) {
-        return child !== ele && child.matches(selector);
-      }
-      return child !== ele;
-    });
-  },
-
   /**
    * @param {*} selector
    * @param {*} eleType the type of create element
@@ -165,14 +167,6 @@ const anzhiyu = {
     }
     selector.parentNode.insertBefore(creatEle, selector);
     creatEle.appendChild(selector);
-  },
-
-  unwrap: el => {
-    const elParentNode = el.parentNode;
-    if (elParentNode !== document.body) {
-      elParentNode.parentNode.insertBefore(el, elParentNode);
-      elParentNode.parentNode.removeChild(elParentNode);
-    }
   },
 
   isHidden: ele => ele.offsetHeight === 0 && ele.offsetWidth === 0,
@@ -203,7 +197,7 @@ const anzhiyu = {
     }
 
     if (service === "fancybox") {
-      ele.forEach(i => {
+      Array.from(ele).forEach(i => {
         if (i.parentNode.tagName !== "A") {
           const dataSrc = i.dataset.lazySrc || i.src;
           const dataCaption = i.title || i.alt || "";
@@ -228,40 +222,72 @@ const anzhiyu = {
     }
   },
 
-  initJustifiedGallery: function (selector) {
-    const runJustifiedGallery = i => {
-      if (!anzhiyu.isHidden(i)) {
-        fjGallery(i, {
-          itemSelector: ".fj-gallery-item",
-          rowHeight: i.getAttribute("data-rowHeight"),
-          gutter: 4,
-          onJustify: function () {
-            this.$container.style.opacity = "1";
-          },
-        });
-      }
-    };
-
-    if (Array.from(selector).length === 0) runJustifiedGallery(selector);
-    else
-      selector.forEach(i => {
-        runJustifiedGallery(i);
-      });
+  setLoading: {
+    add: ele => {
+      const html = `
+        <div class="loading-container">
+          <div class="loading-item">
+            <div></div><div></div><div></div><div></div><div></div>
+          </div>
+        </div>
+      `
+      ele.insertAdjacentHTML('afterend', html)
+    },
+    remove: ele => {
+      ele.nextElementSibling.remove()
+    }
   },
 
-  updateAnchor: anchor => {
+  updateAnchor: (anchor) => {
     if (anchor !== window.location.hash) {
-      if (!anchor) anchor = location.pathname;
-      const title = GLOBAL_CONFIG_SITE.title;
-      window.history.replaceState(
-        {
-          url: location.href,
-          title: title,
-        },
-        title,
-        anchor
-      );
+      if (!anchor) anchor = location.pathname
+      const title = GLOBAL_CONFIG_SITE.title
+      window.history.replaceState({
+        url: location.href,
+        title
+      }, title, anchor)
     }
+  },
+
+  getScrollPercent: (currentTop, ele) => {
+    const docHeight = ele.clientHeight
+    const winHeight = document.documentElement.clientHeight
+    const headerHeight = ele.offsetTop
+    const contentMath = (docHeight > winHeight) ? (docHeight - winHeight) : (document.documentElement.scrollHeight - winHeight)
+    const scrollPercent = (currentTop - headerHeight) / (contentMath)
+    const scrollPercentRounded = Math.round(scrollPercent * 100)
+    const percentage = (scrollPercentRounded > 100) ? 100 : (scrollPercentRounded <= 0) ? 0 : scrollPercentRounded
+    return percentage
+  },
+
+  addGlobalFn: (key, fn, name = false, parent = window) => {
+    const globalFn = parent.globalFn || {}
+    const keyObj = globalFn[key] || {}
+
+    if (name && keyObj[name]) return
+
+    name = name || Object.keys(keyObj).length
+    keyObj[name] = fn
+    globalFn[key] = keyObj
+    parent.globalFn = globalFn
+  },
+
+  addEventListenerPjax: (ele, event, fn, option = false) => {
+    ele.addEventListener(event, fn, option)
+    anzhiyu.addGlobalFn('pjax', () => {
+      ele.removeEventListener(event, fn, option)
+    })
+  },
+
+  removeGlobalFnEvent: (key, parent = window) => {
+    const { globalFn = {} } = parent
+    const keyObj = globalFn[key] || {}
+    const keyArr = Object.keys(keyObj)
+    if (!keyArr.length) return
+    keyArr.forEach(i => {
+      keyObj[i]()
+    })
+    delete parent.globalFn[key]
   },
 
   //更改主题色
@@ -315,23 +341,23 @@ const anzhiyu = {
     rm && rm.hideRightMenu();
     anzhiyu.darkModeStatus();
 
-    const root = document.querySelector(":root");
-    root.style.setProperty("--anzhiyu-bar-background", "var(--anzhiyu-meta-theme-color)");
-    anzhiyu.initThemeColor();
+    // const root = document.querySelector(":root");
+    // root.style.setProperty("--anzhiyu-bar-background", "var(--anzhiyu-meta-theme-color)");
+    // anzhiyu.initThemeColor();
 
     // 要改回来默认主色
-    document.documentElement.style.setProperty(
-      "--anzhiyu-main",
-      getComputedStyle(document.documentElement).getPropertyValue("--anzhiyu-theme")
-    );
-    document.documentElement.style.setProperty(
-      "--anzhiyu-theme-op",
-      getComputedStyle(document.documentElement).getPropertyValue("--anzhiyu-main") + "23"
-    );
-    document.documentElement.style.setProperty(
-      "--anzhiyu-theme-op-deep",
-      getComputedStyle(document.documentElement).getPropertyValue("--anzhiyu-main") + "dd"
-    );
+    // document.documentElement.style.setProperty(
+    //   "--anzhiyu-main",
+    //   getComputedStyle(document.documentElement).getPropertyValue("--anzhiyu-theme")
+    // );
+    // document.documentElement.style.setProperty(
+    //   "--anzhiyu-theme-op",
+    //   getComputedStyle(document.documentElement).getPropertyValue("--anzhiyu-main") + "23"
+    // );
+    // document.documentElement.style.setProperty(
+    //   "--anzhiyu-theme-op-deep",
+    //   getComputedStyle(document.documentElement).getPropertyValue("--anzhiyu-main") + "dd"
+    // );
   },
   //是否是文章页
   is_Post: function () {
@@ -584,11 +610,11 @@ const anzhiyu = {
   },
   sayhi: function () {
     const $sayhiEl = document.getElementById("author-info__sayhi");
-  
+
     const getTimeState = () => {
       const hour = new Date().getHours();
       let message = "";
-  
+
       if (hour >= 0 && hour <= 5) {
         message = "睡个好觉，保证精力充沛";
       } else if (hour > 5 && hour <= 10) {
@@ -600,15 +626,15 @@ const anzhiyu = {
       } else if (hour > 18 && hour <= 24) {
         message = "不要太劳累了，早睡更健康";
       }
-  
+
       return message;
     };
-  
+
     if ($sayhiEl) {
       $sayhiEl.innerHTML = getTimeState();
     }
   },
-  
+
   // 友链注入预设评论
   addFriendLink() {
     var input = document.getElementsByClassName("el-textarea__inner")[0];
@@ -806,7 +832,6 @@ const anzhiyu = {
       // player listswitch 会进入此处
       const musiccover = document.querySelector("#anMusic-page .aplayer-pic");
       anMusicBg.style.backgroundImage = musiccover.style.backgroundImage;
-      $web_container.style.background = "none";
     } else {
       // 第一次进入，绑定事件，改背景
       let timer = setInterval(() => {
@@ -1101,7 +1126,7 @@ const anzhiyu = {
       "取消"
     );
     travellingsTimer = setTimeout(function () {
-      window.open("https://www.travellings.cn/go.html","_blank");
+      window.open("https://www.travellings.cn/go.html", "_blank");
     }, "5000");
   },
 
@@ -1320,5 +1345,100 @@ const anzhiyu = {
       randomGreeting = greetings[Math.floor(Math.random() * greetings.length)];
     }
     authorInfoSayHiElement.textContent = randomGreeting;
+  },
+};
+
+const anzhiyuPopupManager = {
+  queue: [],
+  processing: false,
+  Jump: false,
+
+  enqueuePopup(title, tip, url, duration = 3000) {
+    this.queue.push({ title, tip, url, duration });
+    if (!this.processing) {
+      this.processQueue();
+    }
+  },
+
+  processQueue() {
+    if (this.queue.length > 0 && !this.processing) {
+      this.processing = true;
+      const { title, tip, url, duration } = this.queue.shift();
+      this.popupShow(title, tip, url, duration);
+    }
+  },
+
+  popupShow(title, tip, url, duration) {
+    const popupWindow = document.getElementById("popup-window");
+    const windowTitle = popupWindow.querySelector(".popup-window-title");
+    const windowContent = popupWindow.querySelector(".popup-window-content");
+    const cookiesTip = windowContent.querySelector(".popup-tip");
+    if (popupWindow.classList.contains("show-popup-window")) {
+      popupWindow.classList.add("popup-hide");
+    }
+
+    // 等待上一个弹窗完全消失
+    setTimeout(() => {
+      // 移除之前的点击事件处理程序
+      popupWindow.removeEventListener("click", this.clickEventHandler);
+      if (url) {
+        if (window.pjax) {
+          this.clickEventHandler = event => {
+            event.preventDefault();
+            pjax.loadUrl(url);
+            popupWindow.classList.remove("show-popup-window");
+            popupWindow.classList.remove("popup-hide");
+            this.Jump = true;
+
+            // 处理队列中的下一个弹出窗口
+            this.processing = false;
+            this.processQueue();
+          };
+
+          popupWindow.addEventListener("click", this.clickEventHandler);
+        } else {
+          this.clickEventHandler = () => {
+            window.location.href = url;
+          };
+          popupWindow.addEventListener("click", this.clickEventHandler);
+        }
+        if (popupWindow.classList.contains("no-url")) {
+          popupWindow.classList.remove("no-url");
+        }
+      } else {
+        if (!popupWindow.classList.contains("no-url")) {
+          popupWindow.classList.add("no-url");
+        }
+
+        this.clickEventHandler = () => {
+          popupWindow.classList.add("popup-hide");
+          setTimeout(() => {
+            popupWindow.classList.remove("popup-hide");
+            popupWindow.classList.remove("show-popup-window");
+          }, 1000);
+        };
+        popupWindow.addEventListener("click", this.clickEventHandler);
+      }
+
+      if (popupWindow.classList.contains("popup-hide")) {
+        popupWindow.classList.remove("popup-hide");
+      }
+      popupWindow.classList.add("show-popup-window");
+      windowTitle.textContent = title;
+      cookiesTip.textContent = tip;
+    }, 800);
+
+    setTimeout(() => {
+      if (url && !this.Jump) {
+        this.Jump = false;
+      }
+      if (!popupWindow.classList.contains("popup-hide") && !popupWindow.className === '') {
+        popupWindow.classList.add("popup-hide");
+      }
+
+      // 处理队列中的下一个弹出窗口
+      this.processing = false;
+      this.processQueue();
+    }, duration);
   },
 };
