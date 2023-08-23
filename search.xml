@@ -1,6 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>UE虚拟制片学习手册</title>
+    <url>/2022/07/01/UE%E8%99%9A%E6%8B%9F%E5%88%B6%E7%89%87/</url>
+    <content><![CDATA[<p>UE虚拟制片</p>
+<p>虚拟制片流程</p>
+<h2 id="一、虚拟舞台-x2F-舞台预演"><a href="#一、虚拟舞台-x2F-舞台预演" class="headerlink" title="一、虚拟舞台&#x2F;舞台预演"></a>一、虚拟舞台&#x2F;舞台预演</h2><h3 id="模型导入导出"><a href="#模型导入导出" class="headerlink" title="模型导入导出"></a>模型导入导出</h3><p>插件下载：<a href="https://www.unrealengine.com/zh-CN/datasmith/plugins">https://www.unrealengine.com/zh-CN/datasmith/plugins</a></p>
+<h3 id=""><a href="#" class="headerlink" title=""></a></h3><h3 id="灯具、效果详解"><a href="#灯具、效果详解" class="headerlink" title="灯具、效果详解"></a>灯具、效果详解</h3><h4 id="电脑摇头灯与频闪灯"><a href="#电脑摇头灯与频闪灯" class="headerlink" title="电脑摇头灯与频闪灯"></a>电脑摇头灯与频闪灯</h4><h4 id="Gobo图案盘替换"><a href="#Gobo图案盘替换" class="headerlink" title="Gobo图案盘替换"></a>Gobo图案盘替换</h4><h4 id="扫描灯与帕灯"><a href="#扫描灯与帕灯" class="headerlink" title="扫描灯与帕灯"></a>扫描灯与帕灯</h4><h4 id="矩阵灯"><a href="#矩阵灯" class="headerlink" title="矩阵灯"></a>矩阵灯</h4><h4 id="摇头矩阵灯"><a href="#摇头矩阵灯" class="headerlink" title="摇头矩阵灯"></a>摇头矩阵灯</h4><h4 id="特效烟花"><a href="#特效烟花" class="headerlink" title="特效烟花"></a>特效烟花</h4><h4 id="特效冷焰火"><a href="#特效冷焰火" class="headerlink" title="特效冷焰火"></a>特效冷焰火</h4><h4 id="特效喷泉"><a href="#特效喷泉" class="headerlink" title="特效喷泉"></a>特效喷泉</h4><h4 id="特效激光灯"><a href="#特效激光灯" class="headerlink" title="特效激光灯"></a>特效激光灯</h4><h4 id="自制DMX灯具"><a href="#自制DMX灯具" class="headerlink" title="自制DMX灯具"></a>自制DMX灯具</h4><h4 id="自发光材质"><a href="#自发光材质" class="headerlink" title="自发光材质"></a>自发光材质</h4><p>内容浏览器右键新建材质</p>
+<p>颜色与亮度数值相乘给到自发光材质</p>
+<h4 id="粒子系统（观众-x2F-特效）"><a href="#粒子系统（观众-x2F-特效）" class="headerlink" title="粒子系统（观众&#x2F;特效）"></a>粒子系统（观众&#x2F;特效）</h4><h4 id="音频可视化"><a href="#音频可视化" class="headerlink" title="音频可视化"></a>音频可视化</h4><h3 id="-1"><a href="#-1" class="headerlink" title=""></a></h3><h3 id="替换灯具"><a href="#替换灯具" class="headerlink" title="替换灯具"></a>替换灯具</h3><p>1.右键视图勾选内容</p>
+<p>2.在自己工程中新建文件夹存放灯具</p>
+<p>3.复制官方灯具-DMXFixtures内容中的灯具到自己工程中的灯具目录（方便修改灯具数据）</p>
+<p>4.选择内容浏览器灯具目录中对应灯具，在世界大纲视图中多选对应灯具</p>
+<p>5.右键替换选中的Actor</p>
+<h3 id="灯具配接"><a href="#灯具配接" class="headerlink" title="灯具配接"></a>灯具配接</h3><p>1.在内容浏览器中新建DMX库</p>
+<p>2.添加控制器 Universe Start（起始域）Amount of Universe(域数量）</p>
+<p>3.打开灯具蓝图，查看灯具通道类型（对应灯具功能）</p>
+<p>Pan（P轴）Tilt（T轴）Color（颜色盘，可删除&#x2F;关闭）Gobo（图案盘）</p>
+<p>Dimmer（亮度）Strobe（屏闪） Zoom（聚焦）Frost（雾化）</p>
+<p>Color Component（RGB添加组件中）</p>
+<p>4.根据灯光通道类型在DMX库中新建Fixture类型（对应几种灯具），选择对应灯具类别</p>
+<p>5.添加Modes通道模式</p>
+<p>6.添加函数并选择对应通道名称（对应灯具功能，顺序需与MA2创建的灯库顺序相同）</p>
+<p>注：1.RGB占三个通道</p>
+<p>2.T轴P轴需设置16Bit</p>
+<p>7.Fixture补丁（对应拨地址码）</p>
+<p>添加Fixture（添加灯具）命名格式XXX_1（方便计算灯具数量）Ctrl+W复制灯具 Universe（域,对应灯具分组）</p>
+<p>8.保存DMX</p>
+<p>9.（1）插件配接(官方示例中获取）</p>
+<p>按顺序选择灯光</p>
+<p>点击DMXLibrary选择配接好的DMX灯库</p>
+<p>点击FirstFixture选择对应的灯光在灯库中第一个灯</p>
+<p>1.按顺序配接不改名 2.配接为一个地址码</p>
+<p>3.按顺序配接地址码并重命名</p>
+<p>（2）手动配接</p>
+<p>选择对应灯具在细节面板中修改DMX内容，Library选择配接好的DMX灯库，补丁选</p>
+<p>择灯具在灯库中对应的灯具。</p>
+<h3 id="-2"><a href="#-2" class="headerlink" title=""></a></h3><h3 id="材质修改"><a href="#材质修改" class="headerlink" title="材质修改"></a>材质修改</h3><h3 id="NDI控制屏幕"><a href="#NDI控制屏幕" class="headerlink" title="NDI控制屏幕"></a>NDI控制屏幕</h3>]]></content>
+      <categories>
+        <category>舞美</category>
+      </categories>
+      <tags>
+        <tag>舞美</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>PC局域网搭建可道云</title>
     <url>/2018/05/02/PC%E5%B1%80%E5%9F%9F%E7%BD%91%E6%90%AD%E5%BB%BA%E5%8F%AF%E9%81%93%E4%BA%91/</url>
     <content><![CDATA[<h2 id="UPUPW搭建"><a href="#UPUPW搭建" class="headerlink" title="UPUPW搭建"></a>UPUPW搭建</h2><p>1.下载UPUPW套件<br> 下载地址：<a href="http://www.upupw.net/nphp70/n130.html"><strong>http://www.upupw.net/nphp70/n130.html</strong></a><br> 点击云端下载。</p>
@@ -135,50 +179,6 @@
       </tags>
   </entry>
   <entry>
-    <title>UE虚拟制片学习手册</title>
-    <url>/2022/07/01/UE%E8%99%9A%E6%8B%9F%E5%88%B6%E7%89%87/</url>
-    <content><![CDATA[<p>UE虚拟制片</p>
-<p>虚拟制片流程</p>
-<h2 id="一、虚拟舞台-x2F-舞台预演"><a href="#一、虚拟舞台-x2F-舞台预演" class="headerlink" title="一、虚拟舞台&#x2F;舞台预演"></a>一、虚拟舞台&#x2F;舞台预演</h2><h3 id="模型导入导出"><a href="#模型导入导出" class="headerlink" title="模型导入导出"></a>模型导入导出</h3><p>插件下载：<a href="https://www.unrealengine.com/zh-CN/datasmith/plugins">https://www.unrealengine.com/zh-CN/datasmith/plugins</a></p>
-<h3 id=""><a href="#" class="headerlink" title=""></a></h3><h3 id="灯具、效果详解"><a href="#灯具、效果详解" class="headerlink" title="灯具、效果详解"></a>灯具、效果详解</h3><h4 id="电脑摇头灯与频闪灯"><a href="#电脑摇头灯与频闪灯" class="headerlink" title="电脑摇头灯与频闪灯"></a>电脑摇头灯与频闪灯</h4><h4 id="Gobo图案盘替换"><a href="#Gobo图案盘替换" class="headerlink" title="Gobo图案盘替换"></a>Gobo图案盘替换</h4><h4 id="扫描灯与帕灯"><a href="#扫描灯与帕灯" class="headerlink" title="扫描灯与帕灯"></a>扫描灯与帕灯</h4><h4 id="矩阵灯"><a href="#矩阵灯" class="headerlink" title="矩阵灯"></a>矩阵灯</h4><h4 id="摇头矩阵灯"><a href="#摇头矩阵灯" class="headerlink" title="摇头矩阵灯"></a>摇头矩阵灯</h4><h4 id="特效烟花"><a href="#特效烟花" class="headerlink" title="特效烟花"></a>特效烟花</h4><h4 id="特效冷焰火"><a href="#特效冷焰火" class="headerlink" title="特效冷焰火"></a>特效冷焰火</h4><h4 id="特效喷泉"><a href="#特效喷泉" class="headerlink" title="特效喷泉"></a>特效喷泉</h4><h4 id="特效激光灯"><a href="#特效激光灯" class="headerlink" title="特效激光灯"></a>特效激光灯</h4><h4 id="自制DMX灯具"><a href="#自制DMX灯具" class="headerlink" title="自制DMX灯具"></a>自制DMX灯具</h4><h4 id="自发光材质"><a href="#自发光材质" class="headerlink" title="自发光材质"></a>自发光材质</h4><p>内容浏览器右键新建材质</p>
-<p>颜色与亮度数值相乘给到自发光材质</p>
-<h4 id="粒子系统（观众-x2F-特效）"><a href="#粒子系统（观众-x2F-特效）" class="headerlink" title="粒子系统（观众&#x2F;特效）"></a>粒子系统（观众&#x2F;特效）</h4><h4 id="音频可视化"><a href="#音频可视化" class="headerlink" title="音频可视化"></a>音频可视化</h4><h3 id="-1"><a href="#-1" class="headerlink" title=""></a></h3><h3 id="替换灯具"><a href="#替换灯具" class="headerlink" title="替换灯具"></a>替换灯具</h3><p>1.右键视图勾选内容</p>
-<p>2.在自己工程中新建文件夹存放灯具</p>
-<p>3.复制官方灯具-DMXFixtures内容中的灯具到自己工程中的灯具目录（方便修改灯具数据）</p>
-<p>4.选择内容浏览器灯具目录中对应灯具，在世界大纲视图中多选对应灯具</p>
-<p>5.右键替换选中的Actor</p>
-<h3 id="灯具配接"><a href="#灯具配接" class="headerlink" title="灯具配接"></a>灯具配接</h3><p>1.在内容浏览器中新建DMX库</p>
-<p>2.添加控制器 Universe Start（起始域）Amount of Universe(域数量）</p>
-<p>3.打开灯具蓝图，查看灯具通道类型（对应灯具功能）</p>
-<p>Pan（P轴）Tilt（T轴）Color（颜色盘，可删除&#x2F;关闭）Gobo（图案盘）</p>
-<p>Dimmer（亮度）Strobe（屏闪） Zoom（聚焦）Frost（雾化）</p>
-<p>Color Component（RGB添加组件中）</p>
-<p>4.根据灯光通道类型在DMX库中新建Fixture类型（对应几种灯具），选择对应灯具类别</p>
-<p>5.添加Modes通道模式</p>
-<p>6.添加函数并选择对应通道名称（对应灯具功能，顺序需与MA2创建的灯库顺序相同）</p>
-<p>注：1.RGB占三个通道</p>
-<p>2.T轴P轴需设置16Bit</p>
-<p>7.Fixture补丁（对应拨地址码）</p>
-<p>添加Fixture（添加灯具）命名格式XXX_1（方便计算灯具数量）Ctrl+W复制灯具 Universe（域,对应灯具分组）</p>
-<p>8.保存DMX</p>
-<p>9.（1）插件配接(官方示例中获取）</p>
-<p>按顺序选择灯光</p>
-<p>点击DMXLibrary选择配接好的DMX灯库</p>
-<p>点击FirstFixture选择对应的灯光在灯库中第一个灯</p>
-<p>1.按顺序配接不改名 2.配接为一个地址码</p>
-<p>3.按顺序配接地址码并重命名</p>
-<p>（2）手动配接</p>
-<p>选择对应灯具在细节面板中修改DMX内容，Library选择配接好的DMX灯库，补丁选</p>
-<p>择灯具在灯库中对应的灯具。</p>
-<h3 id="-2"><a href="#-2" class="headerlink" title=""></a></h3><h3 id="材质修改"><a href="#材质修改" class="headerlink" title="材质修改"></a>材质修改</h3><h3 id="NDI控制屏幕"><a href="#NDI控制屏幕" class="headerlink" title="NDI控制屏幕"></a>NDI控制屏幕</h3>]]></content>
-      <categories>
-        <category>舞美</category>
-      </categories>
-      <tags>
-        <tag>舞美</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Windows server WDS部署服务</title>
     <url>/2016/09/02/Windows%20server%20WDS%E9%83%A8%E7%BD%B2%E6%9C%8D%E5%8A%A1/</url>
     <content><![CDATA[<h2 id="WDS的创建"><a href="#WDS的创建" class="headerlink" title="WDS的创建"></a>WDS的创建</h2><p>1.在Windows server仪表盘中添加角色和功能。</p>
@@ -207,65 +207,6 @@
       </tags>
   </entry>
   <entry>
-    <title>“五个一百”网络精品年度发布盛典</title>
-    <url>/2021/12/08/%E2%80%9C%E4%BA%94%E4%B8%AA%E4%B8%80%E7%99%BE%E2%80%9D%E7%BD%91%E7%BB%9C%E7%B2%BE%E5%93%81%E5%B9%B4%E5%BA%A6%E5%8F%91%E5%B8%83%E7%9B%9B%E5%85%B8/</url>
-    <content><![CDATA[<h2 id="项目背景"><a href="#项目背景" class="headerlink" title="项目背景"></a>项目背景</h2><p>中国正能量2021“五个一百”网络精品征集评选展播活动由中央网信办主办，中央网信办网络传播局、中国互联网发展基金会、央视网承办。活动自2016年启动以来历经六届，影响力号召力不断增强，网络同心圆越画越大，汇聚起了奋进新时代、谱写新篇章的磅礴力量。</p>
-<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%E6%88%91%E5%B0%B1%E6%98%AF%E4%B8%AD%E5%9B%BD.jpg"></p>
-<p>今年以<strong>“奋斗的人民、奋进的中国”</strong>为主题，突出共建共享，让正能量催生强大热量。聚焦庆祝中国共产党成立100周年、脱贫攻坚、抗疫成果等重大主题，广泛征集正能量作品，通过各环节评定，最终评出了榜样和作品并于1月28播出年度发布盛典。</p>
-<p>视觉设计思路上，紧扣颁奖盛典<strong>“奋斗的人民、奋进的中国”</strong>主题，用前沿现代的设计语言来讲述深厚的文化积淀，虚拟技术融汇艺术，打破次元壁，同时保证视觉有力量也有温度，充分展现当下的时代内涵。</p>
-<h2 id="效果图"><a href="#效果图" class="headerlink" title="效果图"></a>效果图</h2><h3 id="我的祖国"><a href="#我的祖国" class="headerlink" title="我的祖国"></a>我的祖国</h3><p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E4%25B8%2580%25E6%259D%25A1%25E5%25A4%25A7%25E6%25B2%25B3-tuya.jpg" alt="一条大河-tuya"></p>
-<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E4%25B8%2580%25E6%259D%25A1%25E5%25A4%25A7%25E6%25B2%25B3%25E4%25B8%25BB%25E5%25B1%258F2-tuya.jpg" alt="一条大河主屏2-tuya"></p>
-<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E4%25B8%2580%25E6%259D%25A1%25E5%25A4%25A7%25E6%25B2%25B3%25E4%25B8%25BB%25E5%25B1%258F4-tuya.jpg" alt="一条大河主屏4-tuya"></p>
-<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E4%25B8%2580%25E6%259D%25A1%25E5%25A4%25A7%25E6%25B2%25B3%25E4%25B8%25BB%25E5%25B1%258F5-tuya.jpg" alt="一条大河主屏5-tuya"></p>
-<h3 id="生命之河"><a href="#生命之河" class="headerlink" title="生命之河"></a>生命之河</h3><p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E7%2594%259F%25E5%2591%25BD%25E4%25B9%258B%25E6%25B2%25B3-tuya.jpg" alt="生命之河-tuya"></p>
-<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E7%2594%259F%25E5%2591%25BD%25E4%25B9%258B%25E6%25B2%25B33-tuya.jpg" alt="生命之河3-tuya"></p>
-<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E6%2588%2591%25E5%25B0%25B1%25E6%2598%25AF%25E4%25B8%25AD%25E5%259B%25BD-3.gif" alt="我就是中国-3"></p>
-<h3 id="我有一个梦"><a href="#我有一个梦" class="headerlink" title="我有一个梦"></a>我有一个梦</h3><p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E6%2588%2591%25E6%259C%2589%25E4%25B8%2580%25E4%25B8%25AA%25E6%25A2%25A6-%25E8%2588%259E%25E7%25BE%258E9-tuya.jpg" alt="我有一个梦-舞美9-tuya"></p>
-<h3 id="扶贫日记"><a href="#扶贫日记" class="headerlink" title="扶贫日记"></a>扶贫日记</h3><p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E6%2589%25B6%25E8%25B4%25AB%25E6%2597%25A5%25E8%25AE%25B0%25E8%2588%259E%25E7%25BE%258E2-tuya.jpg" alt="扶贫日记舞美2-tuya"></p>
-<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E6%2589%25B6%25E8%25B4%25AB%25E6%2597%25A5%25E8%25AE%25B0%25E8%2588%259E%25E7%25BE%258E1-tuya.jpg" alt="扶贫日记舞美1-tuya"></p>
-<h3 id="瞬间·中国"><a href="#瞬间·中国" class="headerlink" title="瞬间·中国"></a>瞬间·中国</h3><p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E7%25BD%2591%25E7%25BB%259C%25E6%2597%25B6%25E4%25BB%25A3%25E7%25B4%25A0%25E4%25BA%25BA%25E8%2588%259E%25E7%25BE%258E3-tuya.jpg" alt="网络时代素人舞美3-tuya"></p>
-<h3 id="我和我的祖国"><a href="#我和我的祖国" class="headerlink" title="我和我的祖国"></a>我和我的祖国</h3><p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E6%25B2%2599%25E7%2594%25BB5-tuya.jpg" alt="沙画5-tuya"></p>
-<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E6%25B2%2599%25E7%2594%25BB8-tuya.jpg" alt="沙画8-tuya"></p>
-<h2 id="现场效果"><a href="#现场效果" class="headerlink" title="现场效果"></a>现场效果</h2><p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E6%2588%2591%25E5%25B0%25B1%25E6%2598%25AF%25E4%25B8%25AD%25E5%259B%25BD-1.gif" alt="我就是中国-1"></p>
-<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E6%2588%2591%25E5%25B0%25B1%25E6%2598%25AF%25E4%25B8%25AD%25E5%259B%25BD-2.gif" alt="我就是中国-2"></p>
-<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E6%2588%2591%25E5%25B0%25B1%25E6%2598%25AF%25E4%25B8%25AD%25E5%259B%25BD-4.gif" alt="我就是中国-4"></p>
-<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%E6%88%91%E5%B0%B1%E6%98%AF%E4%B8%AD%E5%9B%BD-5.gif"></p>
-<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%E6%88%91%E5%B0%B1%E6%98%AF%E4%B8%AD%E5%9B%BD-6.gif"></p>
-<img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E6%2588%2591%25E5%25B0%25B1%25E6%2598%25AF%25E4%25B8%25AD%25E5%259B%25BD-7.gif"/>
-
-<h2 id="用户反馈"><a href="#用户反馈" class="headerlink" title="用户反馈"></a>用户反馈</h2><iframe src="//player.bilibili.com/player.html?aid=593607723&bvid=BV1Tq4y1h7mZ&cid=494938533&page=1" scrolling="no" border="0" height="800" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
-
-
-]]></content>
-      <categories>
-        <category>舞台</category>
-      </categories>
-      <tags>
-        <tag>舞台</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>使用Colab挂Sheepit积分</title>
-    <url>/2023/07/20/%E4%BD%BF%E7%94%A8Colab%E6%8C%82Sheepit%E7%A7%AF%E5%88%86/</url>
-    <content><![CDATA[<h2 id="打开Colab项目复制一个副本"><a href="#打开Colab项目复制一个副本" class="headerlink" title="打开Colab项目复制一个副本"></a>打开Colab项目复制一个副本</h2><a class="btn-anzhiyu outline larger" href="https://colab.research.google.com/drive/1JQzTIxAnC6dQc88MJi3UwurlIS8kJpJG?usp=sharing" 
-  title="Colab项目"><i class="fa-brands fa-google-drive"></i><span>Colab项目</span></a>
-
-<h2 id="打开Sheepit官网，并登录账号"><a href="#打开Sheepit官网，并登录账号" class="headerlink" title="打开Sheepit官网，并登录账号"></a>打开Sheepit官网，并登录账号</h2><a class="btn-anzhiyu outline larger" href="https://www.sheepit-renderfarm.com/home" 
-  title="SheepIt官网"><i class="fa-solid fa-cube"></i><span>SheepIt官网</span></a>
-
-<p>点击右上角头像选择Edit profile进入</p>
-<p>点击Render keys复制左下角<strong>Public key（公钥）</strong>到Colab项目中（公钥比填写密码更安全）</p>
-<p>填写用户名</p>
-<h2 id="依次运行三组代码"><a href="#依次运行三组代码" class="headerlink" title="依次运行三组代码"></a>依次运行三组代码</h2><p>这时打开Sheepit官网，点击头像My account，如果已连接的机器显示Tesla T4即可</p>
-]]></content>
-      <categories>
-        <category>系统</category>
-      </categories>
-      <tags>
-        <tag>系统</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>第13届北京冬残奥会开幕式</title>
     <url>/2022/03/04/%E5%8C%97%E4%BA%AC2022%E5%B9%B4%E5%86%AC%E6%AE%8B%E5%A5%A5%E4%BC%9A/</url>
     <content><![CDATA[<h2 id="未采用部分"><a href="#未采用部分" class="headerlink" title="未采用部分"></a>未采用部分</h2><p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E5%2585%25A8%25E8%2593%259D6-tuya.jpg" alt="全蓝6-tuya"></p>
@@ -282,24 +223,6 @@
       </categories>
       <tags>
         <tag>舞台</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>卖奶茶的小女孩</title>
-    <url>/2023/03/06/%E5%8D%96%E5%A5%B6%E8%8C%B6%E7%9A%84%E5%B0%8F%E5%A5%B3%E5%AD%A9/</url>
-    <content><![CDATA[<h2 id="买奶茶的小女孩"><a href="#买奶茶的小女孩" class="headerlink" title="买奶茶的小女孩"></a>买奶茶的小女孩</h2><p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E4%25B9%25B0%25E5%25A5%25B6%25E8%258C%25B6%25E7%259A%2584%25E5%25B0%258F%25E5%25A5%25B3%25E5%25AD%25A9_%25E9%25A1%25B5%25E9%259D%25A2_1-tuya.jpg" alt="买奶茶的小女孩_页面_1-tuya"></p>
-<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E4%25B9%25B0%25E5%25A5%25B6%25E8%258C%25B6%25E7%259A%2584%25E5%25B0%258F%25E5%25A5%25B3%25E5%25AD%25A9_%25E9%25A1%25B5%25E9%259D%25A2_2-tuya.jpg" alt="买奶茶的小女孩_页面_2-tuya"></p>
-<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E4%25B9%25B0%25E5%25A5%25B6%25E8%258C%25B6%25E7%259A%2584%25E5%25B0%258F%25E5%25A5%25B3%25E5%25AD%25A9_%25E9%25A1%25B5%25E9%259D%25A2_3-tuya.jpg" alt="买奶茶的小女孩_页面_3-tuya"></p>
-<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E4%25B9%25B0%25E5%25A5%25B6%25E8%258C%25B6%25E7%259A%2584%25E5%25B0%258F%25E5%25A5%25B3%25E5%25AD%25A9_%25E9%25A1%25B5%25E9%259D%25A2_4-tuya.jpg" alt="买奶茶的小女孩_页面_4-tuya"></p>
-<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E4%25B9%25B0%25E5%25A5%25B6%25E8%258C%25B6%25E7%259A%2584%25E5%25B0%258F%25E5%25A5%25B3%25E5%25AD%25A9_%25E9%25A1%25B5%25E9%259D%25A2_6-tuya.jpg" alt="买奶茶的小女孩_页面_6-tuya"></p>
-<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E4%25B9%25B0%25E5%25A5%25B6%25E8%258C%25B6%25E7%259A%2584%25E5%25B0%258F%25E5%25A5%25B3%25E5%25AD%25A9_%25E9%25A1%25B5%25E9%259D%25A2_7-tuya.jpg" alt="买奶茶的小女孩_页面_7-tuya"></p>
-<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E4%25B9%25B0%25E5%25A5%25B6%25E8%258C%25B6%25E7%259A%2584%25E5%25B0%258F%25E5%25A5%25B3%25E5%25AD%25A9_%25E9%25A1%25B5%25E9%259D%25A2_8-tuya.jpg" alt="买奶茶的小女孩_页面_8-tuya"></p>
-]]></content>
-      <categories>
-        <category>项目</category>
-      </categories>
-      <tags>
-        <tag>项目</tag>
       </tags>
   </entry>
   <entry>
@@ -362,6 +285,27 @@
       </tags>
   </entry>
   <entry>
+    <title>使用Colab挂Sheepit积分</title>
+    <url>/2023/07/20/%E4%BD%BF%E7%94%A8Colab%E6%8C%82Sheepit%E7%A7%AF%E5%88%86/</url>
+    <content><![CDATA[<h2 id="打开Colab项目复制一个副本"><a href="#打开Colab项目复制一个副本" class="headerlink" title="打开Colab项目复制一个副本"></a>打开Colab项目复制一个副本</h2><a class="btn-anzhiyu outline larger" href="https://colab.research.google.com/drive/1JQzTIxAnC6dQc88MJi3UwurlIS8kJpJG?usp=sharing" 
+  title="Colab项目"><i class="fa-brands fa-google-drive"></i><span>Colab项目</span></a>
+
+<h2 id="打开Sheepit官网，并登录账号"><a href="#打开Sheepit官网，并登录账号" class="headerlink" title="打开Sheepit官网，并登录账号"></a>打开Sheepit官网，并登录账号</h2><a class="btn-anzhiyu outline larger" href="https://www.sheepit-renderfarm.com/home" 
+  title="SheepIt官网"><i class="fa-solid fa-cube"></i><span>SheepIt官网</span></a>
+
+<p>点击右上角头像选择Edit profile进入</p>
+<p>点击Render keys复制左下角<strong>Public key（公钥）</strong>到Colab项目中（公钥比填写密码更安全）</p>
+<p>填写用户名</p>
+<h2 id="依次运行三组代码"><a href="#依次运行三组代码" class="headerlink" title="依次运行三组代码"></a>依次运行三组代码</h2><p>这时打开Sheepit官网，点击头像My account，如果已连接的机器显示Tesla T4即可</p>
+]]></content>
+      <categories>
+        <category>系统</category>
+      </categories>
+      <tags>
+        <tag>系统</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>第五届黑龙江省旅发大会</title>
     <url>/2022/05/07/%E5%A4%A7%E5%BA%86%E6%97%85%E6%B8%B8%E5%8F%91%E5%B1%95%E5%A4%A7%E4%BC%9A/</url>
     <content><![CDATA[<h2 id="片头分镜"><a href="#片头分镜" class="headerlink" title="片头分镜"></a>片头分镜</h2><p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E6%2580%25BB.jpg" alt="总"></p>
@@ -384,6 +328,44 @@
 <h3 id="《惊雷之声》"><a href="#《惊雷之声》" class="headerlink" title="《惊雷之声》"></a><strong>《惊雷之声》</strong></h3><p>以充满张力的群体戏剧表演配合投影画面、大视觉装置，用艺术手段再现“18手印”的壮举，展现滁州人民敢为人先的开创精神，以及这片江淮大地上孕育的热血豪情。</p>
 <p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E7%25A0%25B4%25E5%2586%25B0%25E4%25B9%258B%25E5%258B%2587_%25E6%2596%2587%25E5%25AD%2597-tuya.jpg" alt="破冰之勇_文字-tuya"></p>
 <img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/640.gif" alt="640" style="zoom:200%;" />
+
+]]></content>
+      <categories>
+        <category>舞台</category>
+      </categories>
+      <tags>
+        <tag>舞台</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>“五个一百”网络精品年度发布盛典</title>
+    <url>/2021/12/08/%E2%80%9C%E4%BA%94%E4%B8%AA%E4%B8%80%E7%99%BE%E2%80%9D%E7%BD%91%E7%BB%9C%E7%B2%BE%E5%93%81%E5%B9%B4%E5%BA%A6%E5%8F%91%E5%B8%83%E7%9B%9B%E5%85%B8/</url>
+    <content><![CDATA[<h2 id="项目背景"><a href="#项目背景" class="headerlink" title="项目背景"></a>项目背景</h2><p>中国正能量2021“五个一百”网络精品征集评选展播活动由中央网信办主办，中央网信办网络传播局、中国互联网发展基金会、央视网承办。活动自2016年启动以来历经六届，影响力号召力不断增强，网络同心圆越画越大，汇聚起了奋进新时代、谱写新篇章的磅礴力量。</p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%E6%88%91%E5%B0%B1%E6%98%AF%E4%B8%AD%E5%9B%BD.jpg"></p>
+<p>今年以<strong>“奋斗的人民、奋进的中国”</strong>为主题，突出共建共享，让正能量催生强大热量。聚焦庆祝中国共产党成立100周年、脱贫攻坚、抗疫成果等重大主题，广泛征集正能量作品，通过各环节评定，最终评出了榜样和作品并于1月28播出年度发布盛典。</p>
+<p>视觉设计思路上，紧扣颁奖盛典<strong>“奋斗的人民、奋进的中国”</strong>主题，用前沿现代的设计语言来讲述深厚的文化积淀，虚拟技术融汇艺术，打破次元壁，同时保证视觉有力量也有温度，充分展现当下的时代内涵。</p>
+<h2 id="效果图"><a href="#效果图" class="headerlink" title="效果图"></a>效果图</h2><h3 id="我的祖国"><a href="#我的祖国" class="headerlink" title="我的祖国"></a>我的祖国</h3><p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E4%25B8%2580%25E6%259D%25A1%25E5%25A4%25A7%25E6%25B2%25B3-tuya.jpg" alt="一条大河-tuya"></p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E4%25B8%2580%25E6%259D%25A1%25E5%25A4%25A7%25E6%25B2%25B3%25E4%25B8%25BB%25E5%25B1%258F2-tuya.jpg" alt="一条大河主屏2-tuya"></p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E4%25B8%2580%25E6%259D%25A1%25E5%25A4%25A7%25E6%25B2%25B3%25E4%25B8%25BB%25E5%25B1%258F4-tuya.jpg" alt="一条大河主屏4-tuya"></p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E4%25B8%2580%25E6%259D%25A1%25E5%25A4%25A7%25E6%25B2%25B3%25E4%25B8%25BB%25E5%25B1%258F5-tuya.jpg" alt="一条大河主屏5-tuya"></p>
+<h3 id="生命之河"><a href="#生命之河" class="headerlink" title="生命之河"></a>生命之河</h3><p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E7%2594%259F%25E5%2591%25BD%25E4%25B9%258B%25E6%25B2%25B3-tuya.jpg" alt="生命之河-tuya"></p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E7%2594%259F%25E5%2591%25BD%25E4%25B9%258B%25E6%25B2%25B33-tuya.jpg" alt="生命之河3-tuya"></p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E6%2588%2591%25E5%25B0%25B1%25E6%2598%25AF%25E4%25B8%25AD%25E5%259B%25BD-3.gif" alt="我就是中国-3"></p>
+<h3 id="我有一个梦"><a href="#我有一个梦" class="headerlink" title="我有一个梦"></a>我有一个梦</h3><p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E6%2588%2591%25E6%259C%2589%25E4%25B8%2580%25E4%25B8%25AA%25E6%25A2%25A6-%25E8%2588%259E%25E7%25BE%258E9-tuya.jpg" alt="我有一个梦-舞美9-tuya"></p>
+<h3 id="扶贫日记"><a href="#扶贫日记" class="headerlink" title="扶贫日记"></a>扶贫日记</h3><p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E6%2589%25B6%25E8%25B4%25AB%25E6%2597%25A5%25E8%25AE%25B0%25E8%2588%259E%25E7%25BE%258E2-tuya.jpg" alt="扶贫日记舞美2-tuya"></p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E6%2589%25B6%25E8%25B4%25AB%25E6%2597%25A5%25E8%25AE%25B0%25E8%2588%259E%25E7%25BE%258E1-tuya.jpg" alt="扶贫日记舞美1-tuya"></p>
+<h3 id="瞬间·中国"><a href="#瞬间·中国" class="headerlink" title="瞬间·中国"></a>瞬间·中国</h3><p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E7%25BD%2591%25E7%25BB%259C%25E6%2597%25B6%25E4%25BB%25A3%25E7%25B4%25A0%25E4%25BA%25BA%25E8%2588%259E%25E7%25BE%258E3-tuya.jpg" alt="网络时代素人舞美3-tuya"></p>
+<h3 id="我和我的祖国"><a href="#我和我的祖国" class="headerlink" title="我和我的祖国"></a>我和我的祖国</h3><p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E6%25B2%2599%25E7%2594%25BB5-tuya.jpg" alt="沙画5-tuya"></p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E6%25B2%2599%25E7%2594%25BB8-tuya.jpg" alt="沙画8-tuya"></p>
+<h2 id="现场效果"><a href="#现场效果" class="headerlink" title="现场效果"></a>现场效果</h2><p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E6%2588%2591%25E5%25B0%25B1%25E6%2598%25AF%25E4%25B8%25AD%25E5%259B%25BD-1.gif" alt="我就是中国-1"></p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E6%2588%2591%25E5%25B0%25B1%25E6%2598%25AF%25E4%25B8%25AD%25E5%259B%25BD-2.gif" alt="我就是中国-2"></p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E6%2588%2591%25E5%25B0%25B1%25E6%2598%25AF%25E4%25B8%25AD%25E5%259B%25BD-4.gif" alt="我就是中国-4"></p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%E6%88%91%E5%B0%B1%E6%98%AF%E4%B8%AD%E5%9B%BD-5.gif"></p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%E6%88%91%E5%B0%B1%E6%98%AF%E4%B8%AD%E5%9B%BD-6.gif"></p>
+<img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E6%2588%2591%25E5%25B0%25B1%25E6%2598%25AF%25E4%25B8%25AD%25E5%259B%25BD-7.gif"/>
+
+<h2 id="用户反馈"><a href="#用户反馈" class="headerlink" title="用户反馈"></a>用户反馈</h2><iframe src="//player.bilibili.com/player.html?aid=593607723&bvid=BV1Tq4y1h7mZ&cid=494938533&page=1" scrolling="no" border="0" height="800" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+
 
 ]]></content>
       <categories>
@@ -426,69 +408,21 @@
       </tags>
   </entry>
   <entry>
-    <title>数据恢复</title>
-    <url>/2023/03/20/%E6%95%B0%E6%8D%AE%E6%81%A2%E5%A4%8D/</url>
-    <content><![CDATA[<h1 id="数据恢复"><a href="#数据恢复" class="headerlink" title="数据恢复"></a><strong>数据恢复</strong></h1><p>所需软件WinHex R-Studio（自行找破解版下载）</p>
-<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/20201030143801667.png"></p>
-<p>winhex  数据恢复分类：硬恢复和软恢复。所谓硬恢复就是硬盘出现物理性损伤，比如有盘体 坏道、电路板芯片烧毁、盘体异响，等故障，由此所导致的普通用户不容易取出里面数据， 那么我们将它修好，同时又保留里面的数据或后来恢复里面的数据，这些都叫数据恢复， 只不过这些故障有容易的和困难的之分；所谓软恢复，就是硬盘本身没有物理损伤，而是 由于人为或者病毒破坏所造成的数据丢失（比如误格式化，误分区），那么这样的数据恢复 就叫软恢复。 这里呢，我们主要介绍软恢复，因为硬恢复还需要购买一些工具设备（比如 pc3000, 电烙铁，各种芯片、电路板），而且还需要懂一点点电路基础，我们这里所讲到的所有的知 识，涉及面广，层次深，既有数据结构原理，为我们手工准确恢复数据提供依据，又有各 种数据恢复软件的使用方法及技巧，为我们快速恢复数据提供便利，而且所有软件均为网 上下载，不需要我们投资一分钱。 数据恢复的前提：数据不能被二次破坏、覆盖！ 关于数码与码制： 关于二进制、十六进制、八进制它们之间的转换我不想多说，因为他对我们数据恢复 来说帮助不大，而且很容易把我们绕晕。如果你感兴趣想多了解一些，可以到百度里面去 搜一下，这方面资料已经很多了，就不需要我再多说了。 数据恢复我们主要用十六进制编辑器：Winhex （数据恢复首选软件） 我们先了解一下数据结构： 下面是一个分了三个区的整个硬盘的数据结构</p>
-<table>
-<thead>
-<tr>
-<th>MBR</th>
-<th>C盘</th>
-<th>EBR</th>
-<th>D盘</th>
-<th>EBR</th>
-<th>E盘</th>
-</tr>
-</thead>
-</table>
-<p>MBR，即主引导纪录，位于整个硬盘的 0 柱面 0 磁道 1 扇区，共占用了 63 个扇区， 但实际只使用了 1 个扇区（512 字节）。在总共 512 字节的主引导记录中，MBR 又可分为 三部分：第一部分：引导代码，占用了 446 个字节；第二部分：分区表，占用了 64 字节； 第三部分：55AA，结束标志，占用了两个字节。后面我们要说的用 winhex 软件来恢复误 分区，主要就是恢复第二部分：分区表。 引导代码的作用：就是让硬盘具备可以引导的功能。如果引导代码丢失，分区表还在， 那么这个硬盘作为从盘所有分区数据都还在，只是这个硬盘自己不能够用来启动进系统了。 如果要恢复引导代码，可以用 DOS 下的命令：FDISK &#x2F;MBR；这个命令只是用来恢复引导 代码，不会引起分区改变，丢失数据。另外，也可以用工具软件，比如 DISKGEN、WINHEX 等。 但分区表如果丢失，后果就是整个硬盘一个分区没有，就好象刚买来一个新硬盘没有 分过区一样。是很多病毒喜欢破坏的区域。 EBR，也叫做扩展 MBR（Extended MBR）。因为主引导记录 MBR 最多只能描述 4 个 分区项，如果想要在一个硬盘上分多于 4 个区，就要采用扩展 MBR 的办法。 MBR、EBR 是分区产生的。 比如 MBR 和 EBR 各都占用 63 个扇区，C 盘占用 1435329 个扇区……那么数据结构 如下表：</p>
-<table>
-    <tr>
-        <td>63</td>
-        <td>1435329</td>
-        <td>63</td>
-        <td>1435329</td>
-        <td>63</td>
-        <td>1253889</td>
-    </tr>
-    <tr>
-        <td>MBR</td>
-        <td>C盘</td>
-        <td>EBR</td>
-        <td>D盘</td>
-        <td>EBR</td>
-        <td>E盘</td>
-    </tr>
-    <tr>
-        <td> </td>
-        <td> </td>
-        <td colspan="4">扩展分区</td>
-    </tr>
-</table>
-
-<p>而每一个分区又由 DBR、FAT1、FAT2、DIR、DATA5 部分组成：比如 C 盘的数据结 构：</p>
-<table>
-    <tr>
-        <td colspan="5">C盘</td>
-    </tr>
-    <tr>
-        <td>DBR</td>
-        <td>FAT1</td>
-        <td>FAT2</td>
-        <td>DIR</td>
-        <td>DITA</td>
-    </tr>
-</table>
-
-<p>Winhex 是使用最多的一款工具软件，是在 Windows 下运行的十六进制编辑软件，此 软件功能非常强大，有完善的分区管理功能和文件管理功能，能自动分析分区链和文件簇 链，能对硬盘进行不同方式不同程度的备份，甚至克隆整个硬盘；它能够编辑任何一种文 件类型的二进制内容（用十六进制显示）其磁盘编辑器可以编辑物理磁盘或逻辑磁盘的任 意扇区，是手工恢复数据的首选工具软件。 首先要安装 Winhex，安装完了就可以启动 winhex 了，启动画面如下：首先出现的是 启动中心对话框。</p>
+    <title>卖奶茶的小女孩</title>
+    <url>/2023/03/06/%E5%8D%96%E5%A5%B6%E8%8C%B6%E7%9A%84%E5%B0%8F%E5%A5%B3%E5%AD%A9/</url>
+    <content><![CDATA[<h2 id="买奶茶的小女孩"><a href="#买奶茶的小女孩" class="headerlink" title="买奶茶的小女孩"></a>买奶茶的小女孩</h2><p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E4%25B9%25B0%25E5%25A5%25B6%25E8%258C%25B6%25E7%259A%2584%25E5%25B0%258F%25E5%25A5%25B3%25E5%25AD%25A9_%25E9%25A1%25B5%25E9%259D%25A2_1-tuya.jpg" alt="买奶茶的小女孩_页面_1-tuya"></p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E4%25B9%25B0%25E5%25A5%25B6%25E8%258C%25B6%25E7%259A%2584%25E5%25B0%258F%25E5%25A5%25B3%25E5%25AD%25A9_%25E9%25A1%25B5%25E9%259D%25A2_2-tuya.jpg" alt="买奶茶的小女孩_页面_2-tuya"></p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E4%25B9%25B0%25E5%25A5%25B6%25E8%258C%25B6%25E7%259A%2584%25E5%25B0%258F%25E5%25A5%25B3%25E5%25AD%25A9_%25E9%25A1%25B5%25E9%259D%25A2_3-tuya.jpg" alt="买奶茶的小女孩_页面_3-tuya"></p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E4%25B9%25B0%25E5%25A5%25B6%25E8%258C%25B6%25E7%259A%2584%25E5%25B0%258F%25E5%25A5%25B3%25E5%25AD%25A9_%25E9%25A1%25B5%25E9%259D%25A2_4-tuya.jpg" alt="买奶茶的小女孩_页面_4-tuya"></p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E4%25B9%25B0%25E5%25A5%25B6%25E8%258C%25B6%25E7%259A%2584%25E5%25B0%258F%25E5%25A5%25B3%25E5%25AD%25A9_%25E9%25A1%25B5%25E9%259D%25A2_6-tuya.jpg" alt="买奶茶的小女孩_页面_6-tuya"></p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E4%25B9%25B0%25E5%25A5%25B6%25E8%258C%25B6%25E7%259A%2584%25E5%25B0%258F%25E5%25A5%25B3%25E5%25AD%25A9_%25E9%25A1%25B5%25E9%259D%25A2_7-tuya.jpg" alt="买奶茶的小女孩_页面_7-tuya"></p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E4%25B9%25B0%25E5%25A5%25B6%25E8%258C%25B6%25E7%259A%2584%25E5%25B0%258F%25E5%25A5%25B3%25E5%25AD%25A9_%25E9%25A1%25B5%25E9%259D%25A2_8-tuya.jpg" alt="买奶茶的小女孩_页面_8-tuya"></p>
 ]]></content>
       <categories>
-        <category>系统</category>
+        <category>项目</category>
       </categories>
       <tags>
-        <tag>系统</tag>
+        <tag>项目</tag>
       </tags>
   </entry>
   <entry>
@@ -567,6 +501,86 @@
       </tags>
   </entry>
   <entry>
+    <title>数据恢复</title>
+    <url>/2023/03/20/%E6%95%B0%E6%8D%AE%E6%81%A2%E5%A4%8D/</url>
+    <content><![CDATA[<h1 id="数据恢复"><a href="#数据恢复" class="headerlink" title="数据恢复"></a><strong>数据恢复</strong></h1><p>所需软件WinHex R-Studio（自行找破解版下载）</p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/20201030143801667.png"></p>
+<p>winhex  数据恢复分类：硬恢复和软恢复。所谓硬恢复就是硬盘出现物理性损伤，比如有盘体 坏道、电路板芯片烧毁、盘体异响，等故障，由此所导致的普通用户不容易取出里面数据， 那么我们将它修好，同时又保留里面的数据或后来恢复里面的数据，这些都叫数据恢复， 只不过这些故障有容易的和困难的之分；所谓软恢复，就是硬盘本身没有物理损伤，而是 由于人为或者病毒破坏所造成的数据丢失（比如误格式化，误分区），那么这样的数据恢复 就叫软恢复。 这里呢，我们主要介绍软恢复，因为硬恢复还需要购买一些工具设备（比如 pc3000, 电烙铁，各种芯片、电路板），而且还需要懂一点点电路基础，我们这里所讲到的所有的知 识，涉及面广，层次深，既有数据结构原理，为我们手工准确恢复数据提供依据，又有各 种数据恢复软件的使用方法及技巧，为我们快速恢复数据提供便利，而且所有软件均为网 上下载，不需要我们投资一分钱。 数据恢复的前提：数据不能被二次破坏、覆盖！ 关于数码与码制： 关于二进制、十六进制、八进制它们之间的转换我不想多说，因为他对我们数据恢复 来说帮助不大，而且很容易把我们绕晕。如果你感兴趣想多了解一些，可以到百度里面去 搜一下，这方面资料已经很多了，就不需要我再多说了。 数据恢复我们主要用十六进制编辑器：Winhex （数据恢复首选软件） 我们先了解一下数据结构： 下面是一个分了三个区的整个硬盘的数据结构</p>
+<table>
+<thead>
+<tr>
+<th>MBR</th>
+<th>C盘</th>
+<th>EBR</th>
+<th>D盘</th>
+<th>EBR</th>
+<th>E盘</th>
+</tr>
+</thead>
+</table>
+<p>MBR，即主引导纪录，位于整个硬盘的 0 柱面 0 磁道 1 扇区，共占用了 63 个扇区， 但实际只使用了 1 个扇区（512 字节）。在总共 512 字节的主引导记录中，MBR 又可分为 三部分：第一部分：引导代码，占用了 446 个字节；第二部分：分区表，占用了 64 字节； 第三部分：55AA，结束标志，占用了两个字节。后面我们要说的用 winhex 软件来恢复误 分区，主要就是恢复第二部分：分区表。 引导代码的作用：就是让硬盘具备可以引导的功能。如果引导代码丢失，分区表还在， 那么这个硬盘作为从盘所有分区数据都还在，只是这个硬盘自己不能够用来启动进系统了。 如果要恢复引导代码，可以用 DOS 下的命令：FDISK &#x2F;MBR；这个命令只是用来恢复引导 代码，不会引起分区改变，丢失数据。另外，也可以用工具软件，比如 DISKGEN、WINHEX 等。 但分区表如果丢失，后果就是整个硬盘一个分区没有，就好象刚买来一个新硬盘没有 分过区一样。是很多病毒喜欢破坏的区域。 EBR，也叫做扩展 MBR（Extended MBR）。因为主引导记录 MBR 最多只能描述 4 个 分区项，如果想要在一个硬盘上分多于 4 个区，就要采用扩展 MBR 的办法。 MBR、EBR 是分区产生的。 比如 MBR 和 EBR 各都占用 63 个扇区，C 盘占用 1435329 个扇区……那么数据结构 如下表：</p>
+<table>
+    <tr>
+        <td>63</td>
+        <td>1435329</td>
+        <td>63</td>
+        <td>1435329</td>
+        <td>63</td>
+        <td>1253889</td>
+    </tr>
+    <tr>
+        <td>MBR</td>
+        <td>C盘</td>
+        <td>EBR</td>
+        <td>D盘</td>
+        <td>EBR</td>
+        <td>E盘</td>
+    </tr>
+    <tr>
+        <td> </td>
+        <td> </td>
+        <td colspan="4">扩展分区</td>
+    </tr>
+</table>
+
+<p>而每一个分区又由 DBR、FAT1、FAT2、DIR、DATA5 部分组成：比如 C 盘的数据结 构：</p>
+<table>
+    <tr>
+        <td colspan="5">C盘</td>
+    </tr>
+    <tr>
+        <td>DBR</td>
+        <td>FAT1</td>
+        <td>FAT2</td>
+        <td>DIR</td>
+        <td>DITA</td>
+    </tr>
+</table>
+
+<p>Winhex 是使用最多的一款工具软件，是在 Windows 下运行的十六进制编辑软件，此 软件功能非常强大，有完善的分区管理功能和文件管理功能，能自动分析分区链和文件簇 链，能对硬盘进行不同方式不同程度的备份，甚至克隆整个硬盘；它能够编辑任何一种文 件类型的二进制内容（用十六进制显示）其磁盘编辑器可以编辑物理磁盘或逻辑磁盘的任 意扇区，是手工恢复数据的首选工具软件。 首先要安装 Winhex，安装完了就可以启动 winhex 了，启动画面如下：首先出现的是 启动中心对话框。</p>
+]]></content>
+      <categories>
+        <category>系统</category>
+      </categories>
+      <tags>
+        <tag>系统</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>过年啦-冬奥一起玩</title>
+    <url>/2022/05/07/%E8%BF%87%E5%B9%B4%E5%95%A6-%E5%86%AC%E5%A5%A5%E4%B8%80%E8%B5%B7%E7%8E%A9/</url>
+    <content><![CDATA[<h2 id="效果图"><a href="#效果图" class="headerlink" title="效果图"></a>效果图</h2><p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E6%25BB%2591%25E5%2586%25B0%25E5%259C%25BA0027.jpg" alt="滑冰场0027"></p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E5%25BE%25AE%25E4%25BF%25A1%25E5%259B%25BE%25E7%2589%2587_20220117234737.jpg" alt="微信图片_20220117234737"></p>
+<p><a href="https://www.mxdia.com/posts/Yb9A43zKzyZz">过年啦-冬奥一起玩 - 不业文化 -MXDIA乂媒体</a></p>
+]]></content>
+      <categories>
+        <category>舞台</category>
+      </categories>
+      <tags>
+        <tag>舞台</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>米兰大教堂MR-无界</title>
     <url>/2022/05/07/%E7%B1%B3%E5%85%B0%E5%A4%A7%E6%95%99%E5%A0%82MR-%E6%97%A0%E7%95%8C/</url>
     <content><![CDATA[<h2 id="效果图"><a href="#效果图" class="headerlink" title="效果图"></a>效果图</h2><p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E5%25BE%25AE%25E4%25BF%25A1%25E5%259B%25BE%25E7%2589%2587_20220507231905-tuya.jpg" alt="微信图片_20220507231905-tuya"></p>
@@ -582,6 +596,78 @@
       </categories>
       <tags>
         <tag>舞台</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>茅台茅韵宣传片</title>
+    <url>/2022/05/07/%E8%8C%85%E5%8F%B0%E8%8C%85%E9%9F%B5%E5%AE%A3%E4%BC%A0%E7%89%87/</url>
+    <content><![CDATA[<h2 id="前期设计"><a href="#前期设计" class="headerlink" title="前期设计"></a>前期设计</h2><p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E8%258C%2585%25E5%258F%25B0.jpg" alt="茅台"></p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E6%25AF%259B%25E9%259F%25B5.jpg" alt="毛韵"></p>
+]]></content>
+      <categories>
+        <category>舞台</category>
+      </categories>
+      <tags>
+        <tag>舞台</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>阿云嘎-心岛</title>
+    <url>/2022/05/07/%E9%98%BF%E4%BA%91%E5%98%8E-%E5%BF%83%E5%B2%9B/</url>
+    <content><![CDATA[<h2 id="效果图"><a href="#效果图" class="headerlink" title="效果图"></a>效果图</h2><p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E5%25BF%2583%25E5%25B2%259B4.jpg"></p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E5%25BF%2583%25E5%25B2%259B5.jpg"></p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E9%2598%25BF%25E4%25BA%2591%25E5%2598%258E4.gif"></p>
+<h2 id="现场效果"><a href="#现场效果" class="headerlink" title="现场效果"></a>现场效果</h2><p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E9%2598%25BF%25E4%25BA%2591%25E5%2598%258E2.gif"></p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E9%2598%25BF%25E4%25BA%2591%25E5%2598%258E1.gif"></p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E9%2598%25BF%25E4%25BA%2591%25E5%2598%258E3.gif"></p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E9%2598%25BF%25E4%25BA%2591%25E5%2598%258E%25E5%25B9%2595%25E5%2590%258E.png"></p>
+<h2 id="用户反馈"><a href="#用户反馈" class="headerlink" title="用户反馈"></a>用户反馈</h2><p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E5%25BF%2583%25E5%25B2%259B22.png"></p>
+<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E5%25BF%2583%25E5%25B2%259B33.png"></p>
+<iframe src="https://v6.stream.tencentmusic.com/0b53yeabyaaauaai6gofrjrkdqoddtaqahaa.f160030.mp4?dis_k=580523d3d658d86e2a73b3ddabd65df4&dis_t=1686102385&local=1&fromtag=1061014" scrolling="no" border="0" height="800" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+
+]]></content>
+      <categories>
+        <category>舞台</category>
+      </categories>
+      <tags>
+        <tag>舞台</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>黑群晖无损降级</title>
+    <url>/2023/03/06/%E9%BB%91%E7%BE%A4%E6%99%96%E6%97%A0%E6%8D%9F%E9%99%8D%E7%BA%A7/</url>
+    <content><![CDATA[<p><strong>无损的降级重装黑群晖系统：</strong></p>
+<p>一、物理机安装的，需要找一个U盘，刷PE系统到U盘。</p>
+<p>​       虚拟机安装的，只需要找一个PE的ISO镜像，不需要用到U盘。</p>
+<p>二、物理机安装的群晖，把刷好PE系统的U盘拿到安装群晖的主机插上，开机进BIOS设置从PE这个U盘启动。</p>
+<p>​       虚拟机安装群晖的，把虚拟机关机，把PE镜像的ISO挂到群晖虚拟机上，设置从ISO镜像启动。</p>
+<p>三、进入PE后，运行Diskgenius，在左边找到群晖的存储硬盘（标有1.42.6字样的分区）找到 etc 文件夹浏览文件，右键强制删除文件夹里VERSION 这个文件。</p>
+<p>四、在左边找到 etc.defaults 这个文件夹，右键强制删除文件夹里VERSION 这个文件。</p>
+<p>六、如果你有多个存储硬盘，把每个硬盘的 etc 和 etc.defaults 这两个文件夹的 VERSION 这个文件，强制删除，一个不留。</p>
+<p>七、如果你的群晖是用固态硬盘做引导或者你的群晖是用虚拟机安装的，找到 HD0 这个磁盘（标记有 ESP 字样的），右键，删除所有的分区。删除分区后，记得点一下左上角的“保存更改”。</p>
+<p>九、引导盘的所有分区删除了就行，不需要再建立，留空。</p>
+<p>十、固态硬盘做引导或者你的群晖是用虚拟机安装的，此时可以用写镜像软件把升级之前用的群晖引导文件刷到引导盘上。</p>
+<p>​       U盘做引导，此时你可以去把U盘还原空间， 然后把升级之前用的群晖引导文件刷到U盘上。</p>
+<p>十一、引导盘做好了以后，重启，设置从引导盘启动，会出现群晖引导菜单，手动选第二项（群晖型号版本号 Baremetal with Jun&#96;s Mod 版本号 Reinstall)回车。</p>
+<p>十二、在电脑上用群晖助手搜索，会搜索到群晖的IP地址，此时状态为可转移。此时显示的版本最低版本要求，低于此版本是无法安装的。</p>
+<p>十三、在浏览器输入群晖的IP打开，会出现群晖的安装界面，点：安装。</p>
+<p>十四、选择安装类型：选择“迁移” &gt; 手动安装 &gt; 浏览 &gt; 找到对应安装包（需与引导文件匹配） &gt; 立即安装</p>
+<table>
+    <tr>
+        <td>（1）DS3615、DS3617、DS916的1.02b引导，与之对应的系统安装包版本为该型号的6.1-15047至6.17-15284之间；</td>
+        <td>（2）DS3615和DS3617的1.03b引导，与之对应的系统安装包版本为该型号的6.2-23739至6.23-25426之间；</td>
+        <td>（3）DS918的1.04b引导，与之对应的系统安装包版本为该型号的6.2-23739至6.23-25426之间；</td>
+    </tr>
+</table>
+
+<p>十五、等到安装完成后群晖会自动重启，耐心等待几分钟，重新搜索后直到群晖显示“已就绪”就表示降级重装成功！（DS918重装时，如果是手动上传6.23版本的安装包，安装完成后系统会显示是6.23up3版本；而DS3615和DS3617重装6.23完成后，显示6.23版本而不是6.23up3版本。这是正常现象，无须担心。）</p>
+<p>十六、如果NAS主机配置有nvme固态硬盘给群晖做缓存盘，降级重装系统后有可能系统会提示缓存盘损毁，只需要重新打上nvme的补丁，重启后就正常了。如果NAS主机配置有nvme固态硬盘给群晖做存储盘的，降级重装系统后重新打上nvme的补丁，重启后nvme的存储盘也会正常显示的。</p>
+]]></content>
+      <categories>
+        <category>系统</category>
+      </categories>
+      <tags>
+        <tag>系统</tag>
       </tags>
   </entry>
   <entry>
@@ -1683,92 +1769,6 @@
       </categories>
       <tags>
         <tag>项目</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>茅台茅韵宣传片</title>
-    <url>/2022/05/07/%E8%8C%85%E5%8F%B0%E8%8C%85%E9%9F%B5%E5%AE%A3%E4%BC%A0%E7%89%87/</url>
-    <content><![CDATA[<h2 id="前期设计"><a href="#前期设计" class="headerlink" title="前期设计"></a>前期设计</h2><p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E8%258C%2585%25E5%258F%25B0.jpg" alt="茅台"></p>
-<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E6%25AF%259B%25E9%259F%25B5.jpg" alt="毛韵"></p>
-]]></content>
-      <categories>
-        <category>舞台</category>
-      </categories>
-      <tags>
-        <tag>舞台</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>阿云嘎-心岛</title>
-    <url>/2022/05/07/%E9%98%BF%E4%BA%91%E5%98%8E-%E5%BF%83%E5%B2%9B/</url>
-    <content><![CDATA[<h2 id="效果图"><a href="#效果图" class="headerlink" title="效果图"></a>效果图</h2><p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E5%25BF%2583%25E5%25B2%259B4.jpg"></p>
-<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E5%25BF%2583%25E5%25B2%259B5.jpg"></p>
-<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E9%2598%25BF%25E4%25BA%2591%25E5%2598%258E4.gif"></p>
-<h2 id="现场效果"><a href="#现场效果" class="headerlink" title="现场效果"></a>现场效果</h2><p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E9%2598%25BF%25E4%25BA%2591%25E5%2598%258E2.gif"></p>
-<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E9%2598%25BF%25E4%25BA%2591%25E5%2598%258E1.gif"></p>
-<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E9%2598%25BF%25E4%25BA%2591%25E5%2598%258E3.gif"></p>
-<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E9%2598%25BF%25E4%25BA%2591%25E5%2598%258E%25E5%25B9%2595%25E5%2590%258E.png"></p>
-<h2 id="用户反馈"><a href="#用户反馈" class="headerlink" title="用户反馈"></a>用户反馈</h2><p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E5%25BF%2583%25E5%25B2%259B22.png"></p>
-<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E5%25BF%2583%25E5%25B2%259B33.png"></p>
-<iframe src="https://v6.stream.tencentmusic.com/0b53yeabyaaauaai6gofrjrkdqoddtaqahaa.f160030.mp4?dis_k=580523d3d658d86e2a73b3ddabd65df4&dis_t=1686102385&local=1&fromtag=1061014" scrolling="no" border="0" height="800" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
-
-]]></content>
-      <categories>
-        <category>舞台</category>
-      </categories>
-      <tags>
-        <tag>舞台</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>过年啦-冬奥一起玩</title>
-    <url>/2022/05/07/%E8%BF%87%E5%B9%B4%E5%95%A6-%E5%86%AC%E5%A5%A5%E4%B8%80%E8%B5%B7%E7%8E%A9/</url>
-    <content><![CDATA[<h2 id="效果图"><a href="#效果图" class="headerlink" title="效果图"></a>效果图</h2><p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E6%25BB%2591%25E5%2586%25B0%25E5%259C%25BA0027.jpg" alt="滑冰场0027"></p>
-<p><img src="https://yukliu-1259463135.cos.ap-beijing.myqcloud.com/image/%25E5%25BE%25AE%25E4%25BF%25A1%25E5%259B%25BE%25E7%2589%2587_20220117234737.jpg" alt="微信图片_20220117234737"></p>
-<p><a href="https://www.mxdia.com/posts/Yb9A43zKzyZz">过年啦-冬奥一起玩 - 不业文化 -MXDIA乂媒体</a></p>
-]]></content>
-      <categories>
-        <category>舞台</category>
-      </categories>
-      <tags>
-        <tag>舞台</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>黑群晖无损降级</title>
-    <url>/2023/03/06/%E9%BB%91%E7%BE%A4%E6%99%96%E6%97%A0%E6%8D%9F%E9%99%8D%E7%BA%A7/</url>
-    <content><![CDATA[<p><strong>无损的降级重装黑群晖系统：</strong></p>
-<p>一、物理机安装的，需要找一个U盘，刷PE系统到U盘。</p>
-<p>​       虚拟机安装的，只需要找一个PE的ISO镜像，不需要用到U盘。</p>
-<p>二、物理机安装的群晖，把刷好PE系统的U盘拿到安装群晖的主机插上，开机进BIOS设置从PE这个U盘启动。</p>
-<p>​       虚拟机安装群晖的，把虚拟机关机，把PE镜像的ISO挂到群晖虚拟机上，设置从ISO镜像启动。</p>
-<p>三、进入PE后，运行Diskgenius，在左边找到群晖的存储硬盘（标有1.42.6字样的分区）找到 etc 文件夹浏览文件，右键强制删除文件夹里VERSION 这个文件。</p>
-<p>四、在左边找到 etc.defaults 这个文件夹，右键强制删除文件夹里VERSION 这个文件。</p>
-<p>六、如果你有多个存储硬盘，把每个硬盘的 etc 和 etc.defaults 这两个文件夹的 VERSION 这个文件，强制删除，一个不留。</p>
-<p>七、如果你的群晖是用固态硬盘做引导或者你的群晖是用虚拟机安装的，找到 HD0 这个磁盘（标记有 ESP 字样的），右键，删除所有的分区。删除分区后，记得点一下左上角的“保存更改”。</p>
-<p>九、引导盘的所有分区删除了就行，不需要再建立，留空。</p>
-<p>十、固态硬盘做引导或者你的群晖是用虚拟机安装的，此时可以用写镜像软件把升级之前用的群晖引导文件刷到引导盘上。</p>
-<p>​       U盘做引导，此时你可以去把U盘还原空间， 然后把升级之前用的群晖引导文件刷到U盘上。</p>
-<p>十一、引导盘做好了以后，重启，设置从引导盘启动，会出现群晖引导菜单，手动选第二项（群晖型号版本号 Baremetal with Jun&#96;s Mod 版本号 Reinstall)回车。</p>
-<p>十二、在电脑上用群晖助手搜索，会搜索到群晖的IP地址，此时状态为可转移。此时显示的版本最低版本要求，低于此版本是无法安装的。</p>
-<p>十三、在浏览器输入群晖的IP打开，会出现群晖的安装界面，点：安装。</p>
-<p>十四、选择安装类型：选择“迁移” &gt; 手动安装 &gt; 浏览 &gt; 找到对应安装包（需与引导文件匹配） &gt; 立即安装</p>
-<table>
-    <tr>
-        <td>（1）DS3615、DS3617、DS916的1.02b引导，与之对应的系统安装包版本为该型号的6.1-15047至6.17-15284之间；</td>
-        <td>（2）DS3615和DS3617的1.03b引导，与之对应的系统安装包版本为该型号的6.2-23739至6.23-25426之间；</td>
-        <td>（3）DS918的1.04b引导，与之对应的系统安装包版本为该型号的6.2-23739至6.23-25426之间；</td>
-    </tr>
-</table>
-
-<p>十五、等到安装完成后群晖会自动重启，耐心等待几分钟，重新搜索后直到群晖显示“已就绪”就表示降级重装成功！（DS918重装时，如果是手动上传6.23版本的安装包，安装完成后系统会显示是6.23up3版本；而DS3615和DS3617重装6.23完成后，显示6.23版本而不是6.23up3版本。这是正常现象，无须担心。）</p>
-<p>十六、如果NAS主机配置有nvme固态硬盘给群晖做缓存盘，降级重装系统后有可能系统会提示缓存盘损毁，只需要重新打上nvme的补丁，重启后就正常了。如果NAS主机配置有nvme固态硬盘给群晖做存储盘的，降级重装系统后重新打上nvme的补丁，重启后nvme的存储盘也会正常显示的。</p>
-]]></content>
-      <categories>
-        <category>系统</category>
-      </categories>
-      <tags>
-        <tag>系统</tag>
       </tags>
   </entry>
 </search>
